@@ -1,19 +1,17 @@
 /* ========================================================
-   The Long Run — personal finance for people with a life to run
+   The Long Run — Modern Minimal theme
    Design tokens
    ======================================================== */
 
 :root {
-  --bg: #F6F1E7;
-  --paper: #FBF8F1;
-  --ink: #26241D;
-  --ink-soft: #55503F;
-  --forest: #24402F;
-  --forest-deep: #182C20;
-  --gold: #B9862F;
-  --gold-deep: #92691F;
-  --line: #DCD3BF;
-  --sage: #7C9078;
+  --bg: #FFFFFF;
+  --paper: #F7F8FA;
+  --ink: #16181D;
+  --ink-soft: #5A5F6B;
+  --accent: #3D5AFE;
+  --accent-deep: #2A3ECF;
+  --accent-tint: #EEF0FF;
+  --line: #E7E9EE;
   --max: 1120px;
 }
 
@@ -25,21 +23,22 @@ body {
   margin: 0;
   background: var(--bg);
   color: var(--ink);
-  font-family: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   font-size: 17px;
-  line-height: 1.55;
+  line-height: 1.6;
   -webkit-font-smoothing: antialiased;
 }
 
 h1, h2, h3, .serif {
-  font-family: "Source Serif 4", Georgia, "Times New Roman", serif;
-  font-weight: 600;
-  color: var(--forest-deep);
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  color: var(--ink);
   margin: 0;
 }
 
-a { color: var(--forest); text-decoration: none; }
-a:hover { color: var(--gold-deep); }
+a { color: var(--accent); text-decoration: none; }
+a:hover { color: var(--accent-deep); }
 
 img { max-width: 100%; display: block; }
 
@@ -52,45 +51,44 @@ img { max-width: 100%; display: block; }
 /* ---------- Masthead ---------- */
 
 .masthead {
-  border-bottom: 1px solid var(--line);
-  padding: 30px 0 0;
+  padding: 32px 0 0;
 }
 
 .masthead .wrap {
   display: flex;
-  align-items: baseline;
+  align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 14px;
-  padding-bottom: 18px;
+  padding-bottom: 20px;
 }
 
 .wordmark {
-  font-family: "Source Serif 4", Georgia, serif;
-  font-size: 30px;
-  font-weight: 600;
-  color: var(--forest-deep);
-  letter-spacing: 0.2px;
+  font-family: "Inter", sans-serif;
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: -0.6px;
+  color: var(--ink);
 }
 
 .wordmark span {
-  color: var(--gold);
+  color: var(--accent);
 }
 
 .tagline {
   color: var(--ink-soft);
-  font-size: 14.5px;
+  font-size: 14px;
   max-width: 260px;
   text-align: right;
 }
 
 nav.primary {
-  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
 }
 
 nav.primary .wrap {
   display: flex;
-  gap: 28px;
+  gap: 30px;
   padding-top: 0;
   padding-bottom: 0;
   overflow-x: auto;
@@ -98,42 +96,47 @@ nav.primary .wrap {
 
 nav.primary a {
   display: inline-block;
-  padding: 13px 0;
+  padding: 14px 0;
   font-size: 14.5px;
-  color: var(--ink);
+  color: var(--ink-soft);
   border-bottom: 2px solid transparent;
   white-space: nowrap;
+  font-weight: 500;
 }
 
 nav.primary a:hover,
 nav.primary a.current {
-  color: var(--forest-deep);
-  border-bottom-color: var(--gold);
+  color: var(--ink);
+  border-bottom-color: var(--accent);
+  font-weight: 600;
 }
 
 /* ---------- Hero / featured post ---------- */
 
 .hero {
-  padding: 46px 0 38px;
-  border-bottom: 1px solid var(--line);
+  padding: 50px 0 40px;
 }
 
 .kicker {
   display: inline-block;
-  font-size: 13px;
-  color: var(--gold-deep);
-  font-weight: 600;
-  margin-bottom: 12px;
+  font-size: 12.5px;
+  color: var(--accent);
+  font-weight: 700;
+  margin-bottom: 16px;
+  background: var(--accent-tint);
+  padding: 5px 13px;
+  border-radius: 20px;
+  letter-spacing: 0.2px;
 }
 
 .hero h1 {
-  font-size: clamp(30px, 4vw, 46px);
-  line-height: 1.12;
+  font-size: clamp(30px, 4.2vw, 48px);
+  line-height: 1.08;
   max-width: 15ch;
 }
 
 .hero .dek {
-  margin-top: 16px;
+  margin-top: 18px;
   max-width: 62ch;
   font-size: 19px;
   color: var(--ink-soft);
@@ -151,41 +154,45 @@ nav.primary a.current {
   display: grid;
   grid-template-columns: minmax(0, 1fr) 300px;
   gap: 56px;
-  padding: 40px 0 60px;
+  padding: 8px 0 60px;
 }
 
 .section-label {
   font-size: 13px;
   color: var(--ink-soft);
-  border-bottom: 1px solid var(--line);
-  padding-bottom: 10px;
+  font-weight: 600;
+  padding-bottom: 14px;
   margin-bottom: 6px;
 }
 
 .row {
-  display: grid;
-  grid-template-columns: 92px 1fr;
-  gap: 20px;
-  padding: 26px 0;
-  border-bottom: 1px solid var(--line);
+  display: block;
+  padding: 24px;
+  margin-bottom: 16px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  transition: border-color 0.15s ease;
+}
+
+.row:hover {
+  border-color: var(--accent);
 }
 
 .row .num {
-  font-family: "Source Serif 4", serif;
-  font-size: 15px;
-  color: var(--sage);
-  padding-top: 4px;
+  display: none;
 }
 
 .row h3 {
-  font-size: 21px;
+  font-size: 20px;
   line-height: 1.3;
+  font-weight: 700;
+  letter-spacing: -0.3px;
 }
 
 .row .dek {
-  margin-top: 8px;
+  margin-top: 10px;
   color: var(--ink-soft);
-  font-size: 15.5px;
+  font-size: 15px;
   max-width: 58ch;
 }
 
@@ -194,13 +201,15 @@ nav.primary a.current {
 .side-box {
   background: var(--paper);
   border: 1px solid var(--line);
+  border-radius: 16px;
   padding: 24px;
-  margin-bottom: 28px;
+  margin-bottom: 24px;
 }
 
 .side-box h2 {
-  font-size: 18px;
+  font-size: 17px;
   margin-bottom: 14px;
+  font-weight: 700;
 }
 
 .side-box ul {
@@ -218,13 +227,13 @@ nav.primary a.current {
 .side-box li:first-child { border-top: none; }
 
 .side-box.signup {
-  background: var(--forest-deep);
-  color: #EFE9DA;
+  background: var(--ink);
+  color: #F2F3F5;
   border: none;
 }
 
 .side-box.signup h2 { color: #fff; }
-.side-box.signup p { color: #C9C3AF; font-size: 14.5px; }
+.side-box.signup p { color: #A7ABB6; font-size: 14.5px; }
 
 .signup form {
   display: flex;
@@ -236,27 +245,29 @@ nav.primary a.current {
 .signup input[type="email"] {
   flex: 1;
   min-width: 0;
-  padding: 11px 12px;
-  border: 1px solid #3E5645;
-  background: #1D3324;
+  padding: 11px 14px;
+  border: 1px solid #33363E;
+  background: #24262D;
   color: #fff;
   font-size: 14.5px;
+  border-radius: 10px;
 }
 
-.signup input[type="email"]::placeholder { color: #9CA894; }
+.signup input[type="email"]::placeholder { color: #7A7E89; }
 
 .btn {
   display: inline-block;
-  background: var(--gold);
-  color: #211a0a;
+  background: var(--accent);
+  color: #fff;
   border: none;
   padding: 11px 18px;
   font-size: 14.5px;
   font-weight: 600;
   cursor: pointer;
+  border-radius: 10px;
 }
 
-.btn:hover { background: var(--gold-deep); color: #fff; }
+.btn:hover { background: var(--accent-deep); }
 
 .disclosure {
   font-size: 13px;
@@ -274,6 +285,7 @@ nav.primary a.current {
   text-align: center;
   padding: 18px;
   margin: 8px 0 28px;
+  border-radius: 12px;
 }
 
 /* ---------- Article page ---------- */
@@ -281,27 +293,29 @@ nav.primary a.current {
 .article {
   max-width: 700px;
   margin: 0 auto;
-  padding: 46px 28px 70px;
+  padding: 50px 28px 70px;
 }
 
-.article .kicker { margin-bottom: 14px; }
+.article .kicker { margin-bottom: 16px; }
 
 .article h1 {
-  font-size: clamp(28px, 4vw, 40px);
-  line-height: 1.16;
+  font-size: clamp(28px, 4vw, 42px);
+  line-height: 1.14;
 }
 
 .article .meta {
-  margin: 18px 0 34px;
+  margin: 20px 0 36px;
   font-size: 14px;
   color: var(--ink-soft);
   border-bottom: 1px solid var(--line);
-  padding-bottom: 26px;
+  padding-bottom: 28px;
 }
 
 .article h2 {
-  font-size: 24px;
-  margin: 40px 0 14px;
+  font-size: 23px;
+  margin: 42px 0 14px;
+  font-weight: 700;
+  letter-spacing: -0.3px;
 }
 
 .article p {
@@ -317,12 +331,13 @@ nav.primary a.current {
 .article li { margin-bottom: 8px; max-width: 60ch; }
 
 .pullquote {
-  border-left: 3px solid var(--gold);
+  border-left: 3px solid var(--accent);
   padding: 4px 0 4px 22px;
-  margin: 30px 0;
-  font-family: "Source Serif 4", serif;
+  margin: 32px 0;
   font-size: 21px;
-  color: var(--forest-deep);
+  font-weight: 600;
+  letter-spacing: -0.2px;
+  color: var(--ink);
   max-width: 56ch;
 }
 
@@ -355,8 +370,6 @@ footer nav a:first-child { margin-left: 0; }
 @media (max-width: 860px) {
   .layout { grid-template-columns: 1fr; }
   .tagline { display: none; }
-  .row { grid-template-columns: 1fr; }
-  .row .num { display: none; }
 }
 
 /* Reduced motion */
@@ -366,6 +379,6 @@ footer nav a:first-child { margin-left: 0; }
 
 /* Visible keyboard focus */
 a:focus-visible, .btn:focus-visible, input:focus-visible {
-  outline: 2px solid var(--gold-deep);
+  outline: 2px solid var(--accent-deep);
   outline-offset: 2px;
 }
