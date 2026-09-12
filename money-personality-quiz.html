@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>What's Your Money Personality? A 2-Minute Quiz — Clearcoin</title>
+<meta name="description" content="Are you The Planner, The Avoider, The Optimizer, or The Juggler? A quick quiz to find your money personality, with guides matched to your result.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="What's Your Money Personality? A 2-Minute Quiz">
+<meta property="og:description" content="Are you The Planner, The Avoider, The Optimizer, or The Juggler? A quick quiz to find your money personality, with guides matched to your result.">
+<meta property="og:url" content="https://artemdryn584-code.github.io/the-long-run/money-personality-quiz.html">
+<meta property="og:site_name" content="Clearcoin">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="What's Your Money Personality? A 2-Minute Quiz">
+<meta name="twitter:description" content="Are you The Planner, The Avoider, The Optimizer, or The Juggler? A quick quiz to find your money personality, with guides matched to your result.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<style>
+  .quiz-option {
+    display: block;
+    width: 100%;
+    text-align: left;
+    padding: 13px 16px;
+    margin-bottom: 10px;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    background: #fff;
+    color: var(--ink);
+    font-family: inherit;
+    font-size: 15px;
+    cursor: pointer;
+  }
+  .quiz-option:hover, .quiz-option:focus-visible {
+    border-color: var(--accent);
+    color: var(--accent-deep);
+    outline: none;
+  }
+  .quiz-progress {
+    font-size: 13px;
+    color: var(--ink-soft);
+    margin-bottom: 14px;
+  }
+  .quiz-question {
+    font-size: 19px;
+    font-weight: 700;
+    margin-bottom: 18px;
+    letter-spacing: -0.2px;
+  }
+  .quiz-result-title {
+    font-size: 26px;
+    font-weight: 800;
+    color: #fff;
+    margin-bottom: 8px;
+  }
+  .quiz-result-desc {
+    color: #C9CCD4;
+    font-size: 15px;
+    margin-bottom: 16px;
+  }
+  .quiz-result-links a {
+    color: #fff;
+    text-decoration: underline;
+  }
+  .quiz-restart {
+    margin-top: 20px;
+  }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="wrap">
+    <div class="wordmark"><a href="index.html" style="color:inherit;">Clear<span>coin</span></a></div>
+    <div class="tagline">Practical money advice for people with a life to live, not a spreadsheet to obsess over.</div>
+  </div>
+  <nav class="primary">
+    <div class="wrap">
+      <a href="index.html">Guides</a>
+      <a href="calculators.html">Calculators</a>
+      <a href="debt.html">Debt</a>
+      <a href="saving.html">Saving</a>
+      <a href="investing.html">Investing</a>
+      <a href="retirement.html">Retirement</a>
+      <a href="housing.html">Housing</a>
+      <a href="family.html">Family</a>
+      <a href="about.html">About</a>
+    </div>
+  </nav>
+</header>
+
+<article class="article">
+  <span class="kicker">Quiz</span>
+  <h1>What's Your Money Personality?</h1>
+  <p class="meta">2 minutes, 7 questions, no email required</p>
+
+  <p>Everyone handles money a little differently — not necessarily well or badly, just differently. Answer these seven quick questions to see which pattern fits you best, and get a couple of guides picked for exactly that.</p>
+
+  <div class="calc-box" id="quiz-box">
+    <div class="quiz-progress" id="quiz-progress">Question 1 of 7</div>
+    <div class="quiz-question" id="quiz-question"></div>
+    <div id="quiz-options"></div>
+  </div>
+
+</article>
+
+<footer>
+  <div class="wrap">
+    <div>© 2026 Clearcoin.</div>
+    <nav>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="privacy.html">Privacy Policy</a>
+    </nav>
+  </div>
+</footer>
+
+<script>
+var questions = [
+  {
+    q: "A surprise expense comes up. You...",
+    options: [
+      { t: "Already have money set aside for exactly this", a: "planner" },
+      { t: "Put it on a card and deal with it later", a: "avoider" },
+      { t: "Immediately look for the cheapest way to cover it", a: "optimizer" },
+      { t: "Juggle it between a couple of accounts to make it work", a: "juggler" }
+    ]
+  },
+  {
+    q: "How often do you check your bank balance?",
+    options: [
+      { t: "On a set schedule, like once a week", a: "planner" },
+      { t: "Rarely — I'd honestly rather not know", a: "avoider" },
+      { t: "Often, I like knowing exactly where things stand", a: "optimizer" },
+      { t: "Whenever I remember, which isn't consistent", a: "juggler" }
+    ]
+  },
+  {
+    q: "Your idea of a budget is...",
+    options: [
+      { t: "A detailed plan I check regularly", a: "planner" },
+      { t: "Something I know I should have but don't", a: "avoider" },
+      { t: "A system I've fine-tuned to cut waste", a: "optimizer" },
+      { t: "A rough sense of what's coming in and out", a: "juggler" }
+    ]
+  },
+  {
+    q: "When it comes to paying bills, you...",
+    options: [
+      { t: "Automate everything well ahead of time", a: "planner" },
+      { t: "Sometimes pay late because it slipped your mind", a: "avoider" },
+      { t: "Time payments around due dates and cash flow", a: "optimizer" },
+      { t: "Pay them as they come, moving money around as needed", a: "juggler" }
+    ]
+  },
+  {
+    q: "Your retirement savings situation is...",
+    options: [
+      { t: "On a clear plan I actually track", a: "planner" },
+      { t: "Something I know I should look into", a: "avoider" },
+      { t: "Optimized across account types on purpose", a: "optimizer" },
+      { t: "Contributing what I can, when I can", a: "juggler" }
+    ]
+  },
+  {
+    q: "A friend asks you for money advice. You...",
+    options: [
+      { t: "Walk them through a step-by-step plan", a: "planner" },
+      { t: "Say \"honestly, I'm not the one to ask\"", a: "avoider" },
+      { t: "Give them a detailed breakdown of the best options", a: "optimizer" },
+      { t: "Share what's worked for you, flaws and all", a: "juggler" }
+    ]
+  },
+  {
+    q: "What stresses you out most about money?",
+    options: [
+      { t: "Not sticking to the plan", a: "planner" },
+      { t: "Thinking about it at all", a: "avoider" },
+      { t: "Missing a better rate or option elsewhere", a: "optimizer" },
+      { t: "Keeping track of everything at once", a: "juggler" }
+    ]
+  }
+];
+
+var results = {
+  planner: {
+    title: "The Planner",
+    desc: "You like a real plan and you actually check it. Structure isn't a chore for you — it's what makes money feel manageable. The next step for you is usually automating the plan you already have, so it runs even on the weeks you don't check in.",
+    links: [
+      { t: "The Sinking Fund Method", href: "sinking-fund-method.html" },
+      { t: "Free printable budget template", href: "budget-template.html" }
+    ]
+  },
+  avoider: {
+    title: "The Avoider",
+    desc: "Money isn't your favorite thing to think about, and that's more common than it feels. The goal isn't to suddenly love spreadsheets — it's a few small, automated things that work in the background so avoidance doesn't quietly cost you.",
+    links: [
+      { t: "The 6-Month Emergency Fund Plan", href: "article.html" },
+      { t: "How Much Should You Actually Save", href: "how-much-to-save.html" }
+    ]
+  },
+  optimizer: {
+    title: "The Optimizer",
+    desc: "You want the best rate, the best account, the best structure — and you're usually willing to do the research to find it. Just make sure the chase for optimal doesn't delay decisions that are fine to make now and adjust later.",
+    links: [
+      { t: "How to Compare High-Yield Savings Accounts", href: "best-high-yield-savings-accounts.html" },
+      { t: "Robo-Advisors for Beginners", href: "robo-advisors-for-beginners.html" }
+    ]
+  },
+  juggler: {
+    title: "The Juggler",
+    desc: "You're keeping a lot of balls in the air, and mostly making it work — but \"mostly\" takes real effort to maintain. A simpler system, even a rough one, would probably free up more mental energy than a stricter one you won't stick to.",
+    links: [
+      { t: "Budgeting Apps Compared", href: "budgeting-apps-compared.html" },
+      { t: "Free printable budget template", href: "budget-template.html" }
+    ]
+  }
+};
+
+var current = 0;
+var scores = { planner: 0, avoider: 0, optimizer: 0, juggler: 0 };
+
+function renderQuestion() {
+  var box = document.getElementById("quiz-box");
+  var q = questions[current];
+  document.getElementById("quiz-progress").textContent = "Question " + (current + 1) + " of " + questions.length;
+  document.getElementById("quiz-question").textContent = q.q;
+  var optionsDiv = document.getElementById("quiz-options");
+  optionsDiv.innerHTML = "";
+  q.options.forEach(function (opt) {
+    var btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "quiz-option";
+    btn.textContent = opt.t;
+    btn.addEventListener("click", function () {
+      scores[opt.a]++;
+      current++;
+      if (current < questions.length) {
+        renderQuestion();
+      } else {
+        renderResult();
+      }
+    });
+    optionsDiv.appendChild(btn);
+  });
+}
+
+function renderResult() {
+  var winner = "planner";
+  var best = -1;
+  Object.keys(scores).forEach(function (key) {
+    if (scores[key] > best) {
+      best = scores[key];
+      winner = key;
+    }
+  });
+  var r = results[winner];
+  var box = document.getElementById("quiz-box");
+  box.classList.add("calc-result");
+  var linksHtml = r.links.map(function (l) {
+    return '<div class="row-line"><span><a href="' + l.href + '">' + l.t + "</a></span></div>";
+  }).join("");
+  box.innerHTML =
+    '<div class="quiz-result-title">' + r.title + "</div>" +
+    '<div class="quiz-result-desc">' + r.desc + "</div>" +
+    '<div class="quiz-result-links">' + linksHtml + "</div>" +
+    '<button type="button" class="btn quiz-restart" id="quiz-restart">Take it again</button>';
+  document.getElementById("quiz-restart").addEventListener("click", function () {
+    current = 0;
+    scores = { planner: 0, avoider: 0, optimizer: 0, juggler: 0 };
+    box.classList.remove("calc-result");
+    renderQuestion();
+  });
+}
+
+renderQuestion();
+</script>
+
+</body>
+</html>

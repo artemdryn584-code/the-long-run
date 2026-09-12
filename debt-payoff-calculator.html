@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Debt Payoff Calculator: See Your Payoff Date & Total Interest — Clearcoin</title>
+<meta name="description" content="Enter your balance, APR, and monthly payment to see exactly when you'll be debt-free and how much interest you'll pay.">
+<meta property="og:title" content="Debt Payoff Calculator — Clearcoin">
+<meta property="og:description" content="See exactly when you'll be debt-free and how much interest you'll pay.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://artemdryn584-code.github.io/the-long-run/debt-payoff-calculator.html">
+<meta property="og:image" content="https://artemdryn584-code.github.io/the-long-run/og-cover.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#3D5AFE">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="article-page">
+
+<header class="masthead">
+  <div class="wrap">
+    <div class="wordmark"><a href="index.html" style="color:inherit;">Clear<span>coin</span></a></div>
+    <div class="tagline">Clear, practical money advice — no jargon, no spreadsheets to obsess over.</div>
+  </div>
+  <nav class="primary">
+    <div class="wrap">
+      <a href="index.html">Guides</a>
+      <a href="calculators.html">Calculators</a>
+      <a href="debt.html" class="current">Debt</a>
+      <a href="saving.html">Saving</a>
+      <a href="investing.html">Investing</a>
+      <a href="retirement.html">Retirement</a>
+      <a href="housing.html">Housing</a>
+      <a href="family.html">Family</a>
+      <a href="about.html">About</a>
+    </div>
+  </nav>
+</header>
+
+<article class="article">
+  <span class="kicker">Calculator</span>
+  <h1>Debt Payoff Calculator</h1>
+  <p class="meta">Free tool — takes about 30 seconds</p>
+
+  <p>Enter one debt's balance, interest rate, and monthly payment to see how long it'll take to pay off and how much interest you'll pay along the way.</p>
+
+  <div class="calc-box">
+    <div class="calc-grid">
+      <div class="calc-field">
+        <label for="balance">Current balance ($)</label>
+        <input type="number" id="balance" placeholder="e.g. 5000" value="5000">
+      </div>
+      <div class="calc-field">
+        <label for="apr">Interest rate — APR (%)</label>
+        <input type="number" id="apr" placeholder="e.g. 22" value="22" step="0.1">
+      </div>
+      <div class="calc-field">
+        <label for="payment">Monthly payment ($)</label>
+        <input type="number" id="payment" placeholder="e.g. 200" value="200">
+      </div>
+    </div>
+
+    <div class="calc-result" id="result">
+      <div class="row-line"><span>Time to pay off</span><span class="big" id="months-out">32 months</span></div>
+      <div class="row-line"><span>Total interest paid</span><span id="interest-out">$1,340</span></div>
+      <div class="row-line"><span>Total you'll pay</span><span id="total-out">$6,340</span></div>
+    </div>
+    <div class="calc-note" id="warning" style="display:none;">At this payment, the balance won't shrink — interest is outpacing what you're paying. Try a higher monthly payment.</div>
+    <div class="calc-note">Estimate assumes a fixed rate and no new charges added to the balance.</div>
+  </div>
+
+  <h2>How this is calculated</h2>
+  <p>Each month, interest is added to your balance first (APR ÷ 12), then your payment is subtracted from what's left. This repeats until the balance hits zero — the same way credit card and loan interest actually compounds.</p>
+  <p>If you're deciding which debt to tackle first, see <a href="debt-avalanche-vs-snowball.html">Debt Avalanche vs. Snowball</a>. And once this balance hits zero, here's <a href="after-paying-off-credit-card.html">what to do the day after</a>.</p>
+</article>
+
+<footer>
+  <div class="wrap">
+    <div>© 2026 Clearcoin.</div>
+    <nav>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="privacy.html">Privacy Policy</a>
+    </nav>
+  </div>
+</footer>
+
+<script>
+function calc() {
+  var balance = parseFloat(document.getElementById('balance').value) || 0;
+  var apr = parseFloat(document.getElementById('apr').value) || 0;
+  var payment = parseFloat(document.getElementById('payment').value) || 0;
+  var monthlyRate = apr / 100 / 12;
+
+  var b = balance;
+  var totalInterest = 0;
+  var monthsCount = 0;
+  var warn = document.getElementById('warning');
+  warn.style.display = 'none';
+
+  if (payment <= b * monthlyRate && monthlyRate > 0) {
+    warn.style.display = 'block';
+    document.getElementById('months-out').textContent = '—';
+    document.getElementById('interest-out').textContent = '—';
+    document.getElementById('total-out').textContent = '—';
+    return;
+  }
+
+  while (b > 0 && monthsCount < 1200) {
+    var interest = b * monthlyRate;
+    totalInterest += interest;
+    b = b + interest - payment;
+    monthsCount++;
+    if (b < 0) b = 0;
+  }
+
+  document.getElementById('months-out').textContent = monthsCount + ' months';
+  document.getElementById('interest-out').textContent = '$' + totalInterest.toLocaleString(undefined, {maximumFractionDigits:0});
+  document.getElementById('total-out').textContent = '$' + (balance + totalInterest).toLocaleString(undefined, {maximumFractionDigits:0});
+}
+['balance','apr','payment'].forEach(function(id){
+  document.getElementById(id).addEventListener('input', calc);
+});
+calc();
+</script>
+
+</body>
+</html>
