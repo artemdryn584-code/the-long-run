@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<script>(function(){try{if(localStorage.getItem('theme')==='dark'){document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();</script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Free Money Calculators — Clearcoin</title>
 <meta name="description" content="Free calculators for your emergency fund, debt payoff, and 401(k) growth — no signup required.">
@@ -25,6 +26,7 @@
   <div class="wrap">
     <div class="wordmark"><a href="index.html" style="color:inherit;"><img src="favicon.svg" alt="" class="wordmark-icon">Clear<span>coin</span></a></div>
     <div class="tagline">Clear, practical money advice — no jargon, no spreadsheets to obsess over.</div>
+    <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">🌙</button>
   </div>
   <nav class="primary">
     <div class="wrap">
@@ -51,7 +53,7 @@
   <h1>Money Calculators</h1>
   <p class="meta">No signup, no email required — just enter your numbers</p>
 
-  <p>Three quick tools to answer the questions that actually matter: how big your emergency fund should be, when a debt will be paid off, and what your 401(k) could grow to.</p>
+  <p>Four quick tools to answer the questions that actually matter: how big your emergency fund should be, when a debt will be paid off, what your 401(k) could grow to, and how compounding adds up over time.</p>
 
   <h2><a href="emergency-fund-calculator.html">Emergency Fund Calculator</a></h2>
   <p>Enter your monthly expenses and savings rate to see your exact target and how long it'll take to reach it.</p>
@@ -61,6 +63,9 @@
 
   <h2><a href="401k-calculator.html">401(k) Growth Calculator</a></h2>
   <p>Project your retirement balance based on your current savings, contributions, and employer match.</p>
+
+  <h2><a href="compound-interest-calculator.html">Compound Interest Calculator</a></h2>
+  <p>Enter a starting amount, a monthly contribution, and a rate of return to see your money grow year by year, plotted on a chart.</p>
 
   <div class="side-box">
     <h2>Clearcoin Plus<span class="badge-soon">Preview</span></h2>
@@ -111,6 +116,43 @@ function clearcoinFeedback(btn) {
   var box = btn.closest('.feedback-box');
   if (box) box.innerHTML = '<p class="feedback-thanks">Thanks for the feedback!</p>';
 }
+
+// Dark mode toggle
+(function () {
+  var btn = document.getElementById('theme-toggle');
+  if (!btn) return;
+  function updateIcon() {
+    var isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+    btn.textContent = isDark ? '☀️' : '🌙';
+  }
+  updateIcon();
+  btn.addEventListener('click', function () {
+    var isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+    if (isDark) {
+      document.documentElement.removeAttribute('data-theme');
+      try { localStorage.setItem('theme', 'light'); } catch (e) {}
+    } else {
+      document.documentElement.setAttribute('data-theme', 'dark');
+      try { localStorage.setItem('theme', 'dark'); } catch (e) {}
+    }
+    updateIcon();
+  });
+})();
+
+function clearcoinCopyLink(btn, url) {
+  navigator.clipboard.writeText(url).then(function () {
+    var original = btn.textContent;
+    btn.textContent = 'Copied!';
+    btn.style.width = 'auto';
+    btn.style.padding = '0 12px';
+    setTimeout(function () {
+      btn.textContent = original;
+      btn.style.width = '';
+      btn.style.padding = '';
+    }, 2000);
+  });
+}
+
 
 // Reading progress bar
 (function () {

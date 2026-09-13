@@ -676,6 +676,97 @@ footer nav a:first-child { margin-left: 0; }
   flex-shrink: 0;
 }
 
+/* ---------- Breadcrumbs ---------- */
+
+.breadcrumbs {
+  padding: 18px 0 0;
+  font-size: 13px;
+  color: var(--ink-soft);
+}
+
+.breadcrumbs a {
+  color: var(--ink-soft);
+}
+
+.breadcrumbs a:hover {
+  color: var(--accent);
+}
+
+/* ---------- Share buttons ---------- */
+
+.share-buttons {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 28px 0;
+  flex-wrap: wrap;
+}
+
+.share-buttons > span {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--ink-soft);
+  margin-right: 4px;
+}
+
+.share-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  color: var(--ink);
+  font-size: 13px;
+  font-weight: 700;
+  background: #fff;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.share-btn:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* ---------- Dark mode toggle ---------- */
+
+.theme-toggle {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  width: 36px;
+  height: 36px;
+  font-size: 15px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: var(--ink);
+  font-family: inherit;
+}
+
+.theme-toggle:hover {
+  border-color: var(--accent);
+}
+
+html[data-theme="dark"] {
+  --bg: #101114;
+  --paper: #1A1C21;
+  --ink: #F2F3F5;
+  --ink-soft: #9A9DA6;
+  --line: #2A2D35;
+  --accent-tint: #232848;
+}
+
+html[data-theme="dark"] .calc-field input,
+html[data-theme="dark"] .calc-field select,
+html[data-theme="dark"] .share-btn {
+  background: var(--paper);
+}
+
 /* ---------- Reading progress bar ---------- */
 
 .reading-progress {
@@ -711,14 +802,14 @@ footer nav a:first-child { margin-left: 0; }
 .site-search input:focus {
   outline: none;
   border-color: var(--accent);
-  background: #fff;
+  background: var(--bg);
 }
 
 .site-search-results {
   display: none;
   position: fixed;
   width: 300px;
-  background: #fff;
+  background: var(--bg);
   border: 1px solid var(--line);
   border-radius: 14px;
   box-shadow: 0 12px 28px rgba(22, 24, 29, 0.12);
@@ -786,7 +877,7 @@ footer nav a:first-child { margin-left: 0; }
   border: 1px solid var(--line);
   border-radius: 16px;
   padding: 28px;
-  background: #fff;
+  background: var(--bg);
 }
 
 .pricing-card.featured {

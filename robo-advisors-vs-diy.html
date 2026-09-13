@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<script>(function(){try{if(localStorage.getItem('theme')==='dark'){document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();</script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Robo-Advisors vs. DIY Investing: What's the Real Difference — Clearcoin</title>
 <meta name="description" content="Robo-advisors and DIY index investing end up in similar places for many people. Here's what you're actually paying for with each.">
@@ -61,6 +62,7 @@
   <div class="wrap">
     <div class="wordmark"><a href="index.html" style="color:inherit;"><img src="favicon.svg" alt="" class="wordmark-icon">Clear<span>coin</span></a></div>
     <div class="tagline">Practical money advice for people with a life to live, not a spreadsheet to obsess over.</div>
+    <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">🌙</button>
   </div>
   <nav class="primary">
     <div class="wrap">
@@ -82,10 +84,15 @@
   </nav>
 </header>
 
+<div class="wrap">
+  <div class="breadcrumbs"><a href="index.html">Home</a> / <a href="investing.html">Investing</a> / Robo-Advisors vs. DIY Investing: What's…</div>
+</div>
+
+
 <article class="article">
   <span class="kicker">Investing</span>
   <h1>Robo-Advisors vs. DIY Investing: What's the Real Difference</h1>
-  <p class="meta">Sept 12, 2026, 6 min read</p>
+  <p class="meta">Sept 12, 2026, 6 min read, Updated Sept 2026</p>
 
   <div class="side-box takeaways">
     <h2>Key takeaways</h2>
@@ -97,33 +104,45 @@
     </ul>
   </div>
 
+  <div class="side-box toc">
+    <h2>On this page</h2>
+    <ul>
+      <li><a href="#what-a-robo-advisor-actually-does-for-its-fee">What a robo-advisor actually does for its fee</a></li>
+      <li><a href="#what-diy-investing-saves-you">What DIY investing saves you</a></li>
+      <li><a href="#where-a-robo-advisor-tends-to-be-worth-the-fee">Where a robo-advisor tends to be worth the fee</a></li>
+      <li><a href="#where-diy-tends-to-make-more-sense">Where DIY tends to make more sense</a></li>
+      <li><a href="#a-reasonable-way-to-decide">A reasonable way to decide</a></li>
+    </ul>
+  </div>
+
+
   <p>A robo-advisor builds and manages a diversified portfolio for you automatically, based on a short questionnaire about your goals and risk tolerance, for a small annual fee (commonly 0.25%-0.50% of your balance). DIY investing means picking and managing your own mix of <a href="index-funds-explained.html">index funds</a> yourself. For many people, the two approaches end up holding nearly identical underlying investments — the difference is really about who does the work.</p>
 
-  <h2>What a robo-advisor actually does for its fee</h2>
+  <h2 id="what-a-robo-advisor-actually-does-for-its-fee">What a robo-advisor actually does for its fee</h2>
   <ul>
     <li>Builds a diversified portfolio of low-cost funds matched to your risk tolerance and timeline.</li>
     <li>Automatically rebalances the portfolio as markets move, without you having to remember to do it.</li>
     <li>Often includes tax-loss harvesting in taxable accounts — automatically selling losing positions to offset gains, which can be genuinely difficult to do well manually.</li>
   </ul>
 
-  <h2>What DIY investing saves you</h2>
+  <h2 id="what-diy-investing-saves-you">What DIY investing saves you</h2>
   <p>Managing your own portfolio of two or three broad index funds costs only the funds' own expense ratios — often 0.03%-0.10% — with no additional advisory fee. Over decades, the gap between a 0.05% DIY portfolio and a 0.35% robo-advisor fee compounds into a real difference, though it requires you to actually do the rebalancing and stay disciplined during downturns.</p>
 
   <div class="ad-slot">Ad placeholder — an in-article AdSense unit works well right here</div>
 
-  <h2>Where a robo-advisor tends to be worth the fee</h2>
+  <h2 id="where-a-robo-advisor-tends-to-be-worth-the-fee">Where a robo-advisor tends to be worth the fee</h2>
   <p>If the alternative to a robo-advisor isn't "confident DIY investing" but "not investing at all because it feels overwhelming," or if you know you'd panic-sell during a downturn without some structure in place, the fee is buying real behavioral value — a lower-cost fund sitting in cash because you're too intimidated to buy it earns nothing.</p>
 
   <div class="pullquote">The real comparison isn't robo-advisor versus DIY in the abstract. It's robo-advisor versus what you would <em>actually</em> do without one.</div>
 
-  <h2>Where DIY tends to make more sense</h2>
+  <h2 id="where-diy-tends-to-make-more-sense">Where DIY tends to make more sense</h2>
   <ul>
     <li>You're comfortable picking 2-4 broad index funds and rebalancing once or twice a year — a genuinely simple, learnable task.</li>
     <li>Your account balance is large enough that the percentage fee adds up to a meaningful dollar amount each year.</li>
     <li>You want full control over which specific funds you hold, for tax or personal preference reasons.</li>
   </ul>
 
-  <h2>A reasonable way to decide</h2>
+  <h2 id="a-reasonable-way-to-decide">A reasonable way to decide</h2>
   <p>If reading the section above on DIY index investing felt approachable and mildly boring, you'll probably do fine managing it yourself. If it felt like a chore you'd keep postponing, a robo-advisor's fee is a reasonable price for automatically getting invested and staying that way — which matters far more than optimizing the fee down to the decimal.</p>
 
   <div class="side-box related">
@@ -146,6 +165,14 @@
       <button type="button" class="btn" onclick="clearcoinFeedback(this)">Yes</button>
       <button type="button" class="btn-outline" onclick="clearcoinFeedback(this)">No</button>
     </div>
+  </div>
+
+  <div class="share-buttons">
+    <span>Share this</span>
+    <a class="share-btn" href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fartemdryn584-code.github.io%2Fthe-long-run%2Frobo-advisors-vs-diy.html&text=Robo-Advisors%20vs.%20DIY%20Investing%3A%20What's%20the%20Real%20Difference" target="_blank" rel="noopener">X</a>
+    <a class="share-btn" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fartemdryn584-code.github.io%2Fthe-long-run%2Frobo-advisors-vs-diy.html" target="_blank" rel="noopener">f</a>
+    <a class="share-btn" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fartemdryn584-code.github.io%2Fthe-long-run%2Frobo-advisors-vs-diy.html" target="_blank" rel="noopener">in</a>
+    <button type="button" class="share-btn" onclick="clearcoinCopyLink(this, 'https://artemdryn584-code.github.io/the-long-run/robo-advisors-vs-diy.html')">🔗</button>
   </div>
 
   <div class="faq">
@@ -211,6 +238,43 @@ function clearcoinFeedback(btn) {
   var box = btn.closest('.feedback-box');
   if (box) box.innerHTML = '<p class="feedback-thanks">Thanks for the feedback!</p>';
 }
+
+// Dark mode toggle
+(function () {
+  var btn = document.getElementById('theme-toggle');
+  if (!btn) return;
+  function updateIcon() {
+    var isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+    btn.textContent = isDark ? '☀️' : '🌙';
+  }
+  updateIcon();
+  btn.addEventListener('click', function () {
+    var isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+    if (isDark) {
+      document.documentElement.removeAttribute('data-theme');
+      try { localStorage.setItem('theme', 'light'); } catch (e) {}
+    } else {
+      document.documentElement.setAttribute('data-theme', 'dark');
+      try { localStorage.setItem('theme', 'dark'); } catch (e) {}
+    }
+    updateIcon();
+  });
+})();
+
+function clearcoinCopyLink(btn, url) {
+  navigator.clipboard.writeText(url).then(function () {
+    var original = btn.textContent;
+    btn.textContent = 'Copied!';
+    btn.style.width = 'auto';
+    btn.style.padding = '0 12px';
+    setTimeout(function () {
+      btn.textContent = original;
+      btn.style.width = '';
+      btn.style.padding = '';
+    }, 2000);
+  });
+}
+
 
 // Reading progress bar
 (function () {

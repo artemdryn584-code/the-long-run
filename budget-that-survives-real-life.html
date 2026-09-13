@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<script>(function(){try{if(localStorage.getItem('theme')==='dark'){document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();</script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Building a Budget That Survives Real Life, Not Just a Spreadsheet — Clearcoin</title>
 <meta name="description" content="Most budgets fail in week three. Here's how to build one that actually holds up against a messy, unpredictable month.">
@@ -61,6 +62,7 @@
   <div class="wrap">
     <div class="wordmark"><a href="index.html" style="color:inherit;"><img src="favicon.svg" alt="" class="wordmark-icon">Clear<span>coin</span></a></div>
     <div class="tagline">Practical money advice for people with a life to live, not a spreadsheet to obsess over.</div>
+    <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">🌙</button>
   </div>
   <nav class="primary">
     <div class="wrap">
@@ -82,10 +84,15 @@
   </nav>
 </header>
 
+<div class="wrap">
+  <div class="breadcrumbs"><a href="index.html">Home</a> / <a href="family.html">Family</a> / Building a Budget That Survives Real Lif…</div>
+</div>
+
+
 <article class="article">
   <span class="kicker">Family</span>
   <h1>Building a Budget That Survives Real Life, Not Just a Spreadsheet</h1>
-  <p class="meta">Sept 12, 2026, 7 min read</p>
+  <p class="meta">Sept 12, 2026, 7 min read, Updated Sept 2026</p>
 
   <div class="side-box takeaways">
     <h2>Key takeaways</h2>
@@ -97,25 +104,37 @@
     </ul>
   </div>
 
+  <div class="side-box toc">
+    <h2>On this page</h2>
+    <ul>
+      <li><a href="#start-with-what-you-actually-spent-not-what-you-wish-you-spent">Start with what you actually spent, not what you wish you spent</a></li>
+      <li><a href="#build-in-a-category-for-life-happens">Build in a category for &quot;life happens&quot;</a></li>
+      <li><a href="#fewer-categories-tracked-consistently-beats-detailed-categories-abandoned-in-a-month">Fewer categories, tracked consistently, beats detailed categories abandoned in a month</a></li>
+      <li><a href="#review-monthly-not-daily">Review monthly, not daily</a></li>
+      <li><a href="#where-to-start-this-week">Where to start this week</a></li>
+    </ul>
+  </div>
+
+
   <p>Most budgets are abandoned within a few weeks, not because the person lacked discipline, but because the budget itself was built for a version of life that's too tidy — one without a flat tire, a birthday gift, or a bad week that ends in takeout three times.</p>
 
-  <h2>Start with what you actually spent, not what you wish you spent</h2>
+  <h2 id="start-with-what-you-actually-spent-not-what-you-wish-you-spent">Start with what you actually spent, not what you wish you spent</h2>
   <p>Pulling the last two or three months of real transactions gives a far more honest starting point than estimating categories from memory. Most people are surprised by at least one category once they actually look.</p>
 
-  <h2>Build in a category for "life happens"</h2>
+  <h2 id="build-in-a-category-for-life-happens">Build in a category for "life happens"</h2>
   <p>A budget with zero room for the unexpected breaks the first time something unexpected happens — which is always. Setting aside even a modest miscellaneous or buffer category prevents one surprise expense from feeling like total failure.</p>
 
   <div class="ad-slot">Ad placeholder — an in-article AdSense unit works well right here</div>
 
-  <h2>Fewer categories, tracked consistently, beats detailed categories abandoned in a month</h2>
+  <h2 id="fewer-categories-tracked-consistently-beats-detailed-categories-abandoned-in-a-month">Fewer categories, tracked consistently, beats detailed categories abandoned in a month</h2>
   <p>A budget with 20 finely split categories is more accurate in theory but much more likely to be dropped the first busy week. Grouping expenses into a handful of broad categories — housing, transportation, food, savings, everything else — is easier to sustain and still catches the big problems.</p>
 
   <div class="pullquote">A budget you actually keep beats a perfect one you abandon in three weeks.</div>
 
-  <h2>Review monthly, not daily</h2>
+  <h2 id="review-monthly-not-daily">Review monthly, not daily</h2>
   <p>Checking a budget every single day tends to create anxiety without adding much accuracy. A once-a-month review — comparing what actually happened to the plan, and adjusting categories that were consistently off — is usually enough to keep a budget honest over time.</p>
 
-  <h2>Where to start this week</h2>
+  <h2 id="where-to-start-this-week">Where to start this week</h2>
   <ul>
     <li>Pull your last month of transactions from your bank or credit card statement.</li>
     <li>Sort them into 5-7 broad categories.</li>
@@ -145,6 +164,14 @@
       <button type="button" class="btn" onclick="clearcoinFeedback(this)">Yes</button>
       <button type="button" class="btn-outline" onclick="clearcoinFeedback(this)">No</button>
     </div>
+  </div>
+
+  <div class="share-buttons">
+    <span>Share this</span>
+    <a class="share-btn" href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fartemdryn584-code.github.io%2Fthe-long-run%2Fbudget-that-survives-real-life.html&text=Building%20a%20Budget%20That%20Survives%20Real%20Life%2C%20Not%20Just%20a%20Spreadsheet" target="_blank" rel="noopener">X</a>
+    <a class="share-btn" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fartemdryn584-code.github.io%2Fthe-long-run%2Fbudget-that-survives-real-life.html" target="_blank" rel="noopener">f</a>
+    <a class="share-btn" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fartemdryn584-code.github.io%2Fthe-long-run%2Fbudget-that-survives-real-life.html" target="_blank" rel="noopener">in</a>
+    <button type="button" class="share-btn" onclick="clearcoinCopyLink(this, 'https://artemdryn584-code.github.io/the-long-run/budget-that-survives-real-life.html')">🔗</button>
   </div>
 
   <div class="faq">
@@ -210,6 +237,43 @@ function clearcoinFeedback(btn) {
   var box = btn.closest('.feedback-box');
   if (box) box.innerHTML = '<p class="feedback-thanks">Thanks for the feedback!</p>';
 }
+
+// Dark mode toggle
+(function () {
+  var btn = document.getElementById('theme-toggle');
+  if (!btn) return;
+  function updateIcon() {
+    var isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+    btn.textContent = isDark ? '☀️' : '🌙';
+  }
+  updateIcon();
+  btn.addEventListener('click', function () {
+    var isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+    if (isDark) {
+      document.documentElement.removeAttribute('data-theme');
+      try { localStorage.setItem('theme', 'light'); } catch (e) {}
+    } else {
+      document.documentElement.setAttribute('data-theme', 'dark');
+      try { localStorage.setItem('theme', 'dark'); } catch (e) {}
+    }
+    updateIcon();
+  });
+})();
+
+function clearcoinCopyLink(btn, url) {
+  navigator.clipboard.writeText(url).then(function () {
+    var original = btn.textContent;
+    btn.textContent = 'Copied!';
+    btn.style.width = 'auto';
+    btn.style.padding = '0 12px';
+    setTimeout(function () {
+      btn.textContent = original;
+      btn.style.width = '';
+      btn.style.padding = '';
+    }, 2000);
+  });
+}
+
 
 // Reading progress bar
 (function () {

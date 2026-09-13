@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Compound Interest Calculator: See Your Money Grow — Clearcoin</title>
+<meta name="description" content="Visualize how your savings or investments grow over time with compound interest — enter your numbers and see the chart.">
+<meta property="og:title" content="Compound Interest Calculator — Clearcoin">
+<meta property="og:description" content="Visualize how your money grows over time with compound interest.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://artemdryn584-code.github.io/the-long-run/compound-interest-calculator.html">
+<meta property="og:image" content="https://artemdryn584-code.github.io/the-long-run/og-cover.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#3D5AFE">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="article-page">
+
+<header class="masthead">
+  <div class="wrap">
+    <div class="wordmark"><a href="index.html" style="color:inherit;">Clear<span>coin</span></a></div>
+    <div class="tagline">Clear, practical money advice — no jargon, no spreadsheets to obsess over.</div>
+  </div>
+  <nav class="primary">
+    <div class="wrap">
+      <a href="index.html">Guides</a>
+      <a href="calculators.html" class="current">Calculators</a>
+      <a href="#">Debt</a>
+      <a href="#">Saving</a>
+      <a href="#">Investing</a>
+      <a href="#">Retirement</a>
+      <a href="about.html">About</a>
+    </div>
+  </nav>
+</header>
+
+<article class="article">
+  <span class="kicker">Calculator</span>
+  <h1>Compound Interest Calculator</h1>
+  <p class="meta">Free tool — takes about 30 seconds</p>
+
+  <p>Enter a starting amount, a monthly contribution, a rate of return, and a number of years to see exactly how compound growth adds up — plotted out year by year.</p>
+
+  <div class="calc-box">
+    <div class="calc-grid">
+      <div class="calc-field">
+        <label for="ci-start">Starting amount ($)</label>
+        <input type="number" id="ci-start" value="1000">
+      </div>
+      <div class="calc-field">
+        <label for="ci-monthly">Monthly contribution ($)</label>
+        <input type="number" id="ci-monthly" value="200">
+      </div>
+      <div class="calc-field">
+        <label for="ci-rate">Annual return (%)</label>
+        <input type="number" id="ci-rate" value="7" step="0.1">
+      </div>
+      <div class="calc-field">
+        <label for="ci-years">Years</label>
+        <input type="number" id="ci-years" value="20">
+      </div>
+    </div>
+
+    <canvas id="ci-chart" width="600" height="280" style="width:100%;height:auto;background:#fff;border-radius:12px;border:1px solid var(--line);margin-bottom:18px;"></canvas>
+
+    <div class="calc-result">
+      <div class="row-line"><span>Final balance</span><span class="big" id="ci-final">$–</span></div>
+      <div class="row-line"><span>You contributed</span><span id="ci-contributed">$–</span></div>
+      <div class="row-line"><span>Growth from returns</span><span id="ci-growth">$–</span></div>
+    </div>
+    <div class="calc-note">Assumes a steady annual return compounded monthly — real returns vary year to year, so treat this as a long-term estimate.</div>
+  </div>
+
+  <h2>Why the chart curves upward</h2>
+  <p>Early on, most of your balance comes from what you've contributed. Over time, the returns you've already earned start earning their own returns — that's compounding, and it's why the line bends upward instead of climbing in a straight line.</p>
+  <p>Want to see this applied to a specific goal? Try the <a href="401k-calculator.html">401(k) Growth Calculator</a> or read <a href="index-funds-explained.html">Index Funds, Explained</a> for where this kind of growth actually comes from.</p>
+</article>
+
+<footer>
+  <div class="wrap">
+    <div>© 2026 Clearcoin.</div>
+    <nav>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="privacy.html">Privacy Policy</a>
+    </nav>
+  </div>
+</footer>
+
+<script>
+function formatMoney(n) {
+  return '$' + n.toLocaleString(undefined, {maximumFractionDigits:0});
+}
+
+function calc() {
+  var start = parseFloat(document.getElementById('ci-start').value) || 0;
+  var monthly = parseFloat(document.getElementById('ci-monthly').value) || 0;
+  var rate = parseFloat(document.getElementById('ci-rate').value) || 0;
+  var years = parseInt(document.getElementById('ci-years').value) || 0;
+  var monthlyRate = rate / 100 / 12;
+  var months = years * 12;
+
+  var balance = start;
+  var contributed = start;
+  var yearlyPoints = [balance];
+
+  for (var m = 1; m <= months; m++) {
+    balance = balance * (1 + monthlyRate) + monthly;
+    contributed += monthly;
+    if (m % 12 === 0) yearlyPoints.push(balance);
+  }
+
+  var growth = balance - contributed;
+  document.getElementById('ci-final').textContent = formatMoney(balance);
+  document.getElementById('ci-contributed').textContent = formatMoney(contributed);
+  document.getElementById('ci-growth').textContent = formatMoney(Math.max(growth, 0));
+
+  drawChart(yearlyPoints);
+}
+
+function drawChart(points) {
+  var canvas = document.getElementById('ci-chart');
+  var ctx = canvas.getContext('2d');
+  var w = canvas.width, h = canvas.height;
+  ctx.clearRect(0, 0, w, h);
+
+  var max = Math.max.apply(null, points) * 1.08;
+  var padding = 36;
+  var chartW = w - padding * 2;
+  var chartH = h - padding * 2;
+
+  ctx.strokeStyle = '#E7E9EE';
+  ctx.lineWidth = 1;
+  for (var g = 0; g <= 4; g++) {
+    var gy = padding + chartH - (g / 4) * chartH;
+    ctx.beginPath();
+    ctx.moveTo(padding, gy);
+    ctx.lineTo(w - padding, gy);
+    ctx.stroke();
+  }
+
+  ctx.beginPath();
+  ctx.strokeStyle = '#3D5AFE';
+  ctx.lineWidth = 3;
+  points.forEach(function(val, i) {
+    var x = padding + (i / (points.length - 1)) * chartW;
+    var y = padding + chartH - (val / max) * chartH;
+    if (i === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+  });
+  ctx.stroke();
+
+  var last = points[points.length - 1];
+  var lastX = padding + chartW;
+  var lastY = padding + chartH - (last / max) * chartH;
+  ctx.fillStyle = '#3D5AFE';
+  ctx.beginPath();
+  ctx.arc(lastX, lastY, 5, 0, Math.PI * 2);
+  ctx.fill();
+
+  ctx.fillStyle = '#5A5F6B';
+  ctx.font = '12px Inter, sans-serif';
+  ctx.fillText('Year 0', padding, h - 12);
+  ctx.fillText('Year ' + (points.length - 1), w - padding - 50, h - 12);
+}
+
+['ci-start','ci-monthly','ci-rate','ci-years'].forEach(function(id){
+  document.getElementById(id).addEventListener('input', calc);
+});
+calc();
+</script>
+
+</body>
+</html>

@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<script>(function(){try{if(localStorage.getItem('theme')==='dark'){document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();</script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Family Guides — Clearcoin</title>
 <meta name="description" content="Teaching kids about money, splitting finances with a partner, life insurance, and other money questions that come up as a family.">
@@ -28,6 +29,7 @@
   <div class="wrap">
     <div class="wordmark"><a href="index.html" style="color:inherit;"><img src="favicon.svg" alt="" class="wordmark-icon">Clear<span>coin</span></a></div>
     <div class="tagline">Practical money advice for people with a life to live, not a spreadsheet to obsess over.</div>
+    <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">🌙</button>
   </div>
   <nav class="primary">
     <div class="wrap">
@@ -212,6 +214,43 @@ function clearcoinFeedback(btn) {
   var box = btn.closest('.feedback-box');
   if (box) box.innerHTML = '<p class="feedback-thanks">Thanks for the feedback!</p>';
 }
+
+// Dark mode toggle
+(function () {
+  var btn = document.getElementById('theme-toggle');
+  if (!btn) return;
+  function updateIcon() {
+    var isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+    btn.textContent = isDark ? '☀️' : '🌙';
+  }
+  updateIcon();
+  btn.addEventListener('click', function () {
+    var isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+    if (isDark) {
+      document.documentElement.removeAttribute('data-theme');
+      try { localStorage.setItem('theme', 'light'); } catch (e) {}
+    } else {
+      document.documentElement.setAttribute('data-theme', 'dark');
+      try { localStorage.setItem('theme', 'dark'); } catch (e) {}
+    }
+    updateIcon();
+  });
+})();
+
+function clearcoinCopyLink(btn, url) {
+  navigator.clipboard.writeText(url).then(function () {
+    var original = btn.textContent;
+    btn.textContent = 'Copied!';
+    btn.style.width = 'auto';
+    btn.style.padding = '0 12px';
+    setTimeout(function () {
+      btn.textContent = original;
+      btn.style.width = '';
+      btn.style.padding = '';
+    }, 2000);
+  });
+}
+
 
 // Reading progress bar
 (function () {

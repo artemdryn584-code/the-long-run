@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<script>(function(){try{if(localStorage.getItem('theme')==='dark'){document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();</script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Robo-Advisors for Beginners: What to Look For — Clearcoin</title>
 <meta name="description" content="If you've decided a robo-advisor makes sense for you, here's exactly what to check before picking one — fees, minimums, tax features, and account types.">
@@ -61,6 +62,7 @@
   <div class="wrap">
     <div class="wordmark"><a href="index.html" style="color:inherit;"><img src="favicon.svg" alt="" class="wordmark-icon">Clear<span>coin</span></a></div>
     <div class="tagline">Practical money advice for people with a life to live, not a spreadsheet to obsess over.</div>
+    <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">🌙</button>
   </div>
   <nav class="primary">
     <div class="wrap">
@@ -82,10 +84,15 @@
   </nav>
 </header>
 
+<div class="wrap">
+  <div class="breadcrumbs"><a href="index.html">Home</a> / <a href="investing.html">Investing</a> / Robo-Advisors for Beginners: What to Loo…</div>
+</div>
+
+
 <article class="article">
   <span class="kicker">Investing</span>
   <h1>Robo-Advisors for Beginners: What to Look For</h1>
-  <p class="meta">Sept 12, 2026, 7 min read</p>
+  <p class="meta">Sept 12, 2026, 7 min read, Updated Sept 2026</p>
 
   <div class="side-box takeaways">
     <h2>Key takeaways</h2>
@@ -97,32 +104,45 @@
     </ul>
   </div>
 
+  <div class="side-box toc">
+    <h2>On this page</h2>
+    <ul>
+      <li><a href="#the-management-fee-and-what-it-actually-covers">The management fee, and what it actually covers</a></li>
+      <li><a href="#account-minimums">Account minimums</a></li>
+      <li><a href="#which-account-types-are-actually-supported">Which account types are actually supported</a></li>
+      <li><a href="#tax-loss-harvesting-check-if-it-s-actually-included">Tax-loss harvesting: check if it's actually included</a></li>
+      <li><a href="#how-much-control-you-actually-have-over-the-portfolio">How much control you actually have over the portfolio</a></li>
+      <li><a href="#a-short-checklist-before-signing-up">A short checklist before signing up</a></li>
+    </ul>
+  </div>
+
+
   <p>If you've already weighed <a href="robo-advisors-vs-diy.html">robo-advisors against managing your own index funds</a> and decided a robo-advisor fits how you want to invest, the next question is more concrete: what actually separates one robo-advisor from another. Specific pricing and features change often enough that naming a single "best" one goes stale fast — this is what to actually check before you sign up for any of them.</p>
 
-  <h2>The management fee, and what it actually covers</h2>
+  <h2 id="the-management-fee-and-what-it-actually-covers">The management fee, and what it actually covers</h2>
   <p>Most robo-advisors charge an annual fee as a percentage of your balance, commonly in the range of 0.25%-0.50%. Confirm whether that fee is the entire cost, or whether the underlying funds it invests in also carry their own separate expense ratios on top — the combined cost is what actually matters, not just the headline number.</p>
 
-  <h2>Account minimums</h2>
+  <h2 id="account-minimums">Account minimums</h2>
   <p>Some robo-advisors have no minimum to open an account, while others require a few hundred to a few thousand dollars to start. If you're beginning with a small amount, confirm the minimum before assuming a particular service is an option.</p>
 
   <div class="ad-slot">Ad placeholder — an in-article AdSense unit works well right here</div>
 
-  <h2>Which account types are actually supported</h2>
+  <h2 id="which-account-types-are-actually-supported">Which account types are actually supported</h2>
   <ul>
     <li><strong>Taxable brokerage accounts:</strong> Standard investing accounts with no special tax treatment.</li>
     <li><strong>IRAs (Traditional and Roth):</strong> Confirm both are offered if you want tax-advantaged retirement investing through the same platform.</li>
     <li><strong>401(k) rollovers:</strong> Some robo-advisors specifically support rolling over an old employer 401(k); others don't handle this directly.</li>
   </ul>
 
-  <h2>Tax-loss harvesting: check if it's actually included</h2>
+  <h2 id="tax-loss-harvesting-check-if-it-s-actually-included">Tax-loss harvesting: check if it's actually included</h2>
   <p>This feature — automatically selling losing positions in a taxable account to offset gains elsewhere — is one of the more genuinely valuable things a robo-advisor can do that's tedious to replicate manually. Some providers include it standard, others only on premium tiers, and some don't offer it at all. If you'll be investing in a taxable account, this is worth specifically confirming.</p>
 
   <div class="pullquote">Two robo-advisors charging the same headline fee can end up costing very different amounts once minimums, fund expense ratios, and premium-tier features are factored in.</div>
 
-  <h2>How much control you actually have over the portfolio</h2>
+  <h2 id="how-much-control-you-actually-have-over-the-portfolio">How much control you actually have over the portfolio</h2>
   <p>Some services let you adjust the underlying fund mix or exclude certain sectors; others are fully automated with no customization. Neither approach is wrong, but it's worth knowing which one you're getting — a fully hands-off design is the point for some people and a dealbreaker for others.</p>
 
-  <h2>A short checklist before signing up</h2>
+  <h2 id="a-short-checklist-before-signing-up">A short checklist before signing up</h2>
   <ol>
     <li>Total annual cost: management fee plus underlying fund expense ratios.</li>
     <li>Minimum balance to open and to access any premium features.</li>
@@ -153,6 +173,14 @@
       <button type="button" class="btn" onclick="clearcoinFeedback(this)">Yes</button>
       <button type="button" class="btn-outline" onclick="clearcoinFeedback(this)">No</button>
     </div>
+  </div>
+
+  <div class="share-buttons">
+    <span>Share this</span>
+    <a class="share-btn" href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fartemdryn584-code.github.io%2Fthe-long-run%2Frobo-advisors-for-beginners.html&text=Robo-Advisors%20for%20Beginners%3A%20What%20to%20Look%20For" target="_blank" rel="noopener">X</a>
+    <a class="share-btn" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fartemdryn584-code.github.io%2Fthe-long-run%2Frobo-advisors-for-beginners.html" target="_blank" rel="noopener">f</a>
+    <a class="share-btn" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fartemdryn584-code.github.io%2Fthe-long-run%2Frobo-advisors-for-beginners.html" target="_blank" rel="noopener">in</a>
+    <button type="button" class="share-btn" onclick="clearcoinCopyLink(this, 'https://artemdryn584-code.github.io/the-long-run/robo-advisors-for-beginners.html')">🔗</button>
   </div>
 
   <div class="faq">
@@ -218,6 +246,43 @@ function clearcoinFeedback(btn) {
   var box = btn.closest('.feedback-box');
   if (box) box.innerHTML = '<p class="feedback-thanks">Thanks for the feedback!</p>';
 }
+
+// Dark mode toggle
+(function () {
+  var btn = document.getElementById('theme-toggle');
+  if (!btn) return;
+  function updateIcon() {
+    var isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+    btn.textContent = isDark ? '☀️' : '🌙';
+  }
+  updateIcon();
+  btn.addEventListener('click', function () {
+    var isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+    if (isDark) {
+      document.documentElement.removeAttribute('data-theme');
+      try { localStorage.setItem('theme', 'light'); } catch (e) {}
+    } else {
+      document.documentElement.setAttribute('data-theme', 'dark');
+      try { localStorage.setItem('theme', 'dark'); } catch (e) {}
+    }
+    updateIcon();
+  });
+})();
+
+function clearcoinCopyLink(btn, url) {
+  navigator.clipboard.writeText(url).then(function () {
+    var original = btn.textContent;
+    btn.textContent = 'Copied!';
+    btn.style.width = 'auto';
+    btn.style.padding = '0 12px';
+    setTimeout(function () {
+      btn.textContent = original;
+      btn.style.width = '';
+      btn.style.padding = '';
+    }, 2000);
+  });
+}
+
 
 // Reading progress bar
 (function () {

@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<script>(function(){try{if(localStorage.getItem('theme')==='dark'){document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();</script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Cost of Living Differences by State: Why "It Depends Where You Live" Is the Right Answer — Clearcoin</title>
 <meta name="description" content="The same salary can feel completely different depending on where you live. Here's what actually drives cost-of-living differences by state.">
@@ -61,6 +62,7 @@
   <div class="wrap">
     <div class="wordmark"><a href="index.html" style="color:inherit;"><img src="favicon.svg" alt="" class="wordmark-icon">Clear<span>coin</span></a></div>
     <div class="tagline">Practical money advice for people with a life to live, not a spreadsheet to obsess over.</div>
+    <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">🌙</button>
   </div>
   <nav class="primary">
     <div class="wrap">
@@ -82,10 +84,15 @@
   </nav>
 </header>
 
+<div class="wrap">
+  <div class="breadcrumbs"><a href="index.html">Home</a> / <a href="family.html">Family</a> / Cost of Living Differences by State: Why…</div>
+</div>
+
+
 <article class="article">
   <span class="kicker">Family</span>
   <h1>Cost of Living Differences by State: Why "It Depends Where You Live" Is the Right Answer</h1>
-  <p class="meta">Sept 12, 2026, 6 min read</p>
+  <p class="meta">Sept 12, 2026, 6 min read, Updated Sept 2026</p>
 
   <div class="side-box takeaways">
     <h2>Key takeaways</h2>
@@ -97,12 +104,23 @@
     </ul>
   </div>
 
+  <div class="side-box toc">
+    <h2>On this page</h2>
+    <ul>
+      <li><a href="#housing-is-usually-the-biggest-driver">Housing is usually the biggest driver</a></li>
+      <li><a href="#other-categories-that-shift-meaningfully-by-location">Other categories that shift meaningfully by location</a></li>
+      <li><a href="#why-comparing-raw-salaries-across-locations-is-misleading">Why comparing raw salaries across locations is misleading</a></li>
+      <li><a href="#what-to-actually-check-before-comparing-locations">What to actually check before comparing locations</a></li>
+    </ul>
+  </div>
+
+
   <p>"What's a good salary?" doesn't have one answer, and "it depends where you live" isn't a dodge — it's the actual, correct response. The same salary can comfortably cover a family in one state and feel tight in another, mostly driven by a handful of specific cost categories rather than everything being uniformly more expensive.</p>
 
-  <h2>Housing is usually the biggest driver</h2>
+  <h2 id="housing-is-usually-the-biggest-driver">Housing is usually the biggest driver</h2>
   <p>Housing costs vary more by location than almost any other budget category — a comparable home or apartment can cost multiples more in a high-demand metro area than in a lower-cost region. Because housing is typically the largest single expense in most budgets, this one factor alone explains much of the difference between "comfortable" and "tight" at similar income levels.</p>
 
-  <h2>Other categories that shift meaningfully by location</h2>
+  <h2 id="other-categories-that-shift-meaningfully-by-location">Other categories that shift meaningfully by location</h2>
   <ul>
     <li><strong>Childcare:</strong> Costs vary enormously by region and can rival a mortgage payment in some high-cost areas.</li>
     <li><strong>Healthcare and insurance:</strong> Premiums and typical costs differ by state and even by region within a state.</li>
@@ -112,12 +130,12 @@
 
   <div class="ad-slot">Ad placeholder — an in-article AdSense unit works well right here</div>
 
-  <h2>Why comparing raw salaries across locations is misleading</h2>
+  <h2 id="why-comparing-raw-salaries-across-locations-is-misleading">Why comparing raw salaries across locations is misleading</h2>
   <p>A job offer with a higher salary in a high-cost city can leave less real disposable income than a lower salary in a cheaper region, once housing and other locally-variable costs are factored in. Cost-of-living calculators that adjust a salary for a specific target city are far more useful than comparing raw numbers.</p>
 
   <div class="pullquote">Two people earning the same salary in different states aren't actually earning the same amount, once what that money has to cover is factored in.</div>
 
-  <h2>What to actually check before comparing locations</h2>
+  <h2 id="what-to-actually-check-before-comparing-locations">What to actually check before comparing locations</h2>
   <ol>
     <li>Typical housing costs (rent or purchase price) for the specific neighborhood, not just the state average.</li>
     <li>Local income, sales, and property tax rates.</li>
@@ -148,6 +166,14 @@
       <button type="button" class="btn" onclick="clearcoinFeedback(this)">Yes</button>
       <button type="button" class="btn-outline" onclick="clearcoinFeedback(this)">No</button>
     </div>
+  </div>
+
+  <div class="share-buttons">
+    <span>Share this</span>
+    <a class="share-btn" href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fartemdryn584-code.github.io%2Fthe-long-run%2Fcost-of-living-by-state.html&text=Cost%20of%20Living%20Differences%20by%20State%3A%20Why%20It%20Depends%20Where%20You%20Live%20Is%20the%20Right%20Answer" target="_blank" rel="noopener">X</a>
+    <a class="share-btn" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fartemdryn584-code.github.io%2Fthe-long-run%2Fcost-of-living-by-state.html" target="_blank" rel="noopener">f</a>
+    <a class="share-btn" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fartemdryn584-code.github.io%2Fthe-long-run%2Fcost-of-living-by-state.html" target="_blank" rel="noopener">in</a>
+    <button type="button" class="share-btn" onclick="clearcoinCopyLink(this, 'https://artemdryn584-code.github.io/the-long-run/cost-of-living-by-state.html')">🔗</button>
   </div>
 
   <div class="faq">
@@ -213,6 +239,43 @@ function clearcoinFeedback(btn) {
   var box = btn.closest('.feedback-box');
   if (box) box.innerHTML = '<p class="feedback-thanks">Thanks for the feedback!</p>';
 }
+
+// Dark mode toggle
+(function () {
+  var btn = document.getElementById('theme-toggle');
+  if (!btn) return;
+  function updateIcon() {
+    var isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+    btn.textContent = isDark ? '☀️' : '🌙';
+  }
+  updateIcon();
+  btn.addEventListener('click', function () {
+    var isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+    if (isDark) {
+      document.documentElement.removeAttribute('data-theme');
+      try { localStorage.setItem('theme', 'light'); } catch (e) {}
+    } else {
+      document.documentElement.setAttribute('data-theme', 'dark');
+      try { localStorage.setItem('theme', 'dark'); } catch (e) {}
+    }
+    updateIcon();
+  });
+})();
+
+function clearcoinCopyLink(btn, url) {
+  navigator.clipboard.writeText(url).then(function () {
+    var original = btn.textContent;
+    btn.textContent = 'Copied!';
+    btn.style.width = 'auto';
+    btn.style.padding = '0 12px';
+    setTimeout(function () {
+      btn.textContent = original;
+      btn.style.width = '';
+      btn.style.padding = '';
+    }, 2000);
+  });
+}
+
 
 // Reading progress bar
 (function () {
