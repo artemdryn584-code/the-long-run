@@ -23,6 +23,8 @@
 </head>
 <body>
 
+<div class="reading-progress" id="reading-progress"></div>
+
 <header class="masthead">
   <div class="wrap">
     <div class="wordmark"><img src="favicon.svg" alt="" class="wordmark-icon">Clear<span>coin</span></div>
@@ -38,7 +40,12 @@
       <a href="retirement.html">Retirement</a>
       <a href="housing.html">Housing</a>
       <a href="family.html">Family</a>
+      <a href="pricing.html">Plus</a>
       <a href="about.html">About</a>
+      <div class="site-search">
+        <input type="text" id="site-search-input" placeholder="Search guides…" aria-label="Search Clearcoin">
+        <div class="site-search-results" id="site-search-results"></div>
+      </div>
     </div>
   </nav>
 </header>
@@ -318,6 +325,11 @@
         </ul>
       </div>
 
+      <div class="side-box">
+        <h2>Want more?<span class="badge-soon">Coming soon</span></h2>
+        <p>Clearcoin Plus adds advanced calculators, an ad-free reading experience, and a full toolkit on top of everything free. <a href="pricing.html">See what's included →</a></p>
+      </div>
+
       <div class="side-box signup">
         <h2>One practical idea a week</h2>
         <p>No spam, no "hustle harder." Just one thing worth doing with your money.</p>
@@ -374,6 +386,109 @@ function clearcoinFeedback(btn) {
   var box = btn.closest('.feedback-box');
   if (box) box.innerHTML = '<p class="feedback-thanks">Thanks for the feedback!</p>';
 }
+
+// Reading progress bar
+(function () {
+  var bar = document.getElementById('reading-progress');
+  if (!bar) return;
+  function update() {
+    var h = document.documentElement;
+    var scrollTop = h.scrollTop || document.body.scrollTop;
+    var scrollHeight = (h.scrollHeight || document.body.scrollHeight) - h.clientHeight;
+    var pct = scrollHeight > 0 ? (scrollTop / scrollHeight) * 100 : 0;
+    bar.style.width = pct + '%';
+  }
+  document.addEventListener('scroll', update, { passive: true });
+  update();
+})();
+
+// Site-wide search
+var CLEARCOIN_PAGES = [
+  { t: "The 6-Month Emergency Fund Plan", k: "Saving", u: "article.html" },
+  { t: "How Much of Your Paycheck Should Go to Savings", k: "Saving", u: "how-much-to-save.html" },
+  { t: "The Sinking Fund Method", k: "Saving", u: "sinking-fund-method.html" },
+  { t: "High-Yield Savings Accounts, Explained", k: "Saving", u: "high-yield-savings-explained.html" },
+  { t: "Best High-Yield Savings Accounts", k: "Saving", u: "best-high-yield-savings-accounts.html" },
+  { t: "Budgeting Apps Compared", k: "Saving", u: "budgeting-apps-compared.html" },
+  { t: "Holiday Spending Without the January Regret", k: "Saving", u: "holiday-budget-guide.html" },
+  { t: "States With No Income Tax", k: "Saving", u: "no-income-tax-states.html" },
+  { t: "Debt Avalanche vs. Snowball", k: "Debt", u: "debt-avalanche-vs-snowball.html" },
+  { t: "Student Loan Repayment in 2026", k: "Debt", u: "student-loan-repayment.html" },
+  { t: "Is Debt Consolidation Worth It?", k: "Debt", u: "debt-consolidation.html" },
+  { t: "The Day After You Pay Off Your Last Credit Card", k: "Debt", u: "after-paying-off-credit-card.html" },
+  { t: "Tax Season Checklist", k: "Debt", u: "tax-season-checklist.html" },
+  { t: "The 401(k) Match Most People Leave on the Table", k: "Retirement", u: "401k-match.html" },
+  { t: "Catching Up on Retirement Savings in Your 40s and 50s", k: "Retirement", u: "catching-up-retirement.html" },
+  { t: "What Happens to Your 401(k) When You Change Jobs", k: "Retirement", u: "401k-job-change.html" },
+  { t: "Roth vs. Traditional 401(k)", k: "Retirement", u: "roth-vs-traditional-401k.html" },
+  { t: "Index Funds, Explained", k: "Investing", u: "index-funds-explained.html" },
+  { t: "How Much Risk Should You Take, By Age", k: "Investing", u: "risk-by-age.html" },
+  { t: "Robo-Advisors vs. DIY Investing", k: "Investing", u: "robo-advisors-vs-diy.html" },
+  { t: "What a Recession Means for Your Retirement Account", k: "Investing", u: "recession-and-retirement.html" },
+  { t: "Robo-Advisors for Beginners", k: "Investing", u: "robo-advisors-for-beginners.html" },
+  { t: "Renting vs. Buying in 2026", k: "Housing", u: "renting-vs-buying.html" },
+  { t: "How Much House Can You Actually Afford", k: "Housing", u: "how-much-house-can-you-afford.html" },
+  { t: "First-Time Homebuyer Programs", k: "Housing", u: "first-time-homebuyer-programs.html" },
+  { t: "Refinancing Your Mortgage", k: "Housing", u: "refinancing-mortgage.html" },
+  { t: "Teaching Your Kids About Money", k: "Family", u: "teaching-kids-money.html" },
+  { t: "Life Insurance Basics for Parents", k: "Family", u: "life-insurance-for-parents.html" },
+  { t: "Splitting Money Fairly with a Partner", k: "Family", u: "splitting-money-with-partner.html" },
+  { t: "What to Do With a Windfall", k: "Family", u: "windfall-guide.html" },
+  { t: "Building a Budget That Survives Real Life", k: "Family", u: "budget-that-survives-real-life.html" },
+  { t: "Open Enrollment Health Insurance Guide", k: "Family", u: "open-enrollment-guide.html" },
+  { t: "Back-to-School Budgeting", k: "Family", u: "back-to-school-budget.html" },
+  { t: "Cost of Living Differences by State", k: "Family", u: "cost-of-living-by-state.html" },
+  { t: "Emergency Fund Calculator", k: "Tool", u: "emergency-fund-calculator.html" },
+  { t: "Debt Payoff Calculator", k: "Tool", u: "debt-payoff-calculator.html" },
+  { t: "401(k) Growth Calculator", k: "Tool", u: "401k-calculator.html" },
+  { t: "Money Personality Quiz", k: "Tool", u: "money-personality-quiz.html" },
+  { t: "Free Budget Template", k: "Tool", u: "budget-template.html" },
+  { t: "Clearcoin Plus", k: "Plus", u: "pricing.html" }
+];
+
+(function () {
+  var input = document.getElementById('site-search-input');
+  var results = document.getElementById('site-search-results');
+  if (!input || !results) return;
+
+  function position() {
+    var r = input.getBoundingClientRect();
+    results.style.top = (r.bottom + 8) + 'px';
+    results.style.right = (window.innerWidth - r.right) + 'px';
+  }
+
+  function render(query) {
+    var q = query.trim().toLowerCase();
+    if (!q) {
+      results.classList.remove('is-open');
+      results.innerHTML = '';
+      return;
+    }
+    var matches = CLEARCOIN_PAGES.filter(function (p) {
+      return p.t.toLowerCase().indexOf(q) !== -1 || p.k.toLowerCase().indexOf(q) !== -1;
+    }).slice(0, 7);
+
+    if (matches.length === 0) {
+      results.innerHTML = '<div class="site-search-empty">No matches — try a different word.</div>';
+    } else {
+      results.innerHTML = matches.map(function (p) {
+        return '<a href="' + p.u + '"><span class="result-kicker">' + p.k + '</span>' + p.t + '</a>';
+      }).join('');
+    }
+    position();
+    results.classList.add('is-open');
+  }
+
+  input.addEventListener('input', function () { render(input.value); });
+  input.addEventListener('focus', function () { if (input.value) render(input.value); });
+  window.addEventListener('resize', function () { if (results.classList.contains('is-open')) position(); });
+  document.addEventListener('click', function (e) {
+    if (!e.target.closest('.site-search')) {
+      results.classList.remove('is-open');
+    }
+  });
+})();
+
 </script>
 
 </body>
