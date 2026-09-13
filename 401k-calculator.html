@@ -132,10 +132,10 @@ function calc() {
   var totalIn = balance + totalContributed + totalMatch;
   var growth = b - totalIn;
 
-  document.getElementById('final-balance').textContent = '$' + b.toLocaleString(undefined, {maximumFractionDigits:0});
-  document.getElementById('total-contributed').textContent = '$' + totalContributed.toLocaleString(undefined, {maximumFractionDigits:0});
-  document.getElementById('total-match').textContent = '$' + totalMatch.toLocaleString(undefined, {maximumFractionDigits:0});
-  document.getElementById('total-growth').textContent = '$' + Math.max(growth,0).toLocaleString(undefined, {maximumFractionDigits:0});
+  document.getElementById('final-balance').textContent = '$' + b.toLocaleString('en-US', {maximumFractionDigits:0});
+  document.getElementById('total-contributed').textContent = '$' + totalContributed.toLocaleString('en-US', {maximumFractionDigits:0});
+  document.getElementById('total-match').textContent = '$' + totalMatch.toLocaleString('en-US', {maximumFractionDigits:0});
+  document.getElementById('total-growth').textContent = '$' + Math.max(growth,0).toLocaleString('en-US', {maximumFractionDigits:0});
 }
 ['age','retireAge','balance401k','contribution','matchContribution','returnRate'].forEach(function(id){
   document.getElementById(id).addEventListener('input', calc);

@@ -124,8 +124,8 @@ function calc() {
   }
 
   document.getElementById('months-out').textContent = monthsCount + ' months';
-  document.getElementById('interest-out').textContent = '$' + totalInterest.toLocaleString(undefined, {maximumFractionDigits:0});
-  document.getElementById('total-out').textContent = '$' + (balance + totalInterest).toLocaleString(undefined, {maximumFractionDigits:0});
+  document.getElementById('interest-out').textContent = '$' + totalInterest.toLocaleString('en-US', {maximumFractionDigits:0});
+  document.getElementById('total-out').textContent = '$' + (balance + totalInterest).toLocaleString('en-US', {maximumFractionDigits:0});
 }
 ['balance','apr','payment'].forEach(function(id){
   document.getElementById(id).addEventListener('input', calc);

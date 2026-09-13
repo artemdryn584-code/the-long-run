@@ -112,8 +112,8 @@ function calc() {
   var gap = Math.max(target - current, 0);
   var time = monthly > 0 ? Math.ceil(gap / monthly) : 0;
 
-  document.getElementById('target').textContent = '$' + target.toLocaleString(undefined, {maximumFractionDigits:0});
-  document.getElementById('gap').textContent = '$' + gap.toLocaleString(undefined, {maximumFractionDigits:0});
+  document.getElementById('target').textContent = '$' + target.toLocaleString('en-US', {maximumFractionDigits:0});
+  document.getElementById('gap').textContent = '$' + gap.toLocaleString('en-US', {maximumFractionDigits:0});
   document.getElementById('time').textContent = gap === 0 ? "You're already there!" : (monthly > 0 ? time + ' months' : 'Add a monthly amount');
 }
 ['expenses','months','current','monthly'].forEach(function(id){
