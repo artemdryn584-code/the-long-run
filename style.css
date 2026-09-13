@@ -88,6 +88,20 @@ img { max-width: 100%; display: block; }
   font-weight: 800;
   letter-spacing: -0.6px;
   color: var(--ink);
+  display: inline-flex;
+  align-items: center;
+}
+
+.wordmark a {
+  display: inline-flex;
+  align-items: center;
+}
+
+.wordmark-icon {
+  width: 26px;
+  height: 26px;
+  flex-shrink: 0;
+  margin-right: 9px;
 }
 
 .wordmark span {
