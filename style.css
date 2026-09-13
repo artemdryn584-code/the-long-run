@@ -445,6 +445,41 @@ body.article-page::after {
   max-width: 56ch;
 }
 
+/* ---------- Comparison tables (in-article) ---------- */
+
+.article table.compare-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 28px 0;
+  font-size: 15.5px;
+}
+
+.compare-table th,
+.compare-table td {
+  text-align: left;
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--line);
+}
+
+.compare-table thead th {
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--ink-soft);
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  border-bottom: 2px solid var(--line);
+}
+
+.compare-table td:first-child,
+.compare-table th:first-child {
+  font-weight: 600;
+}
+
+@media (max-width: 560px) {
+  .compare-table { font-size: 14px; }
+  .compare-table th, .compare-table td { padding: 8px 8px; }
+}
+
 /* ---------- Calculators ---------- */
 
 .calc-box {
