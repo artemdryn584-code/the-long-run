@@ -10,15 +10,18 @@
 <meta property="og:description" content="What Clearcoin is, what we cover, and what we don't.">
 <meta property="og:url" content="https://artemdryn584-code.github.io/the-long-run/about.html">
 <meta property="og:site_name" content="Clearcoin">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://artemdryn584-code.github.io/the-long-run/og-cover.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://artemdryn584-code.github.io/the-long-run/og-cover.png">
 <meta name="twitter:title" content="About">
 <meta name="twitter:description" content="What Clearcoin is, what we cover, and what we don't.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="stylesheet" href="style.css">
-<link rel="icon" href="favicon.svg" type="image/svg+xml">
+
 </head>
-<body>
+<body class="article-page">
 
 <header class="masthead">
   <div class="wrap">
@@ -65,6 +68,35 @@
     </nav>
   </div>
 </footer>
+
+<div class="cookie-banner" id="cookie-banner">
+  <div class="wrap">
+    <p>We use cookies to support advertising and improve your experience. See our <a href="privacy.html">Privacy Policy</a>.</p>
+    <div class="cookie-banner-buttons">
+      <button type="button" class="btn-outline" onclick="clearcoinCookieChoice('declined')">Decline</button>
+      <button type="button" class="btn" onclick="clearcoinCookieChoice('accepted')">Accept</button>
+    </div>
+  </div>
+</div>
+<script>
+(function () {
+  try {
+    if (!localStorage.getItem('cookie-consent')) {
+      var b = document.getElementById('cookie-banner');
+      if (b) b.classList.add('is-visible');
+    }
+  } catch (e) {}
+})();
+function clearcoinCookieChoice(choice) {
+  try { localStorage.setItem('cookie-consent', choice); } catch (e) {}
+  var b = document.getElementById('cookie-banner');
+  if (b) b.classList.remove('is-visible');
+}
+function clearcoinFeedback(btn) {
+  var box = btn.closest('.feedback-box');
+  if (box) box.innerHTML = '<p class="feedback-thanks">Thanks for the feedback!</p>';
+}
+</script>
 
 </body>
 </html>

@@ -136,5 +136,34 @@ function calc() {
 calc();
 </script>
 
+<div class="cookie-banner" id="cookie-banner">
+  <div class="wrap">
+    <p>We use cookies to support advertising and improve your experience. See our <a href="privacy.html">Privacy Policy</a>.</p>
+    <div class="cookie-banner-buttons">
+      <button type="button" class="btn-outline" onclick="clearcoinCookieChoice('declined')">Decline</button>
+      <button type="button" class="btn" onclick="clearcoinCookieChoice('accepted')">Accept</button>
+    </div>
+  </div>
+</div>
+<script>
+(function () {
+  try {
+    if (!localStorage.getItem('cookie-consent')) {
+      var b = document.getElementById('cookie-banner');
+      if (b) b.classList.add('is-visible');
+    }
+  } catch (e) {}
+})();
+function clearcoinCookieChoice(choice) {
+  try { localStorage.setItem('cookie-consent', choice); } catch (e) {}
+  var b = document.getElementById('cookie-banner');
+  if (b) b.classList.remove('is-visible');
+}
+function clearcoinFeedback(btn) {
+  var box = btn.closest('.feedback-box');
+  if (box) box.innerHTML = '<p class="feedback-thanks">Thanks for the feedback!</p>';
+}
+</script>
+
 </body>
 </html>
