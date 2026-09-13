@@ -3,24 +3,24 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Retirement Guides — Clearcoin</title>
-<meta name="description" content="401(k) matches, job changes, and catching up later in life — the retirement questions that actually come up.">
+<title>Mortgage Payoff Accelerator: See What Extra Payments Actually Save — Clearcoin Plus</title>
+<meta name="description" content="See exactly how much time and interest an extra monthly mortgage payment saves you, compared to your original amortization schedule.">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Retirement Guides — Clearcoin">
-<meta property="og:description" content="401(k) matches, job changes, and catching up later in life — the retirement questions that actually come up.">
-<meta property="og:url" content="https://artemdryn584-code.github.io/the-long-run/retirement.html">
+<meta property="og:title" content="Mortgage Payoff Accelerator — Clearcoin Plus">
+<meta property="og:description" content="See exactly how much time and interest an extra monthly mortgage payment saves you.">
+<meta property="og:url" content="https://artemdryn584-code.github.io/the-long-run/mortgage-payoff-accelerator.html">
 <meta property="og:site_name" content="Clearcoin">
 <meta property="og:image" content="https://artemdryn584-code.github.io/the-long-run/og-cover.png">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Mortgage Payoff Accelerator — Clearcoin Plus">
+<meta name="twitter:description" content="See exactly how much time and interest an extra monthly mortgage payment saves you.">
 <meta name="twitter:image" content="https://artemdryn584-code.github.io/the-long-run/og-cover.png">
-<meta name="twitter:title" content="Retirement Guides — Clearcoin">
-<meta name="twitter:description" content="401(k) matches, job changes, and catching up later in life — the retirement questions that actually come up.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="article-page">
 
 <div class="reading-progress" id="reading-progress"></div>
 
@@ -36,10 +36,10 @@
       <a href="debt.html">Debt</a>
       <a href="saving.html">Saving</a>
       <a href="investing.html">Investing</a>
-      <a href="retirement.html" class="current">Retirement</a>
+      <a href="retirement.html">Retirement</a>
       <a href="housing.html">Housing</a>
       <a href="family.html">Family</a>
-      <a href="pricing.html">Plus</a>
+      <a href="pricing.html" class="current">Plus</a>
       <a href="about.html">About</a>
       <div class="site-search">
         <input type="text" id="site-search-input" placeholder="Search guides…" aria-label="Search Clearcoin">
@@ -49,90 +49,46 @@
   </nav>
 </header>
 
-<section class="hero">
-  <div class="wrap">
-    <span class="kicker">Retirement</span>
-    <h1>Retirement Guides</h1>
-    <p class="dek">401(k) matches, job changes, and catching up later in life — the retirement questions that actually come up.</p>
+<article class="article">
+  <span class="kicker">Clearcoin Plus</span>
+  <h1>Mortgage Payoff Accelerator<span class="badge-soon">Plus preview</span></h1>
+  <p class="meta">Free to try while Plus is in the works — see <a href="pricing.html">what else is included</a>.</p>
+
+  <p>An extra $100 or $200 a month toward your mortgage principal sounds small, but because it comes off the top before interest accrues, it compounds into years shaved off the loan and thousands saved. This tool runs the actual month-by-month amortization, with and without your extra payment, so you can see the real difference instead of a rough rule of thumb.</p>
+
+  <div class="calc-box">
+    <div class="calc-grid">
+      <div class="calc-field">
+        <label for="mp-balance">Remaining loan balance ($)</label>
+        <input type="number" id="mp-balance" value="320000">
+      </div>
+      <div class="calc-field">
+        <label for="mp-rate">Interest rate (annual %)</label>
+        <input type="number" id="mp-rate" value="6.5" step="0.1">
+      </div>
+      <div class="calc-field">
+        <label for="mp-years">Remaining term (years)</label>
+        <input type="number" id="mp-years" value="27">
+      </div>
+      <div class="calc-field">
+        <label for="mp-extra">Extra payment per month ($)</label>
+        <input type="number" id="mp-extra" value="200">
+      </div>
+    </div>
+
+    <div class="calc-result" id="mp-result">
+      <div class="row-line"><span>Original payoff time</span><span id="mp-original-time">0</span></div>
+      <div class="row-line"><span>New payoff time with extra payments</span><span id="mp-new-time">0</span></div>
+      <div class="row-line"><span>Time saved</span><span class="big" id="mp-time-saved">0</span></div>
+      <div class="row-line"><span>Total interest saved</span><span id="mp-interest-saved">$0</span></div>
+    </div>
+    <div class="calc-note">This is a planning estimate based on a fixed rate for the full remaining term — it doesn't account for refinancing, rate changes, or extra fees.</div>
   </div>
-</section>
 
-<div class="wrap">
-  <div class="layout">
-
-    <main>
-      <div class="section-label">All retirement guides</div>
-
-      <article class="row">
-        <div class="num">01</div>
-        <div>
-          <span class="kicker">Retirement</span>
-          <h3><a href="roth-vs-traditional-401k.html">Roth vs. Traditional 401(k): Which One Fits Your Situation</a></h3>
-          <p class="dek">The core difference between Roth and Traditional 401(k) contributions, and a simple way to decide between them.</p>
-          <p class="meta">Sept 12, 2026, 6 min read</p>
-        </div>
-      </article>
-
-      <article class="row">
-        <div class="num">02</div>
-        <div>
-          <span class="kicker">Retirement</span>
-          <h3><a href="catching-up-retirement.html">Catching Up on Retirement Savings in Your 40s and 50s</a></h3>
-          <p class="dek">A late start doesn't need a dramatic fix. Here's the realistic plan for making meaningful progress from here.</p>
-          <p class="meta">Sept 12, 2026, 7 min read</p>
-        </div>
-      </article>
-
-      <article class="row">
-        <div class="num">03</div>
-        <div>
-          <span class="kicker">Retirement</span>
-          <h3><a href="401k-job-change.html">What Happens to Your 401(k) When You Change Jobs</a></h3>
-          <p class="dek">Your 401(k) doesn't disappear when you leave a job, but doing nothing about it is usually the worst of your four options.</p>
-          <p class="meta">Sept 12, 2026, 6 min read</p>
-        </div>
-      </article>
-
-      <article class="row">
-        <div class="num">04</div>
-        <div>
-          <span class="kicker">Retirement</span>
-          <h3><a href="401k-match.html">The 401(k) Match Most People Leave on the Table</a></h3>
-          <p class="dek">If your employer offers a match and you're not contributing enough to get all of it, you're turning down part of your salary. Here's how to check.</p>
-          <p class="meta">Sept 2, 2026, 5 min read</p>
-        </div>
-      </article>
-
-    </main>
-
-    <aside>
-      <div class="side-box">
-        <h2>Where people start</h2>
-        <ul>
-          <li><a href="article.html">Build your first emergency fund</a></li>
-          <li><a href="debt.html">Pay off debt faster, without a side hustle</a></li>
-          <li><a href="investing.html">Understand index investing in 10 minutes</a></li>
-          <li><a href="retirement.html">Check your 401(k) match</a></li>
-        </ul>
-      </div>
-
-      <div class="side-box signup">
-        <h2>One practical idea a week</h2>
-        <p>No spam, no "hustle harder." Just one thing worth doing with your money.</p>
-        <form>
-          <input type="email" placeholder="you@email.com" aria-label="Email address">
-          <button type="submit" class="btn">Join</button>
-        </form>
-      </div>
-
-      <div class="side-box">
-        <h2>How we make money</h2>
-        <p class="disclosure">Clearcoin is supported by advertising and, occasionally, links to products we've actually researched. It doesn't cost you anything, and it doesn't change what we recommend.</p>
-      </div>
-    </aside>
-
-  </div>
-</div>
+  <h2>How this is calculated</h2>
+  <p>The tool simulates your loan month by month at your current required payment, then reruns the same simulation adding your extra amount directly to principal each month, until each version reaches a zero balance. The difference between the two payoff dates and the two total-interest totals is what your extra payment is actually worth — not an estimate, an exact run of the numbers you entered.</p>
+  <p>For the broader decision of whether extra payments or refinancing makes more sense right now, see our guide on <a href="refinancing-mortgage.html">refinancing your mortgage</a>.</p>
+</article>
 
 <footer>
   <div class="wrap">
@@ -277,7 +233,63 @@ var CLEARCOIN_PAGES = [
     }
   });
 })();
+</script>
 
+<script>
+function mpCalc() {
+  var balance0 = parseFloat(document.getElementById('mp-balance').value) || 0;
+  var annualRate = parseFloat(document.getElementById('mp-rate').value) || 0;
+  var years = parseFloat(document.getElementById('mp-years').value) || 0;
+  var extra = parseFloat(document.getElementById('mp-extra').value) || 0;
+
+  var monthlyRate = annualRate / 100 / 12;
+  var n = years * 12;
+
+  var payment;
+  if (monthlyRate > 0 && n > 0) {
+    payment = balance0 * (monthlyRate * Math.pow(1 + monthlyRate, n)) / (Math.pow(1 + monthlyRate, n) - 1);
+  } else {
+    payment = n > 0 ? balance0 / n : 0;
+  }
+
+  function run(extraAmount) {
+    var balance = balance0;
+    var months = 0;
+    var totalInterest = 0;
+    var maxMonths = 900;
+    while (balance > 0 && months < maxMonths) {
+      var interest = balance * monthlyRate;
+      var principalPayment = (payment + extraAmount) - interest;
+      if (principalPayment <= 0) { months = maxMonths; break; }
+      if (principalPayment > balance) principalPayment = balance;
+      balance -= principalPayment;
+      totalInterest += interest;
+      months++;
+    }
+    return { months: months, totalInterest: totalInterest };
+  }
+
+  var original = run(0);
+  var accelerated = run(extra);
+
+  function fmtYearsMonths(m) {
+    var y = Math.floor(m / 12);
+    var mo = m % 12;
+    return y + 'y ' + mo + 'mo';
+  }
+  function fmtMoney(n) {
+    return '$' + Math.round(n).toLocaleString('en-US');
+  }
+
+  document.getElementById('mp-original-time').textContent = fmtYearsMonths(original.months);
+  document.getElementById('mp-new-time').textContent = fmtYearsMonths(accelerated.months);
+  document.getElementById('mp-time-saved').textContent = fmtYearsMonths(Math.max(original.months - accelerated.months, 0));
+  document.getElementById('mp-interest-saved').textContent = fmtMoney(Math.max(original.totalInterest - accelerated.totalInterest, 0));
+}
+['mp-balance','mp-rate','mp-years','mp-extra'].forEach(function (id) {
+  document.getElementById(id).addEventListener('input', mpCalc);
+});
+mpCalc();
 </script>
 
 </body>

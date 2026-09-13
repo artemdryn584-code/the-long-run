@@ -3,24 +3,24 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Retirement Guides — Clearcoin</title>
-<meta name="description" content="401(k) matches, job changes, and catching up later in life — the retirement questions that actually come up.">
+<title>Retirement Projector: Contribution Growth &amp; Scenario Ranges — Clearcoin Plus</title>
+<meta name="description" content="Project your retirement balance with annual contribution increases, employer match, and a realistic low/high return range — not just one guessed number.">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Retirement Guides — Clearcoin">
-<meta property="og:description" content="401(k) matches, job changes, and catching up later in life — the retirement questions that actually come up.">
-<meta property="og:url" content="https://artemdryn584-code.github.io/the-long-run/retirement.html">
+<meta property="og:title" content="Retirement Projector — Clearcoin Plus">
+<meta property="og:description" content="Project your retirement balance with contribution growth, employer match, and a realistic low/high return range.">
+<meta property="og:url" content="https://artemdryn584-code.github.io/the-long-run/retirement-projector.html">
 <meta property="og:site_name" content="Clearcoin">
 <meta property="og:image" content="https://artemdryn584-code.github.io/the-long-run/og-cover.png">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Retirement Projector — Clearcoin Plus">
+<meta name="twitter:description" content="Project your retirement balance with contribution growth, employer match, and a realistic low/high return range.">
 <meta name="twitter:image" content="https://artemdryn584-code.github.io/the-long-run/og-cover.png">
-<meta name="twitter:title" content="Retirement Guides — Clearcoin">
-<meta name="twitter:description" content="401(k) matches, job changes, and catching up later in life — the retirement questions that actually come up.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="article-page">
 
 <div class="reading-progress" id="reading-progress"></div>
 
@@ -36,10 +36,10 @@
       <a href="debt.html">Debt</a>
       <a href="saving.html">Saving</a>
       <a href="investing.html">Investing</a>
-      <a href="retirement.html" class="current">Retirement</a>
+      <a href="retirement.html">Retirement</a>
       <a href="housing.html">Housing</a>
       <a href="family.html">Family</a>
-      <a href="pricing.html">Plus</a>
+      <a href="pricing.html" class="current">Plus</a>
       <a href="about.html">About</a>
       <div class="site-search">
         <input type="text" id="site-search-input" placeholder="Search guides…" aria-label="Search Clearcoin">
@@ -49,90 +49,58 @@
   </nav>
 </header>
 
-<section class="hero">
-  <div class="wrap">
-    <span class="kicker">Retirement</span>
-    <h1>Retirement Guides</h1>
-    <p class="dek">401(k) matches, job changes, and catching up later in life — the retirement questions that actually come up.</p>
+<article class="article">
+  <span class="kicker">Clearcoin Plus</span>
+  <h1>Retirement Projector<span class="badge-soon">Plus preview</span></h1>
+  <p class="meta">Free to try while Plus is in the works — see <a href="pricing.html">what else is included</a>.</p>
+
+  <p>Most simple retirement calculators assume your contribution and your return rate stay perfectly flat for 30 years, which nobody's actually does. This version adds two things most free calculators skip: your contributions growing with you (raises, cost-of-living bumps), and a realistic range instead of one falsely precise number.</p>
+
+  <div class="calc-box">
+    <div class="calc-grid">
+      <div class="calc-field">
+        <label for="rp-age">Current age</label>
+        <input type="number" id="rp-age" value="32">
+      </div>
+      <div class="calc-field">
+        <label for="rp-retire-age">Retirement age</label>
+        <input type="number" id="rp-retire-age" value="65">
+      </div>
+      <div class="calc-field">
+        <label for="rp-balance">Current retirement balance ($)</label>
+        <input type="number" id="rp-balance" value="45000">
+      </div>
+      <div class="calc-field">
+        <label for="rp-monthly">Your monthly contribution ($)</label>
+        <input type="number" id="rp-monthly" value="500">
+      </div>
+      <div class="calc-field">
+        <label for="rp-match">Employer match, added monthly ($)</label>
+        <input type="number" id="rp-match" value="150">
+      </div>
+      <div class="calc-field">
+        <label for="rp-growth">Annual contribution growth (%)</label>
+        <input type="number" id="rp-growth" value="3" step="0.5">
+      </div>
+      <div class="calc-field">
+        <label for="rp-return">Expected annual return (%)</label>
+        <input type="number" id="rp-return" value="7" step="0.5">
+      </div>
+    </div>
+
+    <div class="calc-result" id="rp-result">
+      <div class="row-line"><span>Projected balance at retirement</span><span class="big" id="rp-mid">$0</span></div>
+      <div class="row-line"><span>Conservative estimate (return −2%)</span><span id="rp-low">$0</span></div>
+      <div class="row-line"><span>Optimistic estimate (return +2%)</span><span id="rp-high">$0</span></div>
+      <div class="row-line"><span>Total you'll have contributed</span><span id="rp-contributed">$0</span></div>
+    </div>
+    <div class="calc-note">This is a planning estimate, not a guarantee — actual market returns vary year to year and this doesn't account for taxes, fees, or Social Security.</div>
   </div>
-</section>
 
-<div class="wrap">
-  <div class="layout">
-
-    <main>
-      <div class="section-label">All retirement guides</div>
-
-      <article class="row">
-        <div class="num">01</div>
-        <div>
-          <span class="kicker">Retirement</span>
-          <h3><a href="roth-vs-traditional-401k.html">Roth vs. Traditional 401(k): Which One Fits Your Situation</a></h3>
-          <p class="dek">The core difference between Roth and Traditional 401(k) contributions, and a simple way to decide between them.</p>
-          <p class="meta">Sept 12, 2026, 6 min read</p>
-        </div>
-      </article>
-
-      <article class="row">
-        <div class="num">02</div>
-        <div>
-          <span class="kicker">Retirement</span>
-          <h3><a href="catching-up-retirement.html">Catching Up on Retirement Savings in Your 40s and 50s</a></h3>
-          <p class="dek">A late start doesn't need a dramatic fix. Here's the realistic plan for making meaningful progress from here.</p>
-          <p class="meta">Sept 12, 2026, 7 min read</p>
-        </div>
-      </article>
-
-      <article class="row">
-        <div class="num">03</div>
-        <div>
-          <span class="kicker">Retirement</span>
-          <h3><a href="401k-job-change.html">What Happens to Your 401(k) When You Change Jobs</a></h3>
-          <p class="dek">Your 401(k) doesn't disappear when you leave a job, but doing nothing about it is usually the worst of your four options.</p>
-          <p class="meta">Sept 12, 2026, 6 min read</p>
-        </div>
-      </article>
-
-      <article class="row">
-        <div class="num">04</div>
-        <div>
-          <span class="kicker">Retirement</span>
-          <h3><a href="401k-match.html">The 401(k) Match Most People Leave on the Table</a></h3>
-          <p class="dek">If your employer offers a match and you're not contributing enough to get all of it, you're turning down part of your salary. Here's how to check.</p>
-          <p class="meta">Sept 2, 2026, 5 min read</p>
-        </div>
-      </article>
-
-    </main>
-
-    <aside>
-      <div class="side-box">
-        <h2>Where people start</h2>
-        <ul>
-          <li><a href="article.html">Build your first emergency fund</a></li>
-          <li><a href="debt.html">Pay off debt faster, without a side hustle</a></li>
-          <li><a href="investing.html">Understand index investing in 10 minutes</a></li>
-          <li><a href="retirement.html">Check your 401(k) match</a></li>
-        </ul>
-      </div>
-
-      <div class="side-box signup">
-        <h2>One practical idea a week</h2>
-        <p>No spam, no "hustle harder." Just one thing worth doing with your money.</p>
-        <form>
-          <input type="email" placeholder="you@email.com" aria-label="Email address">
-          <button type="submit" class="btn">Join</button>
-        </form>
-      </div>
-
-      <div class="side-box">
-        <h2>How we make money</h2>
-        <p class="disclosure">Clearcoin is supported by advertising and, occasionally, links to products we've actually researched. It doesn't cost you anything, and it doesn't change what we recommend.</p>
-      </div>
-    </aside>
-
-  </div>
-</div>
+  <h2>How this is calculated</h2>
+  <p>Each year, your monthly contribution grows by your chosen percentage (matching typical raises), while your employer match is assumed to grow at the same rate as your own contribution. The balance compounds monthly at your expected return rate. The "conservative" and "optimistic" columns rerun the same projection at 2 percentage points below and above your expected return, so you can see how sensitive the outcome is to the one number nobody can actually predict.</p>
+  <p>For the fundamentals behind the numbers here, see <a href="401k-match.html">the 401(k) match guide</a> and <a href="risk-by-age.html">how much risk to take by age</a>.</p>
+</article>
 
 <footer>
   <div class="wrap">
@@ -277,7 +245,56 @@ var CLEARCOIN_PAGES = [
     }
   });
 })();
+</script>
 
+<script>
+function rpCalc() {
+  var age = parseFloat(document.getElementById('rp-age').value) || 0;
+  var retireAge = parseFloat(document.getElementById('rp-retire-age').value) || 0;
+  var balance0 = parseFloat(document.getElementById('rp-balance').value) || 0;
+  var monthly0 = parseFloat(document.getElementById('rp-monthly').value) || 0;
+  var match0 = parseFloat(document.getElementById('rp-match').value) || 0;
+  var growthPct = (parseFloat(document.getElementById('rp-growth').value) || 0) / 100;
+  var returnPct = (parseFloat(document.getElementById('rp-return').value) || 0) / 100;
+
+  var years = Math.max(retireAge - age, 0);
+
+  function project(annualReturn) {
+    var balance = balance0;
+    var monthly = monthly0;
+    var match = match0;
+    var contributed = 0;
+    var monthlyRate = annualReturn / 12;
+    for (var y = 0; y < years; y++) {
+      for (var m = 0; m < 12; m++) {
+        var contribution = monthly + match;
+        balance += contribution;
+        contributed += monthly;
+        balance *= (1 + monthlyRate);
+      }
+      monthly *= (1 + growthPct);
+      match *= (1 + growthPct);
+    }
+    return { balance: balance, contributed: contributed };
+  }
+
+  var mid = project(returnPct);
+  var low = project(Math.max(returnPct - 0.02, 0));
+  var high = project(returnPct + 0.02);
+
+  function fmt(n) {
+    return '$' + Math.round(n).toLocaleString('en-US');
+  }
+
+  document.getElementById('rp-mid').textContent = fmt(mid.balance);
+  document.getElementById('rp-low').textContent = fmt(low.balance);
+  document.getElementById('rp-high').textContent = fmt(high.balance);
+  document.getElementById('rp-contributed').textContent = fmt(mid.contributed + balance0);
+}
+['rp-age','rp-retire-age','rp-balance','rp-monthly','rp-match','rp-growth','rp-return'].forEach(function (id) {
+  document.getElementById(id).addEventListener('input', rpCalc);
+});
+rpCalc();
 </script>
 
 </body>

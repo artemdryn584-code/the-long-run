@@ -3,24 +3,35 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Retirement Guides — Clearcoin</title>
-<meta name="description" content="401(k) matches, job changes, and catching up later in life — the retirement questions that actually come up.">
+<title>Debt-Free Date Planner: One Payoff Timeline for All Your Debts — Clearcoin Plus</title>
+<meta name="description" content="Enter up to three debts and one extra payment amount to see your combined debt-free date, using the avalanche (highest-interest-first) method.">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Retirement Guides — Clearcoin">
-<meta property="og:description" content="401(k) matches, job changes, and catching up later in life — the retirement questions that actually come up.">
-<meta property="og:url" content="https://artemdryn584-code.github.io/the-long-run/retirement.html">
+<meta property="og:title" content="Debt-Free Date Planner — Clearcoin Plus">
+<meta property="og:description" content="Enter up to three debts and one extra payment to see your combined debt-free date.">
+<meta property="og:url" content="https://artemdryn584-code.github.io/the-long-run/debt-free-date-planner.html">
 <meta property="og:site_name" content="Clearcoin">
 <meta property="og:image" content="https://artemdryn584-code.github.io/the-long-run/og-cover.png">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Debt-Free Date Planner — Clearcoin Plus">
+<meta name="twitter:description" content="Enter up to three debts and one extra payment to see your combined debt-free date.">
 <meta name="twitter:image" content="https://artemdryn584-code.github.io/the-long-run/og-cover.png">
-<meta name="twitter:title" content="Retirement Guides — Clearcoin">
-<meta name="twitter:description" content="401(k) matches, job changes, and catching up later in life — the retirement questions that actually come up.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="stylesheet" href="style.css">
+<style>
+  .debt-row-title {
+    font-size: 13.5px;
+    font-weight: 700;
+    color: var(--ink-soft);
+    margin: 20px 0 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+  }
+  .debt-row-title:first-child { margin-top: 0; }
+</style>
 </head>
-<body>
+<body class="article-page">
 
 <div class="reading-progress" id="reading-progress"></div>
 
@@ -36,10 +47,10 @@
       <a href="debt.html">Debt</a>
       <a href="saving.html">Saving</a>
       <a href="investing.html">Investing</a>
-      <a href="retirement.html" class="current">Retirement</a>
+      <a href="retirement.html">Retirement</a>
       <a href="housing.html">Housing</a>
       <a href="family.html">Family</a>
-      <a href="pricing.html">Plus</a>
+      <a href="pricing.html" class="current">Plus</a>
       <a href="about.html">About</a>
       <div class="site-search">
         <input type="text" id="site-search-input" placeholder="Search guides…" aria-label="Search Clearcoin">
@@ -49,90 +60,83 @@
   </nav>
 </header>
 
-<section class="hero">
-  <div class="wrap">
-    <span class="kicker">Retirement</span>
-    <h1>Retirement Guides</h1>
-    <p class="dek">401(k) matches, job changes, and catching up later in life — the retirement questions that actually come up.</p>
+<article class="article">
+  <span class="kicker">Clearcoin Plus</span>
+  <h1>Debt-Free Date Planner<span class="badge-soon">Plus preview</span></h1>
+  <p class="meta">Free to try while Plus is in the works — see <a href="pricing.html">what else is included</a>.</p>
+
+  <p>Juggling more than one debt makes it hard to answer a simple question: when will I actually be done? This tool combines up to three debts into a single payoff timeline, using the <a href="debt-avalanche-vs-snowball.html">avalanche method</a> — your extra payment always goes to whichever debt currently has the highest interest rate, which minimizes total interest across all of them.</p>
+
+  <div class="calc-box">
+    <div class="debt-row-title">Debt 1</div>
+    <div class="calc-grid">
+      <div class="calc-field">
+        <label for="df-bal-1">Balance ($)</label>
+        <input type="number" id="df-bal-1" value="6500">
+      </div>
+      <div class="calc-field">
+        <label for="df-apr-1">Interest rate (APR %)</label>
+        <input type="number" id="df-apr-1" value="22" step="0.1">
+      </div>
+      <div class="calc-field">
+        <label for="df-min-1">Minimum payment ($)</label>
+        <input type="number" id="df-min-1" value="150">
+      </div>
+    </div>
+
+    <div class="debt-row-title">Debt 2 <span style="text-transform:none; font-weight:400;">(leave balance at 0 to skip)</span></div>
+    <div class="calc-grid">
+      <div class="calc-field">
+        <label for="df-bal-2">Balance ($)</label>
+        <input type="number" id="df-bal-2" value="3200">
+      </div>
+      <div class="calc-field">
+        <label for="df-apr-2">Interest rate (APR %)</label>
+        <input type="number" id="df-apr-2" value="14" step="0.1">
+      </div>
+      <div class="calc-field">
+        <label for="df-min-2">Minimum payment ($)</label>
+        <input type="number" id="df-min-2" value="90">
+      </div>
+    </div>
+
+    <div class="debt-row-title">Debt 3 <span style="text-transform:none; font-weight:400;">(leave balance at 0 to skip)</span></div>
+    <div class="calc-grid">
+      <div class="calc-field">
+        <label for="df-bal-3">Balance ($)</label>
+        <input type="number" id="df-bal-3" value="0">
+      </div>
+      <div class="calc-field">
+        <label for="df-apr-3">Interest rate (APR %)</label>
+        <input type="number" id="df-apr-3" value="0" step="0.1">
+      </div>
+      <div class="calc-field">
+        <label for="df-min-3">Minimum payment ($)</label>
+        <input type="number" id="df-min-3" value="0">
+      </div>
+    </div>
+
+    <div class="debt-row-title">Extra payment</div>
+    <div class="calc-grid">
+      <div class="calc-field">
+        <label for="df-extra">Extra amount per month, on top of minimums ($)</label>
+        <input type="number" id="df-extra" value="200">
+      </div>
+    </div>
+
+    <div class="calc-result" id="df-result">
+      <div class="row-line"><span>Debt-free in</span><span class="big" id="df-months">0 months</span></div>
+      <div class="row-line"><span>Estimated debt-free date</span><span id="df-date">—</span></div>
+      <div class="row-line"><span>Total interest you'll pay</span><span id="df-interest">$0</span></div>
+      <div class="row-line"><span>Payoff order (avalanche)</span><span id="df-order">—</span></div>
+    </div>
+    <div class="calc-note">This assumes minimum payments and the extra amount stay constant every month, and that the highest-rate debt always gets the extra payment first.</div>
   </div>
-</section>
 
-<div class="wrap">
-  <div class="layout">
-
-    <main>
-      <div class="section-label">All retirement guides</div>
-
-      <article class="row">
-        <div class="num">01</div>
-        <div>
-          <span class="kicker">Retirement</span>
-          <h3><a href="roth-vs-traditional-401k.html">Roth vs. Traditional 401(k): Which One Fits Your Situation</a></h3>
-          <p class="dek">The core difference between Roth and Traditional 401(k) contributions, and a simple way to decide between them.</p>
-          <p class="meta">Sept 12, 2026, 6 min read</p>
-        </div>
-      </article>
-
-      <article class="row">
-        <div class="num">02</div>
-        <div>
-          <span class="kicker">Retirement</span>
-          <h3><a href="catching-up-retirement.html">Catching Up on Retirement Savings in Your 40s and 50s</a></h3>
-          <p class="dek">A late start doesn't need a dramatic fix. Here's the realistic plan for making meaningful progress from here.</p>
-          <p class="meta">Sept 12, 2026, 7 min read</p>
-        </div>
-      </article>
-
-      <article class="row">
-        <div class="num">03</div>
-        <div>
-          <span class="kicker">Retirement</span>
-          <h3><a href="401k-job-change.html">What Happens to Your 401(k) When You Change Jobs</a></h3>
-          <p class="dek">Your 401(k) doesn't disappear when you leave a job, but doing nothing about it is usually the worst of your four options.</p>
-          <p class="meta">Sept 12, 2026, 6 min read</p>
-        </div>
-      </article>
-
-      <article class="row">
-        <div class="num">04</div>
-        <div>
-          <span class="kicker">Retirement</span>
-          <h3><a href="401k-match.html">The 401(k) Match Most People Leave on the Table</a></h3>
-          <p class="dek">If your employer offers a match and you're not contributing enough to get all of it, you're turning down part of your salary. Here's how to check.</p>
-          <p class="meta">Sept 2, 2026, 5 min read</p>
-        </div>
-      </article>
-
-    </main>
-
-    <aside>
-      <div class="side-box">
-        <h2>Where people start</h2>
-        <ul>
-          <li><a href="article.html">Build your first emergency fund</a></li>
-          <li><a href="debt.html">Pay off debt faster, without a side hustle</a></li>
-          <li><a href="investing.html">Understand index investing in 10 minutes</a></li>
-          <li><a href="retirement.html">Check your 401(k) match</a></li>
-        </ul>
-      </div>
-
-      <div class="side-box signup">
-        <h2>One practical idea a week</h2>
-        <p>No spam, no "hustle harder." Just one thing worth doing with your money.</p>
-        <form>
-          <input type="email" placeholder="you@email.com" aria-label="Email address">
-          <button type="submit" class="btn">Join</button>
-        </form>
-      </div>
-
-      <div class="side-box">
-        <h2>How we make money</h2>
-        <p class="disclosure">Clearcoin is supported by advertising and, occasionally, links to products we've actually researched. It doesn't cost you anything, and it doesn't change what we recommend.</p>
-      </div>
-    </aside>
-
-  </div>
-</div>
+  <h2>How this is calculated</h2>
+  <p>The simulation runs month by month: interest accrues on every debt at its own rate, each debt's minimum payment is applied, and the extra amount is added entirely to whichever remaining debt currently has the highest APR. Once a debt is paid off, its minimum payment amount joins the extra pool and accelerates whatever's left — the same "snowball rolling downhill" effect that makes payoff speed up near the end.</p>
+  <p>If you're deciding between this method and paying off the smallest balance first for motivation, see <a href="debt-avalanche-vs-snowball.html">avalanche vs. snowball</a> — this tool always uses avalanche order, since it minimizes total interest.</p>
+</article>
 
 <footer>
   <div class="wrap">
@@ -277,7 +281,75 @@ var CLEARCOIN_PAGES = [
     }
   });
 })();
+</script>
 
+<script>
+function dfCalc() {
+  var debts = [];
+  for (var i = 1; i <= 3; i++) {
+    var bal = parseFloat(document.getElementById('df-bal-' + i).value) || 0;
+    var apr = parseFloat(document.getElementById('df-apr-' + i).value) || 0;
+    var min = parseFloat(document.getElementById('df-min-' + i).value) || 0;
+    if (bal > 0) {
+      debts.push({ id: i, balance: bal, apr: apr, min: min });
+    }
+  }
+  var extra = parseFloat(document.getElementById('df-extra').value) || 0;
+
+  if (debts.length === 0) {
+    document.getElementById('df-months').textContent = '0 months';
+    document.getElementById('df-date').textContent = 'Today';
+    document.getElementById('df-interest').textContent = '$0';
+    document.getElementById('df-order').textContent = 'No debts entered';
+    return;
+  }
+
+  var order = debts.slice().sort(function (a, b) { return b.apr - a.apr; }).map(function (d) { return 'Debt ' + d.id; }).join(' → ');
+
+  var months = 0;
+  var totalInterest = 0;
+  var maxMonths = 900;
+
+  while (debts.length > 0 && months < maxMonths) {
+    var monthInterestTotal = 0;
+    debts.forEach(function (d) {
+      var interest = d.balance * (d.apr / 100 / 12);
+      d.balance += interest;
+      monthInterestTotal += interest;
+    });
+    totalInterest += monthInterestTotal;
+
+    debts.forEach(function (d) {
+      var pay = Math.min(d.min, d.balance);
+      d.balance -= pay;
+    });
+
+    var pool = extra;
+    debts.sort(function (a, b) { return b.apr - a.apr; });
+    for (var i = 0; i < debts.length && pool > 0; i++) {
+      var pay2 = Math.min(pool, debts[i].balance);
+      debts[i].balance -= pay2;
+      pool -= pay2;
+    }
+
+    debts = debts.filter(function (d) { return d.balance > 0.5; });
+    months++;
+  }
+
+  var today = new Date();
+  var payoffDate = new Date(today.getFullYear(), today.getMonth() + months, 1);
+  var dateStr = payoffDate.toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
+
+  document.getElementById('df-months').textContent = months + (months === 1 ? ' month' : ' months');
+  document.getElementById('df-date').textContent = months >= maxMonths ? 'Payments too low to pay this off' : dateStr;
+  document.getElementById('df-interest').textContent = '$' + Math.round(totalInterest).toLocaleString('en-US');
+  document.getElementById('df-order').textContent = order;
+}
+
+['df-bal-1','df-apr-1','df-min-1','df-bal-2','df-apr-2','df-min-2','df-bal-3','df-apr-3','df-min-3','df-extra'].forEach(function (id) {
+  document.getElementById(id).addEventListener('input', dfCalc);
+});
+dfCalc();
 </script>
 
 </body>
