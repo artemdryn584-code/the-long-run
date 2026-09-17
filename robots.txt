@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://artemdryn584-code.github.io/the-long-run/sitemap.xml
+Sitemap: https://clearcoin.cc/sitemap.xml
