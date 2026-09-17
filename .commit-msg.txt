@@ -1,3 +1,0 @@
-Update all absolute URLs to custom domain clearcoin.cc
-
-Co-Authored-By: Claude Sonnet 5 <noreply@anthropic.com>
