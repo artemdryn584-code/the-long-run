@@ -213,6 +213,22 @@ nav.primary a.current {
   color: var(--ink-soft);
 }
 
+.start-here-banner {
+  display: inline-block;
+  margin-top: 20px;
+  background: var(--accent-tint);
+  color: var(--accent);
+  font-weight: 700;
+  font-size: 14.5px;
+  padding: 10px 18px;
+  border-radius: 20px;
+}
+
+.start-here-banner:hover {
+  background: var(--accent);
+  color: #fff;
+}
+
 /* ---------- Main two-column layout ---------- */
 
 .layout {
@@ -981,4 +997,103 @@ html[data-theme="dark"] .share-btn {
 a:focus-visible, .btn:focus-visible, input:focus-visible {
   outline: 2px solid var(--accent-deep);
   outline-offset: 2px;
+}
+
+/* ---------- Skip link (a11y) ---------- */
+
+.skip-link {
+  position: absolute;
+  left: 12px;
+  top: -60px;
+  z-index: 1000;
+  background: var(--accent);
+  color: #fff;
+  padding: 12px 18px;
+  border-radius: 10px;
+  font-size: 14.5px;
+  font-weight: 600;
+  transition: top 0.15s ease;
+}
+
+.skip-link:focus {
+  top: 12px;
+  color: #fff;
+}
+
+/* ---------- Glossary A-Z nav ---------- */
+
+.glossary-az {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 24px 0 36px;
+}
+
+.glossary-az a,
+.glossary-az span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  font-size: 13.5px;
+  font-weight: 700;
+}
+
+.glossary-az a {
+  background: var(--accent-tint);
+  color: var(--accent);
+}
+
+.glossary-az a:hover {
+  background: var(--accent);
+  color: #fff;
+}
+
+.glossary-az span {
+  color: var(--ink-soft);
+  opacity: 0.35;
+}
+
+/* ---------- Category intro paragraph ---------- */
+
+.category-intro {
+  color: var(--ink-soft);
+  font-size: 16px;
+  max-width: 70ch;
+  margin: 0 0 28px;
+}
+
+/* ---------- Print styles ---------- */
+
+@media print {
+  .article-page .masthead,
+  .article-page nav.primary,
+  .article-page footer,
+  .article-page .cookie-banner,
+  .article-page .share-buttons,
+  .article-page .feedback-box,
+  .article-page .ad-slot,
+  .article-page .side-box.toc,
+  .article-page .reading-progress,
+  .article-page .skip-link,
+  .article-page .breadcrumbs,
+  .article-page .calc-box {
+    display: none !important;
+  }
+
+  .article-page .article {
+    max-width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+
+  body.article-page {
+    overflow-x: visible;
+  }
+
+  body.article-page::after {
+    display: none;
+  }
 }
