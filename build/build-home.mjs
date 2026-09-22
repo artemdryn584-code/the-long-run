@@ -61,8 +61,10 @@ const TOOL_ICON = {
   curve: `<path d="M3 19c6 0 8-3 10-7s4-7 8-7"/><path d="M3 19h18"/>`,
   quiz: `<circle cx="12" cy="12" r="9"/><path d="M9.6 9.3a2.5 2.5 0 1 1 3.3 2.4c-.6.2-.9.8-.9 1.4v.4"/><circle cx="12" cy="16.8" r=".9" fill="currentColor" stroke="none"/>`,
 };
+// width/height are spelled out so the icon still has a size if style.css is
+// stale in a cache or fails to load; the CSS rule overrides them anyway
 const toolIcon = k =>
-  `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${TOOL_ICON[k]}</svg>`;
+  `<svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${TOOL_ICON[k]}</svg>`;
 
 const TOOLS = [
   { href: "emergency-fund-calculator.html", icon: "shield", name: "Emergency fund", note: "How big should yours be?" },

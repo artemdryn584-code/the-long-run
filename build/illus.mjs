@@ -16,7 +16,7 @@ const esc = s =>
 
 const figure = (label, height, body, caption) =>
   `<figure class="illus">
-  <svg viewBox="0 0 600 ${height}" role="img" aria-label="${esc(label)}">
+  <svg viewBox="0 0 600 ${height}" width="600" height="${height}" role="img" aria-label="${esc(label)}">
 ${body}
   </svg>
   <figcaption>${caption}</figcaption>
