@@ -119,7 +119,8 @@ function processArticle(file) {
   // callouts — at most one of each kind, and only from paragraphs we are not
   // already using as an insertion anchor
   let calloutCount = 0;
-  if (!html.includes('class="callout')) {
+  // callouts are for the guides only — a glossary definition is not a tip
+  if (spec && !html.includes('class="callout')) {
     const used = new Set(inserts.map(i => i.at));
     const taken = new Set();
 
