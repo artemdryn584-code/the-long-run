@@ -2375,3 +2375,29 @@ body.article-page::after {
 html[data-theme="dark"] .pricing-card.featured h3 { color: #9fb0ff; }
 html[data-theme="dark"] .pricing-card.featured { border-color: #9fb0ff; }
 html[data-theme="dark"] .pricing-card.featured li::before { border-color: #9fb0ff; }
+
+/* ---------- "Reviewed for accuracy" trust line under the byline ---------- */
+
+.fact-check {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin: -6px 0 22px;
+  font-size: 13.5px;
+  color: var(--ink-soft);
+}
+
+.fact-check svg {
+  color: #1a9d6f;
+  flex-shrink: 0;
+}
+
+.fact-check a {
+  color: var(--ink-soft);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.fact-check a:hover { color: var(--accent); }
+
+html[data-theme="dark"] .fact-check svg { color: #34d399; }
