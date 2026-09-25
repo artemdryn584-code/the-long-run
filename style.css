@@ -2446,3 +2446,71 @@ html[data-theme="dark"] .fact-check svg { color: #34d399; }
   font-weight: 500;
   overflow-wrap: anywhere;
 }
+
+/* ---------- Minimalist decor (REFERENCE — not deployed yet) ---------- */
+
+/* short accent bar under page and article titles */
+.article > h1::after {
+  content: "";
+  display: block;
+  width: 52px;
+  height: 4px;
+  border-radius: 2px;
+  background: var(--accent);
+  margin-top: 16px;
+}
+
+/* subtle accent rule beside homepage section headings */
+.home-section-head h2 {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+.home-section-head h2::before {
+  content: "";
+  width: 4px;
+  height: 22px;
+  border-radius: 2px;
+  background: var(--accent);
+  display: inline-block;
+}
+
+/* ---------- Minimalist decor, round 2 (REFERENCE — not deployed) ---------- */
+
+/* same accent bar under category / section page titles */
+.hero h1::after {
+  content: "";
+  display: block;
+  width: 52px;
+  height: 4px;
+  border-radius: 2px;
+  background: var(--accent);
+  margin-top: 16px;
+}
+
+/* Key takeaways box: accent left edge ties it to the callout system */
+.side-box.takeaways {
+  border-left: 4px solid var(--accent);
+}
+
+/* gentle lift on hover for the homepage cards — subtle, motion only */
+.topic-card,
+.tool-card,
+.card {
+  transition: border-color 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
+}
+.topic-card:hover,
+.tool-card:hover,
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 26px rgba(16, 24, 40, 0.08);
+}
+html[data-theme="dark"] .topic-card:hover,
+html[data-theme="dark"] .tool-card:hover,
+html[data-theme="dark"] .card:hover {
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.45);
+}
+@media (prefers-reduced-motion: reduce) {
+  .topic-card, .tool-card, .card { transition: border-color 0.15s ease; }
+  .topic-card:hover, .tool-card:hover, .card:hover { transform: none; }
+}
