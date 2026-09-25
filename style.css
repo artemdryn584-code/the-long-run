@@ -2276,3 +2276,39 @@ body.article-page::after {
   .mobile-menu nav a svg { width: 17px; height: 17px; }
   .mobile-menu-foot { padding-top: 16px; }
 }
+
+/* ---------- "See everything included" on the Plus card ---------- */
+
+.plan-more { margin-top: 4px; }
+
+.plan-more > summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 9px 0;
+  border-top: 1px solid var(--line);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--accent);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 44px;
+}
+
+.plan-more > summary::-webkit-details-marker { display: none; }
+
+.plan-more > summary::after {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: rotate(45deg);
+  transition: transform 0.15s ease;
+  margin-left: 2px;
+}
+
+.plan-more[open] > summary::after { transform: rotate(-135deg); }
+.plan-more > summary:hover { color: var(--accent-deep); }
+
+.plan-more ul { margin-top: 0; }
