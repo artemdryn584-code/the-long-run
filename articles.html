@@ -47,33 +47,104 @@
 <body>
 <a href="#main" class="skip-link">Skip to main content</a>
 
-<header class="masthead">
-  <div class="wrap">
-    <div class="wordmark"><img src="favicon.svg" alt="" class="wordmark-icon">Clear<span>coin</span></div>
-    <div class="tagline">Practical money advice for people with a life to live, not a spreadsheet to obsess over.</div>
-    <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">🌙</button>
-  </div>
-  <nav class="primary">
-    <div class="wrap">
+<!-- shell:header -->
+<header class="site-header" id="site-header">
+  <div class="wrap header-inner">
+    <div class="wordmark"><a href="index.html"><img src="favicon.svg" alt="" class="wordmark-icon">Clear<span>coin</span></a></div>
+
+    <nav class="header-nav" aria-label="Main">
       <a href="index.html" class="current">Guides</a>
       <a href="start-here.html">Start Here</a>
+
+      <div class="nav-dropdown" data-dropdown>
+        <button type="button" class="nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">Topics <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></button>
+        <div class="nav-dropdown-menu">
+          <a href="debt.html"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M14.5 7H17a5 5 0 0 1 0 10h-2.5"/><path d="M9.5 17H7A5 5 0 0 1 7 7h2.5"/><path d="M9 12h2"/><path d="M13 12h2"/></svg>Debt</a>
+          <a href="saving.html"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><ellipse cx="11.5" cy="12.5" rx="8" ry="6"/><path d="M7 18.2V20.5M16 18.2V20.5"/><path d="M9.2 7.4 10.6 4.6l3.1 1.7"/><path d="M9 11.4h3.6"/><path d="M19.4 11.2h1.9"/><circle cx="16.2" cy="11" r=".9" fill="currentColor" stroke="none"/></svg>Saving</a>
+          <a href="investing.html"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polyline points="3 17 9 11 13 15 21 7"/><polyline points="15 7 21 7 21 13"/><path d="M3 21h18"/></svg>Investing</a>
+          <a href="retirement.html"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6.5 3h11M6.5 21h11"/><path d="M8.5 3v3.6a4 4 0 0 0 1.5 3.1L12 12l-2 2.3a4 4 0 0 0-1.5 3.1V21"/><path d="M15.5 3v3.6a4 4 0 0 1-1.5 3.1L12 12l2 2.3a4 4 0 0 1 1.5 3.1V21"/></svg>Retirement</a>
+          <a href="housing.html"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 10.6 12 3.2l9 7.4"/><path d="M5.2 9.4V20.8h13.6V9.4"/><path d="M9.6 20.8v-6.1h4.8v6.1"/></svg>Housing</a>
+          <a href="family.html"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="8" cy="6.8" r="3.1"/><path d="M2.4 20.6v-1.4A5.6 5.6 0 0 1 8 13.6a5.6 5.6 0 0 1 5.6 5.6v1.4"/><circle cx="17.4" cy="11.4" r="2.3"/><path d="M13.6 20.6v-1.2a3.8 3.8 0 0 1 7.6 0v1.2"/></svg>Family</a>
+        </div>
+      </div>
+
       <a href="calculators.html">Calculators</a>
-      <a href="debt.html">Debt</a>
-      <a href="saving.html">Saving</a>
-      <a href="investing.html">Investing</a>
-      <a href="retirement.html">Retirement</a>
-      <a href="housing.html">Housing</a>
-      <a href="family.html">Family</a>
+      <a href="articles.html">Articles</a>
       <a href="pricing.html">Plus</a>
-      <a href="glossary.html">Glossary</a>
-      <a href="about.html">About</a>
+
+      <div class="nav-dropdown" data-dropdown>
+        <button type="button" class="nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">More <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></button>
+        <div class="nav-dropdown-menu">
+          <a href="glossary.html">Glossary</a>
+          <a href="resources.html">Resources</a>
+          <a href="editorial-guidelines.html">Editorial Guidelines</a>
+          <a href="about.html">About</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="header-tools">
       <div class="site-search">
         <input type="text" id="site-search-input" placeholder="Search guides…" aria-label="Search Clearcoin">
         <div class="site-search-results" id="site-search-results"></div>
       </div>
+      <button type="button" class="icon-btn" id="search-toggle" aria-expanded="false" aria-controls="header-search-row" aria-label="Search"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.6-3.6"/></svg></button>
+      <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+      <button type="button" class="icon-btn" id="menu-toggle" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
     </div>
-  </nav>
+  </div>
+
+  <div class="wrap header-search-row" id="header-search-row">
+    <div class="site-search">
+      <input type="text" id="site-search-input-mobile" placeholder="Search guides…" aria-label="Search Clearcoin">
+      <div class="site-search-results" id="site-search-results-mobile"></div>
+    </div>
+  </div>
 </header>
+
+<div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+  <div class="mobile-menu-backdrop" data-close-menu></div>
+  <div class="mobile-menu-panel" role="dialog" aria-modal="true" aria-label="Site menu">
+    <div class="mobile-menu-head">
+      <div class="wordmark"><a href="index.html"><img src="favicon.svg" alt="" class="wordmark-icon">Clear<span>coin</span></a></div>
+      <button type="button" class="mobile-menu-close" data-close-menu aria-label="Close menu">✕</button>
+    </div>
+
+    <nav aria-label="Main">
+      <a href="index.html" class="current">Guides</a>
+      <a href="start-here.html">Start Here</a>
+      <a href="calculators.html">Calculators</a>
+      <a href="articles.html">All Articles</a>
+      <a href="pricing.html">Plus</a>
+    </nav>
+
+    <h2>Topics</h2>
+    <nav aria-label="Topics">
+      <a href="debt.html"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M14.5 7H17a5 5 0 0 1 0 10h-2.5"/><path d="M9.5 17H7A5 5 0 0 1 7 7h2.5"/><path d="M9 12h2"/><path d="M13 12h2"/></svg>Debt</a>
+      <a href="saving.html"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><ellipse cx="11.5" cy="12.5" rx="8" ry="6"/><path d="M7 18.2V20.5M16 18.2V20.5"/><path d="M9.2 7.4 10.6 4.6l3.1 1.7"/><path d="M9 11.4h3.6"/><path d="M19.4 11.2h1.9"/><circle cx="16.2" cy="11" r=".9" fill="currentColor" stroke="none"/></svg>Saving</a>
+      <a href="investing.html"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polyline points="3 17 9 11 13 15 21 7"/><polyline points="15 7 21 7 21 13"/><path d="M3 21h18"/></svg>Investing</a>
+      <a href="retirement.html"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6.5 3h11M6.5 21h11"/><path d="M8.5 3v3.6a4 4 0 0 0 1.5 3.1L12 12l-2 2.3a4 4 0 0 0-1.5 3.1V21"/><path d="M15.5 3v3.6a4 4 0 0 1-1.5 3.1L12 12l2 2.3a4 4 0 0 1 1.5 3.1V21"/></svg>Retirement</a>
+      <a href="housing.html"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 10.6 12 3.2l9 7.4"/><path d="M5.2 9.4V20.8h13.6V9.4"/><path d="M9.6 20.8v-6.1h4.8v6.1"/></svg>Housing</a>
+      <a href="family.html"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="8" cy="6.8" r="3.1"/><path d="M2.4 20.6v-1.4A5.6 5.6 0 0 1 8 13.6a5.6 5.6 0 0 1 5.6 5.6v1.4"/><circle cx="17.4" cy="11.4" r="2.3"/><path d="M13.6 20.6v-1.2a3.8 3.8 0 0 1 7.6 0v1.2"/></svg>Family</a>
+    </nav>
+
+    <h2>Site</h2>
+    <nav aria-label="More">
+      <a href="glossary.html">Glossary</a>
+      <a href="resources.html">Resources</a>
+      <a href="editorial-guidelines.html">Editorial Guidelines</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="privacy.html">Privacy Policy</a>
+    </nav>
+
+    <div class="mobile-menu-foot">
+      <span>Dark mode</span>
+      <button type="button" class="theme-toggle" id="theme-toggle-menu" aria-label="Toggle dark mode">🌙</button>
+    </div>
+  </div>
+</div>
+<!-- /shell:header -->
 
 <div class="wrap">
   <article class="article article-index" id="main">
@@ -81,82 +152,338 @@
     <h1>All guides</h1>
     <p class="meta">34 guides across 6 topics</p>
 
-    <p>Everything published on Clearcoin, grouped by topic. Each one is a plain-English walkthrough of a single decision.</p>
+    <p>Everything published on Clearcoin, grouped by topic. Each one walks through a single decision in plain English.</p>
 
-      <h2 id="debt"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M14.5 7H17a5 5 0 0 1 0 10h-2.5"/><path d="M9.5 17H7A5 5 0 0 1 7 7h2.5"/><path d="M9 12h2"/><path d="M13 12h2"/></svg>Debt <span style="font-weight:400;color:var(--ink-soft);font-size:15px">5 guides</span></h2>
-      <ul>
-        <li><a href="tax-season-checklist.html">Tax Season Checklist: What to Gather Before You File</a><span>A straightforward checklist of documents and numbers to gather before filing, so tax season stops feeling like a scramble every January.</span></li>
-        <li><a href="student-loan-repayment.html">Student Loan Repayment in 2026: A Plain-English Overview of Your Options</a><span>Income-driven plans, refinancing, and forgiveness — what each option actually does, and how to tell which one fits your loans.</span></li>
-        <li><a href="after-paying-off-credit-card.html">What to Do the Day After You Pay Off Your Last Credit Card</a><span>The moment right after paying off debt is when good decisions matter most. Here's a clear order of operations.</span></li>
-        <li><a href="debt-consolidation.html">Is Debt Consolidation Actually Worth It? A Realistic Look</a><span>Debt consolidation can lower your interest rate and simplify payments — or quietly make things worse. Here's how to tell which one it'll be.</span></li>
-        <li><a href="debt-avalanche-vs-snowball.html">Debt Avalanche vs. Snowball: Which One Actually Gets You Out Faster</a><span>Two popular debt payoff methods compared honestly — including the one case where the slower method is actually the smarter choice.</span></li>
-      </ul>
+    <div class="filter-chips" role="group" aria-label="Filter guides by topic">
+      <button type="button" class="chip" data-filter="All" aria-pressed="true">All</button>
+      <button type="button" class="chip" data-filter="Debt" aria-pressed="false"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M14.5 7H17a5 5 0 0 1 0 10h-2.5"/><path d="M9.5 17H7A5 5 0 0 1 7 7h2.5"/><path d="M9 12h2"/><path d="M13 12h2"/></svg>Debt</button>
+      <button type="button" class="chip" data-filter="Saving" aria-pressed="false"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><ellipse cx="11.5" cy="12.5" rx="8" ry="6"/><path d="M7 18.2V20.5M16 18.2V20.5"/><path d="M9.2 7.4 10.6 4.6l3.1 1.7"/><path d="M9 11.4h3.6"/><path d="M19.4 11.2h1.9"/><circle cx="16.2" cy="11" r=".9" fill="currentColor" stroke="none"/></svg>Saving</button>
+      <button type="button" class="chip" data-filter="Investing" aria-pressed="false"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polyline points="3 17 9 11 13 15 21 7"/><polyline points="15 7 21 7 21 13"/><path d="M3 21h18"/></svg>Investing</button>
+      <button type="button" class="chip" data-filter="Retirement" aria-pressed="false"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6.5 3h11M6.5 21h11"/><path d="M8.5 3v3.6a4 4 0 0 0 1.5 3.1L12 12l-2 2.3a4 4 0 0 0-1.5 3.1V21"/><path d="M15.5 3v3.6a4 4 0 0 1-1.5 3.1L12 12l2 2.3a4 4 0 0 1 1.5 3.1V21"/></svg>Retirement</button>
+      <button type="button" class="chip" data-filter="Housing" aria-pressed="false"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 10.6 12 3.2l9 7.4"/><path d="M5.2 9.4V20.8h13.6V9.4"/><path d="M9.6 20.8v-6.1h4.8v6.1"/></svg>Housing</button>
+      <button type="button" class="chip" data-filter="Family" aria-pressed="false"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="8" cy="6.8" r="3.1"/><path d="M2.4 20.6v-1.4A5.6 5.6 0 0 1 8 13.6a5.6 5.6 0 0 1 5.6 5.6v1.4"/><circle cx="17.4" cy="11.4" r="2.3"/><path d="M13.6 20.6v-1.2a3.8 3.8 0 0 1 7.6 0v1.2"/></svg>Family</button>
+    </div>
+    <p class="articles-empty" id="articles-empty" hidden>Nothing in that topic yet.</p>
 
-      <h2 id="saving"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><ellipse cx="11.5" cy="12.5" rx="8" ry="6"/><path d="M7 18.2V20.5M16 18.2V20.5"/><path d="M9.2 7.4 10.6 4.6l3.1 1.7"/><path d="M9 11.4h3.6"/><path d="M19.4 11.2h1.9"/><circle cx="16.2" cy="11" r=".9" fill="currentColor" stroke="none"/></svg>Saving <span style="font-weight:400;color:var(--ink-soft);font-size:15px">8 guides</span></h2>
-      <ul>
-        <li><a href="budgeting-apps-compared.html">Budgeting Apps Compared: Which Type Actually Fits How You Manage Money</a><span>Budgeting apps fall into a few clear categories. Once you know which type fits how you actually think about money, picking one gets a lot easier.</span></li>
-        <li><a href="no-income-tax-states.html">States With No Income Tax: What That Actually Means for Your Budget</a><span>A handful of states skip income tax entirely — but they still need revenue from somewhere. Here's what that trade-off actually means for your budget.</span></li>
-        <li><a href="sinking-fund-method.html">The Sinking Fund Method: How to Stop Dreading Car Repairs and Holidays</a><span>Sinking funds turn 'surprise' expenses like car repairs, holidays, and annual bills into costs you already planned for.</span></li>
-        <li><a href="holiday-budget-guide.html">How to Budget for the Holidays Without the January Regret</a><span>A simple way to enjoy the holidays without starting the new year with a credit card balance you're still paying off in June.</span></li>
-        <li><a href="best-high-yield-savings-accounts.html">Best High-Yield Savings Accounts: How to Actually Compare Them in 2026</a><span>Rates change constantly and specific bank names age fast — here's how to actually evaluate a high-yield savings account, whichever one you're looking at.</span></li>
-        <li><a href="high-yield-savings-explained.html">High-Yield Savings Accounts, Explained: Where to Actually Keep Your Emergency Fund</a><span>What a high-yield savings account actually is, how it differs from a regular savings account, and where it fits in a real budget.</span></li>
-        <li><a href="how-much-to-save.html">How Much of Your Paycheck Should Actually Go to Savings in 2026</a><span>Forget the flat 20% rule. Here's a savings target that actually adjusts to your income, your debt, and where you live.</span></li>
-        <li><a href="article.html">The 6-Month Emergency Fund Plan for People Who Live Paycheck to Paycheck</a><span>A realistic, step-by-step plan for building a 6-month emergency fund even when there isn't much left over at the end of the month.</span></li>
-      </ul>
+    <section class="cat-block" data-block="Debt">
+      <div class="cat-block-head">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M14.5 7H17a5 5 0 0 1 0 10h-2.5"/><path d="M9.5 17H7A5 5 0 0 1 7 7h2.5"/><path d="M9 12h2"/><path d="M13 12h2"/></svg>
+        <h2 id="debt">Debt</h2>
+        <span class="count">5 guides</span>
+      </div>
+      <div class="articles-grid">
+        <article class="card" data-category="Debt">
+          <span class="kicker"><svg class="cat-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M14.5 7H17a5 5 0 0 1 0 10h-2.5"/><path d="M9.5 17H7A5 5 0 0 1 7 7h2.5"/><path d="M9 12h2"/><path d="M13 12h2"/></svg>Debt</span>
+          <h3><a href="tax-season-checklist.html">Tax Season Checklist: What to Gather Before You File</a></h3>
+          <p class="dek">A straightforward checklist of documents and numbers to gather before filing, so tax season stops feeling like a scramble every January.</p>
+          <p class="meta">Sept 12, 2026, 6 min read, Updated Sept 2026</p>
+        </article>
+        <article class="card" data-category="Debt">
+          <span class="kicker"><svg class="cat-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M14.5 7H17a5 5 0 0 1 0 10h-2.5"/><path d="M9.5 17H7A5 5 0 0 1 7 7h2.5"/><path d="M9 12h2"/><path d="M13 12h2"/></svg>Debt</span>
+          <h3><a href="student-loan-repayment.html">Student Loan Repayment in 2026: A Plain-English Overview of Your Options</a></h3>
+          <p class="dek">Income-driven plans, refinancing, and forgiveness — what each option actually does, and how to tell which one fits your loans.</p>
+          <p class="meta">Sept 12, 2026, 7 min read, Updated Sept 2026</p>
+        </article>
+        <article class="card" data-category="Debt">
+          <span class="kicker"><svg class="cat-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M14.5 7H17a5 5 0 0 1 0 10h-2.5"/><path d="M9.5 17H7A5 5 0 0 1 7 7h2.5"/><path d="M9 12h2"/><path d="M13 12h2"/></svg>Debt</span>
+          <h3><a href="after-paying-off-credit-card.html">What to Do the Day After You Pay Off Your Last Credit Card</a></h3>
+          <p class="dek">The moment right after paying off debt is when good decisions matter most. Here's a clear order of operations.</p>
+          <p class="meta">Sept 12, 2026, 5 min read, Updated Sept 2026</p>
+        </article>
+        <article class="card" data-category="Debt">
+          <span class="kicker"><svg class="cat-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M14.5 7H17a5 5 0 0 1 0 10h-2.5"/><path d="M9.5 17H7A5 5 0 0 1 7 7h2.5"/><path d="M9 12h2"/><path d="M13 12h2"/></svg>Debt</span>
+          <h3><a href="debt-consolidation.html">Is Debt Consolidation Actually Worth It? A Realistic Look</a></h3>
+          <p class="dek">Debt consolidation can lower your interest rate and simplify payments — or quietly make things worse. Here's how to tell which one it'll be.</p>
+          <p class="meta">Sept 12, 2026, 6 min read, Updated Sept 2026</p>
+        </article>
+        <article class="card" data-category="Debt">
+          <span class="kicker"><svg class="cat-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M14.5 7H17a5 5 0 0 1 0 10h-2.5"/><path d="M9.5 17H7A5 5 0 0 1 7 7h2.5"/><path d="M9 12h2"/><path d="M13 12h2"/></svg>Debt</span>
+          <h3><a href="debt-avalanche-vs-snowball.html">Debt Avalanche vs. Snowball: Which One Actually Gets You Out Faster</a></h3>
+          <p class="dek">Two popular debt payoff methods compared honestly — including the one case where the slower method is actually the smarter choice.</p>
+          <p class="meta">Sept 6, 2026, 6 min read, Updated Sept 2026</p>
+        </article>
+      </div>
+    </section>
 
-      <h2 id="investing"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polyline points="3 17 9 11 13 15 21 7"/><polyline points="15 7 21 7 21 13"/><path d="M3 21h18"/></svg>Investing <span style="font-weight:400;color:var(--ink-soft);font-size:15px">5 guides</span></h2>
-      <ul>
-        <li><a href="robo-advisors-for-beginners.html">Robo-Advisors for Beginners: What to Look For</a><span>If you've decided a robo-advisor makes sense for you, here's exactly what to check before picking one — fees, minimums, tax features, and account types.</span></li>
-        <li><a href="robo-advisors-vs-diy.html">Robo-Advisors vs. DIY Investing: What's the Real Difference</a><span>Robo-advisors and DIY index investing end up in similar places for many people. Here's what you're actually paying for with each.</span></li>
-        <li><a href="risk-by-age.html">How Much Risk Should You Actually Be Taking, By Age</a><span>Age-based investing rules of thumb, what they get right, and why your actual timeline matters more than your birth year.</span></li>
-        <li><a href="recession-and-retirement.html">What a Recession Actually Means for Your Retirement Account</a><span>A falling 401(k) balance during a recession feels alarming. Here's what actually matters depending on how many years you have left.</span></li>
-        <li><a href="index-funds-explained.html">Index Funds, Explained for People Who Don't Want to Think About Money</a><span>The case for boring, low-cost investing in about the time it takes to drink your coffee.</span></li>
-      </ul>
+    <section class="cat-block" data-block="Saving">
+      <div class="cat-block-head">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><ellipse cx="11.5" cy="12.5" rx="8" ry="6"/><path d="M7 18.2V20.5M16 18.2V20.5"/><path d="M9.2 7.4 10.6 4.6l3.1 1.7"/><path d="M9 11.4h3.6"/><path d="M19.4 11.2h1.9"/><circle cx="16.2" cy="11" r=".9" fill="currentColor" stroke="none"/></svg>
+        <h2 id="saving">Saving</h2>
+        <span class="count">8 guides</span>
+      </div>
+      <div class="articles-grid">
+        <article class="card" data-category="Saving">
+          <span class="kicker"><svg class="cat-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><ellipse cx="11.5" cy="12.5" rx="8" ry="6"/><path d="M7 18.2V20.5M16 18.2V20.5"/><path d="M9.2 7.4 10.6 4.6l3.1 1.7"/><path d="M9 11.4h3.6"/><path d="M19.4 11.2h1.9"/><circle cx="16.2" cy="11" r=".9" fill="currentColor" stroke="none"/></svg>Saving</span>
+          <h3><a href="budgeting-apps-compared.html">Budgeting Apps Compared: Which Type Actually Fits How You Manage Money</a></h3>
+          <p class="dek">Budgeting apps fall into a few clear categories. Once you know which type fits how you actually think about money, picking one gets a lot easier.</p>
+          <p class="meta">Sept 12, 2026, 7 min read, Updated Sept 2026</p>
+        </article>
+        <article class="card" data-category="Saving">
+          <span class="kicker"><svg class="cat-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><ellipse cx="11.5" cy="12.5" rx="8" ry="6"/><path d="M7 18.2V20.5M16 18.2V20.5"/><path d="M9.2 7.4 10.6 4.6l3.1 1.7"/><path d="M9 11.4h3.6"/><path d="M19.4 11.2h1.9"/><circle cx="16.2" cy="11" r=".9" fill="currentColor" stroke="none"/></svg>Saving</span>
+          <h3><a href="no-income-tax-states.html">States With No Income Tax: What That Actually Means for Your Budget</a></h3>
+          <p class="dek">A handful of states skip income tax entirely — but they still need revenue from somewhere. Here's what that trade-off actually means for your budget.</p>
+          <p class="meta">Sept 12, 2026, 6 min read, Updated Sept 2026</p>
+        </article>
+        <article class="card" data-category="Saving">
+          <span class="kicker"><svg class="cat-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><ellipse cx="11.5" cy="12.5" rx="8" ry="6"/><path d="M7 18.2V20.5M16 18.2V20.5"/><path d="M9.2 7.4 10.6 4.6l3.1 1.7"/><path d="M9 11.4h3.6"/><path d="M19.4 11.2h1.9"/><circle cx="16.2" cy="11" r=".9" fill="currentColor" stroke="none"/></svg>Saving</span>
+          <h3><a href="sinking-fund-method.html">The Sinking Fund Method: How to Stop Dreading Car Repairs and Holidays</a></h3>
+          <p class="dek">Sinking funds turn 'surprise' expenses like car repairs, holidays, and annual bills into costs you already planned for.</p>
+          <p class="meta">Sept 12, 2026, 5 min read, Updated Sept 2026</p>
+        </article>
+        <article class="card" data-category="Saving">
+          <span class="kicker"><svg class="cat-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><ellipse cx="11.5" cy="12.5" rx="8" ry="6"/><path d="M7 18.2V20.5M16 18.2V20.5"/><path d="M9.2 7.4 10.6 4.6l3.1 1.7"/><path d="M9 11.4h3.6"/><path d="M19.4 11.2h1.9"/><circle cx="16.2" cy="11" r=".9" fill="currentColor" stroke="none"/></svg>Saving</span>
+          <h3><a href="holiday-budget-guide.html">How to Budget for the Holidays Without the January Regret</a></h3>
+          <p class="dek">A simple way to enjoy the holidays without starting the new year with a credit card balance you're still paying off in June.</p>
+          <p class="meta">Sept 12, 2026, 6 min read, Updated Sept 2026</p>
+        </article>
+        <article class="card" data-category="Saving">
+          <span class="kicker"><svg class="cat-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><ellipse cx="11.5" cy="12.5" rx="8" ry="6"/><path d="M7 18.2V20.5M16 18.2V20.5"/><path d="M9.2 7.4 10.6 4.6l3.1 1.7"/><path d="M9 11.4h3.6"/><path d="M19.4 11.2h1.9"/><circle cx="16.2" cy="11" r=".9" fill="currentColor" stroke="none"/></svg>Saving</span>
+          <h3><a href="best-high-yield-savings-accounts.html">Best High-Yield Savings Accounts: How to Actually Compare Them in 2026</a></h3>
+          <p class="dek">Rates change constantly and specific bank names age fast — here's how to actually evaluate a high-yield savings account, whichever one you're looking at.</p>
+          <p class="meta">Sept 12, 2026, 7 min read, Updated Sept 2026</p>
+        </article>
+        <article class="card" data-category="Saving">
+          <span class="kicker"><svg class="cat-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><ellipse cx="11.5" cy="12.5" rx="8" ry="6"/><path d="M7 18.2V20.5M16 18.2V20.5"/><path d="M9.2 7.4 10.6 4.6l3.1 1.7"/><path d="M9 11.4h3.6"/><path d="M19.4 11.2h1.9"/><circle cx="16.2" cy="11" r=".9" fill="currentColor" stroke="none"/></svg>Saving</span>
+          <h3><a href="high-yield-savings-explained.html">High-Yield Savings Accounts, Explained: Where to Actually Keep Your Emergency Fund</a></h3>
+          <p class="dek">What a high-yield savings account actually is, how it differs from a regular savings account, and where it fits in a real budget.</p>
+          <p class="meta">Sept 12, 2026, 5 min read, Updated Sept 2026</p>
+        </article>
+        <article class="card" data-category="Saving">
+          <span class="kicker"><svg class="cat-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><ellipse cx="11.5" cy="12.5" rx="8" ry="6"/><path d="M7 18.2V20.5M16 18.2V20.5"/><path d="M9.2 7.4 10.6 4.6l3.1 1.7"/><path d="M9 11.4h3.6"/><path d="M19.4 11.2h1.9"/><circle cx="16.2" cy="11" r=".9" fill="currentColor" stroke="none"/></svg>Saving</span>
+          <h3><a href="how-much-to-save.html">How Much of Your Paycheck Should Actually Go to Savings in 2026</a></h3>
+          <p class="dek">Forget the flat 20% rule. Here's a savings target that actually adjusts to your income, your debt, and where you live.</p>
+          <p class="meta">Sept 12, 2026, 6 min read, Updated Sept 2026</p>
+        </article>
+        <article class="card" data-category="Saving">
+          <span class="kicker"><svg class="cat-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><ellipse cx="11.5" cy="12.5" rx="8" ry="6"/><path d="M7 18.2V20.5M16 18.2V20.5"/><path d="M9.2 7.4 10.6 4.6l3.1 1.7"/><path d="M9 11.4h3.6"/><path d="M19.4 11.2h1.9"/><circle cx="16.2" cy="11" r=".9" fill="currentColor" stroke="none"/></svg>Saving</span>
+          <h3><a href="article.html">The 6-Month Emergency Fund Plan for People Who Live Paycheck to Paycheck</a></h3>
+          <p class="dek">A realistic, step-by-step plan for building a 6-month emergency fund even when there isn't much left over at the end of the month.</p>
+          <p class="meta">Sept 10, 2026, 7 min read, Updated Sept 2026</p>
+        </article>
+      </div>
+    </section>
 
-      <h2 id="retirement"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6.5 3h11M6.5 21h11"/><path d="M8.5 3v3.6a4 4 0 0 0 1.5 3.1L12 12l-2 2.3a4 4 0 0 0-1.5 3.1V21"/><path d="M15.5 3v3.6a4 4 0 0 1-1.5 3.1L12 12l2 2.3a4 4 0 0 1 1.5 3.1V21"/></svg>Retirement <span style="font-weight:400;color:var(--ink-soft);font-size:15px">4 guides</span></h2>
-      <ul>
-        <li><a href="catching-up-retirement.html">Catching Up on Retirement Savings in Your 40s and 50s</a><span>A late start on retirement savings isn't fixed by panic. Here's a realistic plan for making meaningful progress in your 40s and 50s.</span></li>
-        <li><a href="roth-vs-traditional-401k.html">Roth vs. Traditional 401(k): Which One Fits Your Situation</a><span>The core difference between Roth and Traditional 401(k) contributions, and a simple way to decide between them.</span></li>
-        <li><a href="401k-job-change.html">What Happens to Your 401(k) When You Change Jobs</a><span>Your 401(k) doesn't disappear when you leave a job, but doing nothing about it is usually the worst of your four options.</span></li>
-        <li><a href="401k-match.html">The 401(k) Match Most People Leave on the Table</a><span>If your employer offers a 401(k) match and you're not contributing enough to get all of it, here's exactly how to check and fix it.</span></li>
-      </ul>
+    <section class="cat-block" data-block="Investing">
+      <div class="cat-block-head">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polyline points="3 17 9 11 13 15 21 7"/><polyline points="15 7 21 7 21 13"/><path d="M3 21h18"/></svg>
+        <h2 id="investing">Investing</h2>
+        <span class="count">5 guides</span>
+      </div>
+      <div class="articles-grid">
+        <article class="card" data-category="Investing">
+          <span class="kicker"><svg class="cat-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polyline points="3 17 9 11 13 15 21 7"/><polyline points="15 7 21 7 21 13"/><path d="M3 21h18"/></svg>Investing</span>
+          <h3><a href="robo-advisors-for-beginners.html">Robo-Advisors for Beginners: What to Look For</a></h3>
+          <p class="dek">If you've decided a robo-advisor makes sense for you, here's exactly what to check before picking one — fees, minimums, tax features, and account types.</p>
+          <p class="meta">Sept 12, 2026, 7 min read, Updated Sept 2026</p>
+        </article>
+        <article class="card" data-category="Investing">
+          <span class="kicker"><svg class="cat-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polyline points="3 17 9 11 13 15 21 7"/><polyline points="15 7 21 7 21 13"/><path d="M3 21h18"/></svg>Investing</span>
+          <h3><a href="robo-advisors-vs-diy.html">Robo-Advisors vs. DIY Investing: What's the Real Difference</a></h3>
+          <p class="dek">Robo-advisors and DIY index investing end up in similar places for many people. Here's what you're actually paying for with each.</p>
+          <p class="meta">Sept 12, 2026, 6 min read, Updated Sept 2026</p>
+        </article>
+        <article class="card" data-category="Investing">
+          <span class="kicker"><svg class="cat-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polyline points="3 17 9 11 13 15 21 7"/><polyline points="15 7 21 7 21 13"/><path d="M3 21h18"/></svg>Investing</span>
+          <h3><a href="risk-by-age.html">How Much Risk Should You Actually Be Taking, By Age</a></h3>
+          <p class="dek">Age-based investing rules of thumb, what they get right, and why your actual timeline matters more than your birth year.</p>
+          <p class="meta">Sept 12, 2026, 6 min read, Updated Sept 2026</p>
+        </article>
+        <article class="card" data-category="Investing">
+          <span class="kicker"><svg class="cat-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polyline points="3 17 9 11 13 15 21 7"/><polyline points="15 7 21 7 21 13"/><path d="M3 21h18"/></svg>Investing</span>
+          <h3><a href="recession-and-retirement.html">What a Recession Actually Means for Your Retirement Account</a></h3>
+          <p class="dek">A falling 401(k) balance during a recession feels alarming. Here's what actually matters depending on how many years you have left.</p>
+          <p class="meta">Sept 12, 2026, 6 min read, Updated Sept 2026</p>
+        </article>
+        <article class="card" data-category="Investing">
+          <span class="kicker"><svg class="cat-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polyline points="3 17 9 11 13 15 21 7"/><polyline points="15 7 21 7 21 13"/><path d="M3 21h18"/></svg>Investing</span>
+          <h3><a href="index-funds-explained.html">Index Funds, Explained for People Who Don't Want to Think About Money</a></h3>
+          <p class="dek">The case for boring, low-cost investing in about the time it takes to drink your coffee.</p>
+          <p class="meta">Aug 27, 2026, 8 min read, Updated Sept 2026</p>
+        </article>
+      </div>
+    </section>
 
-      <h2 id="housing"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 10.6 12 3.2l9 7.4"/><path d="M5.2 9.4V20.8h13.6V9.4"/><path d="M9.6 20.8v-6.1h4.8v6.1"/></svg>Housing <span style="font-weight:400;color:var(--ink-soft);font-size:15px">4 guides</span></h2>
-      <ul>
-        <li><a href="refinancing-mortgage.html">Refinancing Your Mortgage: When It's Worth It and When It Isn't</a><span>A lower rate isn't automatically a win once closing costs and your break-even timeline are factored in. Here's how to actually check.</span></li>
-        <li><a href="first-time-homebuyer-programs.html">First-Time Homebuyer Programs Worth Knowing About in 2026</a><span>Down payment assistance, low-down-payment loans, and tax credits that many first-time buyers qualify for without realizing it.</span></li>
-        <li><a href="how-much-house-can-you-afford.html">How Much House Can You Actually Afford (Not Just What the Bank Approves)</a><span>A mortgage pre-approval tells you the maximum the bank will lend. It doesn't tell you what you can actually afford to live with.</span></li>
-        <li><a href="renting-vs-buying.html">Renting vs. Buying in 2026: The Math Most Calculators Get Wrong</a><span>Most rent-vs-buy tools ignore opportunity cost. Here's how to actually compare the two.</span></li>
-      </ul>
+    <section class="cat-block" data-block="Retirement">
+      <div class="cat-block-head">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6.5 3h11M6.5 21h11"/><path d="M8.5 3v3.6a4 4 0 0 0 1.5 3.1L12 12l-2 2.3a4 4 0 0 0-1.5 3.1V21"/><path d="M15.5 3v3.6a4 4 0 0 1-1.5 3.1L12 12l2 2.3a4 4 0 0 1 1.5 3.1V21"/></svg>
+        <h2 id="retirement">Retirement</h2>
+        <span class="count">4 guides</span>
+      </div>
+      <div class="articles-grid">
+        <article class="card" data-category="Retirement">
+          <span class="kicker"><svg class="cat-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6.5 3h11M6.5 21h11"/><path d="M8.5 3v3.6a4 4 0 0 0 1.5 3.1L12 12l-2 2.3a4 4 0 0 0-1.5 3.1V21"/><path d="M15.5 3v3.6a4 4 0 0 1-1.5 3.1L12 12l2 2.3a4 4 0 0 1 1.5 3.1V21"/></svg>Retirement</span>
+          <h3><a href="catching-up-retirement.html">Catching Up on Retirement Savings in Your 40s and 50s</a></h3>
+          <p class="dek">A late start on retirement savings isn't fixed by panic. Here's a realistic plan for making meaningful progress in your 40s and 50s.</p>
+          <p class="meta">Sept 12, 2026, 7 min read, Updated Sept 2026</p>
+        </article>
+        <article class="card" data-category="Retirement">
+          <span class="kicker"><svg class="cat-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6.5 3h11M6.5 21h11"/><path d="M8.5 3v3.6a4 4 0 0 0 1.5 3.1L12 12l-2 2.3a4 4 0 0 0-1.5 3.1V21"/><path d="M15.5 3v3.6a4 4 0 0 1-1.5 3.1L12 12l2 2.3a4 4 0 0 1 1.5 3.1V21"/></svg>Retirement</span>
+          <h3><a href="roth-vs-traditional-401k.html">Roth vs. Traditional 401(k): Which One Fits Your Situation</a></h3>
+          <p class="dek">The core difference between Roth and Traditional 401(k) contributions, and a simple way to decide between them.</p>
+          <p class="meta">Sept 12, 2026, 6 min read, Updated Sept 2026</p>
+        </article>
+        <article class="card" data-category="Retirement">
+          <span class="kicker"><svg class="cat-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6.5 3h11M6.5 21h11"/><path d="M8.5 3v3.6a4 4 0 0 0 1.5 3.1L12 12l-2 2.3a4 4 0 0 0-1.5 3.1V21"/><path d="M15.5 3v3.6a4 4 0 0 1-1.5 3.1L12 12l2 2.3a4 4 0 0 1 1.5 3.1V21"/></svg>Retirement</span>
+          <h3><a href="401k-job-change.html">What Happens to Your 401(k) When You Change Jobs</a></h3>
+          <p class="dek">Your 401(k) doesn't disappear when you leave a job, but doing nothing about it is usually the worst of your four options.</p>
+          <p class="meta">Sept 12, 2026, 6 min read, Updated Sept 2026</p>
+        </article>
+        <article class="card" data-category="Retirement">
+          <span class="kicker"><svg class="cat-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6.5 3h11M6.5 21h11"/><path d="M8.5 3v3.6a4 4 0 0 0 1.5 3.1L12 12l-2 2.3a4 4 0 0 0-1.5 3.1V21"/><path d="M15.5 3v3.6a4 4 0 0 1-1.5 3.1L12 12l2 2.3a4 4 0 0 1 1.5 3.1V21"/></svg>Retirement</span>
+          <h3><a href="401k-match.html">The 401(k) Match Most People Leave on the Table</a></h3>
+          <p class="dek">If your employer offers a 401(k) match and you're not contributing enough to get all of it, here's exactly how to check and fix it.</p>
+          <p class="meta">Sept 2, 2026, 5 min read, Updated Sept 2026</p>
+        </article>
+      </div>
+    </section>
 
-      <h2 id="family"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="8" cy="6.8" r="3.1"/><path d="M2.4 20.6v-1.4A5.6 5.6 0 0 1 8 13.6a5.6 5.6 0 0 1 5.6 5.6v1.4"/><circle cx="17.4" cy="11.4" r="2.3"/><path d="M13.6 20.6v-1.2a3.8 3.8 0 0 1 7.6 0v1.2"/></svg>Family <span style="font-weight:400;color:var(--ink-soft);font-size:15px">8 guides</span></h2>
-      <ul>
-        <li><a href="open-enrollment-guide.html">Open Enrollment: How to Actually Choose Your Health Insurance Plan</a><span>Open enrollment forces a once-a-year decision most people rush. Here's how to actually compare plans instead of picking the same one out of habit.</span></li>
-        <li><a href="life-insurance-for-parents.html">Life Insurance Basics for Parents: What You Actually Need</a><span>Term vs. whole life, how much coverage actually makes sense, and the simple math most parents skip when buying a policy.</span></li>
-        <li><a href="cost-of-living-by-state.html">Cost of Living by State: What Actually Drives the Difference</a><span>The same salary can feel completely different depending on where you live. Here's what actually drives cost-of-living differences by state.</span></li>
-        <li><a href="back-to-school-budget.html">Back-to-School Budgeting That Doesn't Wreck Your Month</a><span>School supplies, clothes, and activity fees cluster into a few weeks every year. Here's how to plan for it instead of absorbing the hit all at once.</span></li>
-        <li><a href="windfall-guide.html">What to Do With a Windfall (Bonus, Inheritance, Tax Refund) Before You Spend It</a><span>A simple order of operations for unexpected money, so a windfall builds lasting financial ground instead of quietly disappearing.</span></li>
-        <li><a href="splitting-money-with-partner.html">Splitting Money Fairly with a Partner Who Earns Differently</a><span>A 50/50 split isn't automatically fair when incomes differ. A proportional split usually is — here's how to set one up.</span></li>
-        <li><a href="budget-that-survives-real-life.html">How to Build a Budget That Actually Survives Real Life</a><span>Most budgets fail in week three. Here's how to build one that actually holds up against a messy, unpredictable month.</span></li>
-        <li><a href="teaching-kids-money.html">Teaching Your Kids About Money Without the Awkward Lecture</a><span>Small, low-stakes habits that teach real financial instincts — no allowance spreadsheet required.</span></li>
-      </ul>
+    <section class="cat-block" data-block="Housing">
+      <div class="cat-block-head">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 10.6 12 3.2l9 7.4"/><path d="M5.2 9.4V20.8h13.6V9.4"/><path d="M9.6 20.8v-6.1h4.8v6.1"/></svg>
+        <h2 id="housing">Housing</h2>
+        <span class="count">4 guides</span>
+      </div>
+      <div class="articles-grid">
+        <article class="card" data-category="Housing">
+          <span class="kicker"><svg class="cat-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 10.6 12 3.2l9 7.4"/><path d="M5.2 9.4V20.8h13.6V9.4"/><path d="M9.6 20.8v-6.1h4.8v6.1"/></svg>Housing</span>
+          <h3><a href="refinancing-mortgage.html">Refinancing Your Mortgage: When It's Worth It and When It Isn't</a></h3>
+          <p class="dek">A lower rate isn't automatically a win once closing costs and your break-even timeline are factored in. Here's how to actually check.</p>
+          <p class="meta">Sept 12, 2026, 6 min read, Updated Sept 2026</p>
+        </article>
+        <article class="card" data-category="Housing">
+          <span class="kicker"><svg class="cat-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 10.6 12 3.2l9 7.4"/><path d="M5.2 9.4V20.8h13.6V9.4"/><path d="M9.6 20.8v-6.1h4.8v6.1"/></svg>Housing</span>
+          <h3><a href="first-time-homebuyer-programs.html">First-Time Homebuyer Programs Worth Knowing About in 2026</a></h3>
+          <p class="dek">Down payment assistance, low-down-payment loans, and tax credits that many first-time buyers qualify for without realizing it.</p>
+          <p class="meta">Sept 12, 2026, 6 min read, Updated Sept 2026</p>
+        </article>
+        <article class="card" data-category="Housing">
+          <span class="kicker"><svg class="cat-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 10.6 12 3.2l9 7.4"/><path d="M5.2 9.4V20.8h13.6V9.4"/><path d="M9.6 20.8v-6.1h4.8v6.1"/></svg>Housing</span>
+          <h3><a href="how-much-house-can-you-afford.html">How Much House Can You Actually Afford (Not Just What the Bank Approves)</a></h3>
+          <p class="dek">A mortgage pre-approval tells you the maximum the bank will lend. It doesn't tell you what you can actually afford to live with.</p>
+          <p class="meta">Sept 12, 2026, 8 min read, Updated Sept 2026</p>
+        </article>
+        <article class="card" data-category="Housing">
+          <span class="kicker"><svg class="cat-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 10.6 12 3.2l9 7.4"/><path d="M5.2 9.4V20.8h13.6V9.4"/><path d="M9.6 20.8v-6.1h4.8v6.1"/></svg>Housing</span>
+          <h3><a href="renting-vs-buying.html">Renting vs. Buying in 2026: The Math Most Calculators Get Wrong</a></h3>
+          <p class="dek">Most rent-vs-buy tools ignore opportunity cost. Here's how to actually compare the two.</p>
+          <p class="meta">Aug 21, 2026, 9 min read, Updated Sept 2026</p>
+        </article>
+      </div>
+    </section>
 
+    <section class="cat-block" data-block="Family">
+      <div class="cat-block-head">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="8" cy="6.8" r="3.1"/><path d="M2.4 20.6v-1.4A5.6 5.6 0 0 1 8 13.6a5.6 5.6 0 0 1 5.6 5.6v1.4"/><circle cx="17.4" cy="11.4" r="2.3"/><path d="M13.6 20.6v-1.2a3.8 3.8 0 0 1 7.6 0v1.2"/></svg>
+        <h2 id="family">Family</h2>
+        <span class="count">8 guides</span>
+      </div>
+      <div class="articles-grid">
+        <article class="card" data-category="Family">
+          <span class="kicker"><svg class="cat-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="8" cy="6.8" r="3.1"/><path d="M2.4 20.6v-1.4A5.6 5.6 0 0 1 8 13.6a5.6 5.6 0 0 1 5.6 5.6v1.4"/><circle cx="17.4" cy="11.4" r="2.3"/><path d="M13.6 20.6v-1.2a3.8 3.8 0 0 1 7.6 0v1.2"/></svg>Family</span>
+          <h3><a href="open-enrollment-guide.html">Open Enrollment: How to Actually Choose Your Health Insurance Plan</a></h3>
+          <p class="dek">Open enrollment forces a once-a-year decision most people rush. Here's how to actually compare plans instead of picking the same one out of habit.</p>
+          <p class="meta">Sept 12, 2026, 7 min read, Updated Sept 2026</p>
+        </article>
+        <article class="card" data-category="Family">
+          <span class="kicker"><svg class="cat-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="8" cy="6.8" r="3.1"/><path d="M2.4 20.6v-1.4A5.6 5.6 0 0 1 8 13.6a5.6 5.6 0 0 1 5.6 5.6v1.4"/><circle cx="17.4" cy="11.4" r="2.3"/><path d="M13.6 20.6v-1.2a3.8 3.8 0 0 1 7.6 0v1.2"/></svg>Family</span>
+          <h3><a href="life-insurance-for-parents.html">Life Insurance Basics for Parents: What You Actually Need</a></h3>
+          <p class="dek">Term vs. whole life, how much coverage actually makes sense, and the simple math most parents skip when buying a policy.</p>
+          <p class="meta">Sept 12, 2026, 6 min read, Updated Sept 2026</p>
+        </article>
+        <article class="card" data-category="Family">
+          <span class="kicker"><svg class="cat-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="8" cy="6.8" r="3.1"/><path d="M2.4 20.6v-1.4A5.6 5.6 0 0 1 8 13.6a5.6 5.6 0 0 1 5.6 5.6v1.4"/><circle cx="17.4" cy="11.4" r="2.3"/><path d="M13.6 20.6v-1.2a3.8 3.8 0 0 1 7.6 0v1.2"/></svg>Family</span>
+          <h3><a href="cost-of-living-by-state.html">Cost of Living by State: What Actually Drives the Difference</a></h3>
+          <p class="dek">The same salary can feel completely different depending on where you live. Here's what actually drives cost-of-living differences by state.</p>
+          <p class="meta">Sept 12, 2026, 6 min read, Updated Sept 2026</p>
+        </article>
+        <article class="card" data-category="Family">
+          <span class="kicker"><svg class="cat-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="8" cy="6.8" r="3.1"/><path d="M2.4 20.6v-1.4A5.6 5.6 0 0 1 8 13.6a5.6 5.6 0 0 1 5.6 5.6v1.4"/><circle cx="17.4" cy="11.4" r="2.3"/><path d="M13.6 20.6v-1.2a3.8 3.8 0 0 1 7.6 0v1.2"/></svg>Family</span>
+          <h3><a href="back-to-school-budget.html">Back-to-School Budgeting That Doesn't Wreck Your Month</a></h3>
+          <p class="dek">School supplies, clothes, and activity fees cluster into a few weeks every year. Here's how to plan for it instead of absorbing the hit all at once.</p>
+          <p class="meta">Sept 12, 2026, 5 min read, Updated Sept 2026</p>
+        </article>
+        <article class="card" data-category="Family">
+          <span class="kicker"><svg class="cat-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="8" cy="6.8" r="3.1"/><path d="M2.4 20.6v-1.4A5.6 5.6 0 0 1 8 13.6a5.6 5.6 0 0 1 5.6 5.6v1.4"/><circle cx="17.4" cy="11.4" r="2.3"/><path d="M13.6 20.6v-1.2a3.8 3.8 0 0 1 7.6 0v1.2"/></svg>Family</span>
+          <h3><a href="windfall-guide.html">What to Do With a Windfall (Bonus, Inheritance, Tax Refund) Before You Spend It</a></h3>
+          <p class="dek">A simple order of operations for unexpected money, so a windfall builds lasting financial ground instead of quietly disappearing.</p>
+          <p class="meta">Sept 12, 2026, 6 min read, Updated Sept 2026</p>
+        </article>
+        <article class="card" data-category="Family">
+          <span class="kicker"><svg class="cat-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="8" cy="6.8" r="3.1"/><path d="M2.4 20.6v-1.4A5.6 5.6 0 0 1 8 13.6a5.6 5.6 0 0 1 5.6 5.6v1.4"/><circle cx="17.4" cy="11.4" r="2.3"/><path d="M13.6 20.6v-1.2a3.8 3.8 0 0 1 7.6 0v1.2"/></svg>Family</span>
+          <h3><a href="splitting-money-with-partner.html">Splitting Money Fairly with a Partner Who Earns Differently</a></h3>
+          <p class="dek">A 50/50 split isn't automatically fair when incomes differ. A proportional split usually is — here's how to set one up.</p>
+          <p class="meta">Sept 12, 2026, 5 min read, Updated Sept 2026</p>
+        </article>
+        <article class="card" data-category="Family">
+          <span class="kicker"><svg class="cat-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="8" cy="6.8" r="3.1"/><path d="M2.4 20.6v-1.4A5.6 5.6 0 0 1 8 13.6a5.6 5.6 0 0 1 5.6 5.6v1.4"/><circle cx="17.4" cy="11.4" r="2.3"/><path d="M13.6 20.6v-1.2a3.8 3.8 0 0 1 7.6 0v1.2"/></svg>Family</span>
+          <h3><a href="budget-that-survives-real-life.html">How to Build a Budget That Actually Survives Real Life</a></h3>
+          <p class="dek">Most budgets fail in week three. Here's how to build one that actually holds up against a messy, unpredictable month.</p>
+          <p class="meta">Sept 12, 2026, 7 min read, Updated Sept 2026</p>
+        </article>
+        <article class="card" data-category="Family">
+          <span class="kicker"><svg class="cat-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="8" cy="6.8" r="3.1"/><path d="M2.4 20.6v-1.4A5.6 5.6 0 0 1 8 13.6a5.6 5.6 0 0 1 5.6 5.6v1.4"/><circle cx="17.4" cy="11.4" r="2.3"/><path d="M13.6 20.6v-1.2a3.8 3.8 0 0 1 7.6 0v1.2"/></svg>Family</span>
+          <h3><a href="teaching-kids-money.html">Teaching Your Kids About Money Without the Awkward Lecture</a></h3>
+          <p class="dek">Small, low-stakes habits that teach real financial instincts — no allowance spreadsheet required.</p>
+          <p class="meta">Aug 15, 2026, 6 min read, Updated Sept 2026</p>
+        </article>
+      </div>
+    </section>
   </article>
 </div>
 
-<footer>
+<!-- shell:footer -->
+<footer class="site-footer">
   <div class="wrap">
-    <div>© 2026 Clearcoin.</div>
-    <nav>
-      <a href="about.html">About</a>
-      <a href="editorial-guidelines.html">Editorial Guidelines</a>
-      <a href="glossary.html">Glossary</a>
-      <a href="resources.html">Resources</a>
-      <a href="contact.html">Contact</a>
-      <a href="privacy.html">Privacy Policy</a>
-    </nav>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="wordmark"><a href="index.html"><img src="favicon.svg" alt="" class="wordmark-icon">Clear<span>coin</span></a></div>
+        <p class="footer-slogan">Practical money advice for people with a life to live, not a spreadsheet to obsess over.</p>
+        <p class="footer-disclaimer">Everything here is for education only. It is not personal financial advice, and it does not account for your own situation.</p>
+      </div>
+
+      <div class="footer-col">
+        <h3>Topics</h3>
+        <ul>
+          <li><a href="debt.html">Debt</a></li>
+          <li><a href="saving.html">Saving</a></li>
+          <li><a href="investing.html">Investing</a></li>
+          <li><a href="retirement.html">Retirement</a></li>
+          <li><a href="housing.html">Housing</a></li>
+          <li><a href="family.html">Family</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>Tools</h3>
+        <ul>
+          <li><a href="emergency-fund-calculator.html">Emergency Fund Calculator</a></li>
+          <li><a href="debt-payoff-calculator.html">Debt Payoff Calculator</a></li>
+          <li><a href="401k-calculator.html">401(k) Calculator</a></li>
+          <li><a href="compound-interest-calculator.html">Compound Interest Calculator</a></li>
+          <li><a href="money-personality-quiz.html">Money Personality Quiz</a></li>
+          <li><a href="budget-template.html">Budget Template</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>Site</h3>
+        <ul>
+          <li><a href="start-here.html">Start Here</a></li>
+          <li><a href="articles.html">All Articles</a></li>
+          <li><a href="glossary.html">Glossary</a></li>
+          <li><a href="resources.html">Resources</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="editorial-guidelines.html">Editorial Guidelines</a></li>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">© 2026 Clearcoin. All rights reserved.</div>
   </div>
 </footer>
+<!-- /shell:footer -->
 
 <div class="cookie-banner" id="cookie-banner">
   <div class="wrap">
@@ -336,5 +663,180 @@ if ('serviceWorker' in navigator) {
 }
 </script>
 
+<script>
+/* Category filter for the articles index — shows and hides whole blocks. */
+(function () {
+  var chips = [].slice.call(document.querySelectorAll('.chip[data-filter]'));
+  var blocks = [].slice.call(document.querySelectorAll('.cat-block'));
+  var empty = document.getElementById('articles-empty');
+  if (!chips.length || !blocks.length) return;
+
+  function apply(filter) {
+    var shown = 0;
+    blocks.forEach(function (b) {
+      var match = filter === 'All' || b.getAttribute('data-block') === filter;
+      b.hidden = !match;
+      if (match) shown++;
+    });
+    if (empty) empty.hidden = shown > 0;
+    chips.forEach(function (c) {
+      c.setAttribute('aria-pressed', String(c.getAttribute('data-filter') === filter));
+    });
+    try {
+      var url = new URL(window.location.href);
+      if (filter === 'All') url.searchParams.delete('topic');
+      else url.searchParams.set('topic', filter);
+      history.replaceState(null, '', url);
+    } catch (e) {}
+  }
+
+  chips.forEach(function (c) {
+    c.addEventListener('click', function () { apply(c.getAttribute('data-filter')); });
+  });
+
+  /* deep links like articles.html?topic=Debt */
+  try {
+    var wanted = new URL(window.location.href).searchParams.get('topic');
+    if (wanted && chips.some(function (c) { return c.getAttribute('data-filter') === wanted; })) apply(wanted);
+  } catch (e) {}
+})();
+</script>
+<script>
+/* Header: scroll shadow, dropdowns, mobile search and the slide-in menu. */
+(function () {
+  var header = document.getElementById('site-header');
+  if (header) {
+    var onScroll = function () {
+      header.classList.toggle('is-scrolled', window.scrollY > 4);
+    };
+    document.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  }
+
+  /* --- desktop dropdowns --- */
+  var dropdowns = [].slice.call(document.querySelectorAll('[data-dropdown]'));
+  function closeDropdowns(except) {
+    dropdowns.forEach(function (d) {
+      if (d === except) return;
+      d.classList.remove('is-open');
+      d.querySelector('.nav-dropdown-toggle').setAttribute('aria-expanded', 'false');
+    });
+  }
+  dropdowns.forEach(function (d) {
+    var toggle = d.querySelector('.nav-dropdown-toggle');
+    toggle.addEventListener('click', function (e) {
+      e.stopPropagation();
+      var open = !d.classList.contains('is-open');
+      closeDropdowns(d);
+      d.classList.toggle('is-open', open);
+      toggle.setAttribute('aria-expanded', String(open));
+    });
+    d.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') { closeDropdowns(); toggle.focus(); }
+    });
+    /* leaving the group with Tab closes it */
+    d.addEventListener('focusout', function (e) {
+      if (!d.contains(e.relatedTarget)) {
+        d.classList.remove('is-open');
+        toggle.setAttribute('aria-expanded', 'false');
+      }
+    });
+  });
+  document.addEventListener('click', function () { closeDropdowns(); });
+
+  /* --- mobile search row --- */
+  var searchToggle = document.getElementById('search-toggle');
+  var searchRow = document.getElementById('header-search-row');
+  if (searchToggle && searchRow) {
+    searchToggle.addEventListener('click', function () {
+      var open = !searchRow.classList.contains('is-open');
+      searchRow.classList.toggle('is-open', open);
+      searchToggle.setAttribute('aria-expanded', String(open));
+      if (open) { var i = document.getElementById('site-search-input-mobile'); if (i) i.focus(); }
+    });
+  }
+
+  /* --- slide-in menu --- */
+  var menu = document.getElementById('mobile-menu');
+  var menuToggle = document.getElementById('menu-toggle');
+  if (menu && menuToggle) {
+    var lastFocus = null;
+    var FOCUSABLE = 'a[href], button:not([disabled]), input, [tabindex]:not([tabindex="-1"])';
+
+    function openMenu() {
+      lastFocus = document.activeElement;
+      menu.classList.add('is-open');
+      menu.setAttribute('aria-hidden', 'false');
+      menuToggle.setAttribute('aria-expanded', 'true');
+      menuToggle.setAttribute('aria-label', 'Close menu');
+      document.body.classList.add('menu-open');
+      var first = menu.querySelector('.mobile-menu-close');
+      if (first) first.focus();
+    }
+
+    function closeMenu() {
+      menu.classList.remove('is-open');
+      menu.setAttribute('aria-hidden', 'true');
+      menuToggle.setAttribute('aria-expanded', 'false');
+      menuToggle.setAttribute('aria-label', 'Open menu');
+      document.body.classList.remove('menu-open');
+      /* back to whatever opened it; the burger is the sane fallback */
+      var target = (lastFocus && lastFocus !== document.body && lastFocus.focus) ? lastFocus : menuToggle;
+      target.focus();
+    }
+
+    menuToggle.addEventListener('click', function () {
+      menu.classList.contains('is-open') ? closeMenu() : openMenu();
+    });
+
+    [].slice.call(menu.querySelectorAll('[data-close-menu]')).forEach(function (el) {
+      el.addEventListener('click', closeMenu);
+    });
+
+    document.addEventListener('keydown', function (e) {
+      if (!menu.classList.contains('is-open')) return;
+      if (e.key === 'Escape') { closeMenu(); return; }
+      if (e.key !== 'Tab') return;
+      /* keep Tab inside the panel */
+      var items = [].slice.call(menu.querySelectorAll(FOCUSABLE)).filter(function (el) {
+        return el.offsetParent !== null;
+      });
+      if (!items.length) return;
+      var first = items[0], last = items[items.length - 1];
+      if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+      else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+    });
+
+    /* if the window grows past the breakpoint while the menu is open */
+    window.addEventListener('resize', function () {
+      if (window.innerWidth > 900 && menu.classList.contains('is-open')) closeMenu();
+    });
+  }
+
+  /* --- the theme button inside the menu, kept in step with the header one --- */
+  var menuTheme = document.getElementById('theme-toggle-menu');
+  if (menuTheme) {
+    var headerTheme = document.getElementById('theme-toggle');
+    function paint() {
+      var dark = document.documentElement.getAttribute('data-theme') === 'dark';
+      menuTheme.textContent = dark ? '☀️' : '🌙';
+      if (headerTheme) headerTheme.textContent = dark ? '☀️' : '🌙';
+    }
+    paint();
+    menuTheme.addEventListener('click', function () {
+      var dark = document.documentElement.getAttribute('data-theme') === 'dark';
+      if (dark) {
+        document.documentElement.removeAttribute('data-theme');
+        try { localStorage.setItem('theme', 'light'); } catch (e) {}
+      } else {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        try { localStorage.setItem('theme', 'dark'); } catch (e) {}
+      }
+      paint();
+    });
+    if (headerTheme) headerTheme.addEventListener('click', paint);
+  }
+})();
+</script>
 </body>
 </html>
