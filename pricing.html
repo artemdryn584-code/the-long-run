@@ -211,11 +211,16 @@
   <div class="side-box signup">
     <h2>Join the waitlist</h2>
     <p>No payment, no spam — just one email when Clearcoin Plus is ready. We'll never use this list for anything else.</p>
-    <form id="waitlist-form">
-      <input type="email" id="waitlist-email" placeholder="you@email.com" aria-label="Email address" required>
+    <form id="waitlist-form" action="https://formsubmit.co/clearcoin.help@gmail.com" method="POST">
+      <input type="email" id="waitlist-email" name="email" placeholder="you@email.com" aria-label="Email address" autocomplete="email" required>
+      <input type="hidden" name="_subject" value="New Clearcoin Plus waitlist signup">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_template" value="table">
+      <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
       <button type="submit" class="btn">Notify me</button>
     </form>
     <p id="waitlist-thanks" style="display:none; margin-top:12px; margin-bottom:0;">Thanks — we'll email you the moment Plus is available.</p>
+    <p id="waitlist-error" style="display:none; margin-top:12px; margin-bottom:0; color:#c0392b;">Something went wrong — please email <a href="mailto:clearcoin.help@gmail.com">clearcoin.help@gmail.com</a> and we'll add you.</p>
   </div>
 
   <h2>Why the free guides aren't going anywhere</h2>
@@ -473,11 +478,34 @@ var CLEARCOIN_PAGES = [
 (function () {
   var form = document.getElementById('waitlist-form');
   if (!form) return;
+  var thanks = document.getElementById('waitlist-thanks');
+  var error = document.getElementById('waitlist-error');
+  var btn = form.querySelector('button[type="submit"]');
   form.addEventListener('submit', function (e) {
     e.preventDefault();
-    form.style.display = 'none';
-    var thanks = document.getElementById('waitlist-thanks');
-    if (thanks) thanks.style.display = 'block';
+    if (error) error.style.display = 'none';
+    var email = (document.getElementById('waitlist-email') || {}).value;
+    if (!email) return;
+    if (btn) { btn.disabled = true; btn.textContent = 'Sending…'; }
+    fetch('https://formsubmit.co/ajax/clearcoin.help@gmail.com', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify({
+        email: email,
+        _subject: 'New Clearcoin Plus waitlist signup',
+        _template: 'table',
+        _captcha: 'false'
+      })
+    }).then(function (r) {
+      if (!r.ok) throw new Error('bad response');
+      return r.json();
+    }).then(function () {
+      form.style.display = 'none';
+      if (thanks) thanks.style.display = 'block';
+    }).catch(function () {
+      if (btn) { btn.disabled = false; btn.textContent = 'Notify me'; }
+      if (error) error.style.display = 'block';
+    });
   });
 })();
 </script>
