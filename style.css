@@ -2798,3 +2798,37 @@ html:not([data-theme="dark"]) body {
     radial-gradient(1100px 520px at 50% -260px, rgba(61,90,254,.05), transparent 70%),
     var(--bg);
 }
+
+/* ---------- Language switcher ---------- */
+.lang-select{position:relative}
+.lang-menu{position:absolute;top:calc(100% + 8px);right:0;min-width:168px;background:var(--bg);border:1px solid var(--line);border-radius:12px;box-shadow:0 14px 34px -12px rgba(20,24,40,.28);padding:6px;display:none;z-index:60}
+.lang-select.is-open .lang-menu{display:block}
+.lang-menu button{display:block;width:100%;text-align:left;background:none;border:none;font-family:inherit;font-size:14.5px;color:var(--ink);padding:9px 12px;border-radius:8px;cursor:pointer}
+.lang-menu button:hover{background:var(--accent-tint);color:var(--accent-deep)}
+.lang-menu button.is-active{color:var(--accent);font-weight:700}
+
+/* hide Google Translate's top banner (old + new class) and undo the body offset */
+.goog-te-banner-frame,
+.VIpgJd-ZVi9od-ORHb-OEVmcd{display:none !important}
+body{top:0 !important}
+.goog-tooltip,.goog-tooltip:hover{display:none !important}
+.goog-text-highlight{background:none !important;box-shadow:none !important}
+
+/* ---------- Dashboard preview: circular score rings ---------- */
+.pp-rings{display:flex;justify-content:space-around;gap:16px;margin-top:22px;flex-wrap:wrap}
+.pp-rings .ring{display:flex;flex-direction:column;align-items:center;gap:11px}
+.pp-rings .ring-c{width:94px;height:94px;border-radius:50%;background:conic-gradient(var(--c) calc(var(--val)*1%), rgba(255,255,255,.09) 0);display:grid;place-items:center;position:relative}
+.pp-rings .ring-c::before{content:"";position:absolute;inset:9px;border-radius:50%;background:#12141b}
+.pp-rings .ring-c b{position:relative;font-size:21px;font-weight:800;color:#EDEFF5;letter-spacing:-.02em}
+.pp-rings .ring-l{color:#9aa3b2;font-size:13px;font-weight:600}
+
+/* language control shown as a labelled pill: 🌐 English ⌄ */
+.lang-btn{display:inline-flex;align-items:center;gap:7px;height:38px;padding:0 12px;border:1px solid var(--line);border-radius:11px;background:var(--bg);color:var(--ink-soft);font-family:inherit;font-size:14px;font-weight:600;cursor:pointer;transition:border-color .15s ease,color .15s ease}
+.lang-btn:hover{border-color:var(--accent);color:var(--ink)}
+.lang-btn #lang-current{color:var(--ink)}
+.lang-btn .lang-caret{opacity:.6;transition:transform .15s ease}
+.lang-select.is-open .lang-btn .lang-caret{transform:rotate(180deg)}
+@media (max-width:600px){
+  .lang-btn #lang-current,.lang-btn .lang-caret{display:none}
+  .lang-btn{padding:0 9px;width:38px;justify-content:center}
+}

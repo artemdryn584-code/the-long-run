@@ -99,10 +99,24 @@ ${MORE.map(([n, h]) => `          <a href="${h}"${mark(h, current)}>${n}</a>`).j
         <div class="site-search-results" id="site-search-results"></div>
       </div>
       <button type="button" class="icon-btn" id="search-toggle" aria-expanded="false" aria-controls="header-search-row" aria-label="Search">${searchIcon}</button>
+      <div class="lang-select" data-dropdown-lang>
+        <button type="button" class="lang-btn" id="lang-toggle" aria-expanded="false" aria-haspopup="true" aria-label="Change language"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3a15 15 0 0 1 0 18a15 15 0 0 1 0-18"/></svg><span id="lang-current">English</span><svg class="lang-caret" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></button>
+        <div class="lang-menu" id="lang-menu" role="menu">
+          <button type="button" role="menuitem" data-lang="en">English</button>
+          <button type="button" role="menuitem" data-lang="es">Español</button>
+          <button type="button" role="menuitem" data-lang="fr">Français</button>
+          <button type="button" role="menuitem" data-lang="de">Deutsch</button>
+          <button type="button" role="menuitem" data-lang="pt">Português</button>
+          <button type="button" role="menuitem" data-lang="it">Italiano</button>
+          <button type="button" role="menuitem" data-lang="uk">Українська</button>
+          <button type="button" role="menuitem" data-lang="ru">Русский</button>
+        </div>
+      </div>
       <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">🌙</button>
       <button type="button" class="icon-btn" id="menu-toggle" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">${burgerIcon}</button>
     </div>
   </div>
+  <div id="google_translate_element" aria-hidden="true" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)"></div>
 
   <div class="wrap header-search-row" id="header-search-row">
     <div class="site-search">
@@ -314,6 +328,79 @@ const SHELL_JS = `<script>
     });
     if (headerTheme) headerTheme.addEventListener('click', paint);
   }
+
+  /* --- language switcher: English is the source; other languages via Google Translate --- */
+  (function () {
+    var wrap = document.querySelector('[data-dropdown-lang]');
+    if (!wrap) return;
+    var toggle = document.getElementById('lang-toggle');
+    var menu = document.getElementById('lang-menu');
+
+    function readTrans() {
+      var cs = document.cookie.split(';');
+      for (var i = 0; i < cs.length; i++) {
+        var c = cs[i].trim();
+        if (c.indexOf('googtrans=') === 0) return decodeURIComponent(c.substring(10));
+      }
+      return '';
+    }
+    var current = (readTrans().split('/')[2]) || 'en';
+
+    function loadGT() {
+      if (window.__gtLoaded) return;
+      window.__gtLoaded = true;
+      window.googleTranslateElementInit = function () {
+        try { new google.translate.TranslateElement({ pageLanguage: 'en', autoDisplay: false }, 'google_translate_element'); } catch (e) {}
+        var t = (readTrans().split('/')[2]) || 'en';
+        if (t !== 'en') {
+          var tries = 0;
+          (function poll() {
+            var c = document.querySelector('.goog-te-combo');
+            if (c) { c.value = t; c.dispatchEvent(new Event('change')); }
+            else if (tries++ < 40) setTimeout(poll, 200);
+          })();
+        }
+      };
+      var s = document.createElement('script');
+      s.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+      document.head.appendChild(s);
+    }
+    if (current !== 'en') loadGT();
+
+    function setLang(lang) {
+      var host = location.hostname;
+      var expire = 'expires=Thu, 01 Jan 1970 00:00:00 GMT';
+      document.cookie = 'googtrans=;' + expire + ';path=/';
+      document.cookie = 'googtrans=;' + expire + ';path=/;domain=' + host;
+      document.cookie = 'googtrans=;' + expire + ';path=/;domain=.' + host;
+      if (lang && lang !== 'en') {
+        var v = '/en/' + lang;
+        document.cookie = 'googtrans=' + v + ';path=/';
+        document.cookie = 'googtrans=' + v + ';path=/;domain=' + host;
+        document.cookie = 'googtrans=' + v + ';path=/;domain=.' + host;
+      }
+      location.reload();
+    }
+
+    function close() { wrap.classList.remove('is-open'); toggle.setAttribute('aria-expanded', 'false'); }
+    toggle.addEventListener('click', function (e) {
+      e.stopPropagation();
+      var open = !wrap.classList.contains('is-open');
+      wrap.classList.toggle('is-open', open);
+      toggle.setAttribute('aria-expanded', String(open));
+    });
+    menu.addEventListener('click', function (e) {
+      var b = e.target.closest('[data-lang]');
+      if (b) setLang(b.getAttribute('data-lang'));
+    });
+    document.addEventListener('click', function (e) { if (!wrap.contains(e.target)) close(); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') close(); });
+    var NAMES = { en: 'English', es: 'Español', fr: 'Français', de: 'Deutsch', pt: 'Português', it: 'Italiano', uk: 'Українська', ru: 'Русский' };
+    var label = document.getElementById('lang-current');
+    if (label && NAMES[current]) label.textContent = NAMES[current];
+    var act = menu.querySelector('[data-lang="' + current + '"]');
+    if (act) act.classList.add('is-active');
+  })();
 })();
 </script>`;
 
