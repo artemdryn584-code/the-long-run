@@ -55,7 +55,7 @@ const SITE = [
 const coinMark = () => `<img src="favicon.svg" alt="" class="wordmark-icon">`;
 
 const wordmark = () =>
-  `<div class="wordmark"><a href="index.html">${coinMark()}Clear<span>coin</span></a></div>`;
+  `<div class="wordmark"><a href="index.html" translate="no" class="notranslate">${coinMark()}<span translate="no" class="notranslate">Clear<span>coin</span></span></a></div>`;
 
 const chevron = `<svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>`;
 const searchIcon = `<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.6-3.6"/></svg>`;
