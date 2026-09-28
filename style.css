@@ -2610,3 +2610,16 @@ html[data-theme="dark"] .plan-save { background: rgba(45, 170, 95, 0.18); color:
 html[data-theme="dark"] .pricing-card.featured {
   box-shadow: 0 18px 48px -12px rgba(120, 140, 255, 0.28);
 }
+
+/* ---------- Plus buy buttons (revealed at launch via plus.js) ---------- */
+.plan-buy { display: flex; flex-direction: column; gap: 8px; }
+.plan-buy .plan-cta { width: 100%; margin: 0; border: none; cursor: pointer; font-family: inherit; }
+.plan-buy-alt {
+  background: none; border: none; cursor: pointer; font-family: inherit;
+  color: var(--accent); font-weight: 600; font-size: 14px; padding: 6px 0 2px;
+  text-decoration: underline; text-underline-offset: 3px;
+}
+.plan-buy-alt:hover { color: var(--accent-deep); }
+
+/* Plus entitlement: hide ad slots for subscribers (inert until ads exist) */
+.plus-active .ad-slot { display: none !important; }
