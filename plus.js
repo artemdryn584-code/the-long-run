@@ -92,7 +92,10 @@
   // waitlist stays the primary CTA until then.
   document.addEventListener('DOMContentLoaded', function () {
     var buy = document.querySelector('.plan-buy');
-    if (buy && CFG.live) {
+    // Preview: add ?plus=preview to the URL to reveal the buy buttons before launch.
+    var previewing = false;
+    try { previewing = new URLSearchParams(location.search).get('plus') === 'preview'; } catch (e) {}
+    if (buy && (CFG.live || previewing)) {
       buy.style.display = '';
       // hide the waitlist CTA + signup box once real checkout is live
       var waitCta = document.querySelector('.plan-cta[href="#waitlist-form"]');
