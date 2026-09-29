@@ -13,7 +13,7 @@
 //   - serves other assets from cache but refreshes them in the background.
 //
 // Bump CACHE whenever the caching rules themselves change.
-const CACHE = 'clearcoin-v3';
+const CACHE = 'clearcoin-v4';
 const OFFLINE_FALLBACK = '/';
 
 self.addEventListener('install', event => {
