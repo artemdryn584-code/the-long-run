@@ -603,4 +603,23 @@ export const SPECS = {
       centre: { top: "Annual", bottom: "total cost" },
     }),
   },
+  // ---- new guides & investor-principle articles (no illustration specs) ----
+  "how-to-make-a-budget.html": {},
+  "how-to-build-credit.html": {},
+  "how-to-start-investing.html": {},
+  "roth-ira-vs-401k.html": {},
+  "hsa-vs-fsa.html": {},
+  "how-to-save-for-a-down-payment.html": {},
+  "how-to-negotiate-a-raise.html": {},
+  "credit-score-ranges-explained.html": {},
+  "50-30-20-budget-rule.html": {},
+  "warren-buffett-index-funds.html": {},
+  "psychology-of-money-lessons.html": {},
+  "dave-ramsey-baby-steps.html": {},
+  "jl-collins-simple-path-to-wealth.html": {},
+  "ramit-sethi-rich-life.html": {},
+  "benjamin-graham-value-investing.html": {},
+  "your-money-or-your-life.html": {},
+  "peter-lynch-invest-in-what-you-know.html": {},
+
 };
