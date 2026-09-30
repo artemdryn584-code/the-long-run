@@ -403,6 +403,18 @@ const SHELL_JS = `<script>
     var act = menu.querySelector('[data-lang="' + current + '"]');
     if (act) act.classList.add('is-active');
   })();
+
+  /* --- copy-link button in the article share bar --- */
+  document.addEventListener('click', function (e) {
+    var b = e.target.closest ? e.target.closest('.share-copy') : null;
+    if (!b) return;
+    var u = b.getAttribute('data-url');
+    if (!u || !navigator.clipboard) return;
+    navigator.clipboard.writeText(u).then(function () {
+      b.classList.add('is-copied');
+      setTimeout(function () { b.classList.remove('is-copied'); }, 1500);
+    }).catch(function () {});
+  });
 })();
 </script>`;
 

@@ -23,7 +23,7 @@
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="manifest" href="/manifest.json">
 <link rel="apple-touch-icon" href="/icon-192.png">
-<link rel="stylesheet" href="style.css?v=ba1e7194">
+<link rel="stylesheet" href="style.css?v=46510371">
 
 </head>
 <body class="article-page">
@@ -698,6 +698,18 @@ var CLEARCOIN_PAGES = [
     var act = menu.querySelector('[data-lang="' + current + '"]');
     if (act) act.classList.add('is-active');
   })();
+
+  /* --- copy-link button in the article share bar --- */
+  document.addEventListener('click', function (e) {
+    var b = e.target.closest ? e.target.closest('.share-copy') : null;
+    if (!b) return;
+    var u = b.getAttribute('data-url');
+    if (!u || !navigator.clipboard) return;
+    navigator.clipboard.writeText(u).then(function () {
+      b.classList.add('is-copied');
+      setTimeout(function () { b.classList.remove('is-copied'); }, 1500);
+    }).catch(function () {});
+  });
 })();
 </script>
 </body>
