@@ -49,6 +49,8 @@ const SITE = [
   ["Contact", "contact.html"],
   ["Editorial Guidelines", "editorial-guidelines.html"],
   ["Privacy Policy", "privacy.html"],
+  ["Terms of Service", "terms.html"],
+  ["Refund Policy", "refund-policy.html"],
 ];
 
 // the site's own favicon, exactly as the old masthead used it

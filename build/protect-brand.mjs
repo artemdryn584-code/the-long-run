@@ -26,7 +26,14 @@ for (const f of files) {
     return "\u0000" + (stash.length - 1) + "\u0000";
   });
 
-  // rewrite only text nodes (between ">" and "<"); skip ones already wrapped
+  // first unwrap any existing brand spans so re-runs don't nest them
+  let prev;
+  do {
+    prev = body;
+    body = body.replace(/<span translate="no" class="notranslate">Clearcoin<\/span>/g, "Clearcoin");
+  } while (body !== prev);
+
+  // rewrite only text nodes (between ">" and "<")
   body = body.replace(/>([^<]+)</g, (m, txt) => {
     if (txt.indexOf("Clearcoin") === -1) return m;
     return ">" + txt.replace(/Clearcoin/g, SPAN) + "<";
