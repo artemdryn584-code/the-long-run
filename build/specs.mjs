@@ -622,4 +622,12 @@ export const SPECS = {
   "your-money-or-your-life.html": {},
   "peter-lynch-invest-in-what-you-know.html": {},
 
+  // ---- batch3 viral-query articles ----
+  "how-much-should-i-have-saved-by-30.html": {},
+  "how-to-become-a-millionaire.html": {},
+  "how-to-save-10000-in-a-year.html": {},
+  "stop-living-paycheck-to-paycheck.html": {},
+  "what-is-the-fire-movement.html": {},
+  "money-mistakes-in-your-20s.html": {},
+
 };
