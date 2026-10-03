@@ -630,4 +630,12 @@ export const SPECS = {
   "what-is-the-fire-movement.html": {},
   "money-mistakes-in-your-20s.html": {},
 
+  // ---- batch4 ----
+  "what-is-an-etf.html": {},
+  "how-much-do-i-need-to-retire.html": {},
+  "how-to-pay-off-student-loans-faster.html": {},
+  "what-is-net-worth.html": {},
+  "how-much-should-i-spend-on-rent.html": {},
+  "dollar-cost-averaging.html": {},
+
 };
