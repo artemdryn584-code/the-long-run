@@ -15,15 +15,15 @@
  */
 (function () {
   var CFG = {
-    env: 'sandbox', // 'sandbox' | 'production'
-    token: 'test_912dc6b678fcf8741f252b4e9a0',
+    env: 'production', // 'sandbox' | 'production'
+    token: 'live_b5bd29f7e093f4696c9c5183a1e',
     prices: {
-      monthly: 'pri_01m3m5bj93a0ze7mwhz62ayfba',
-      yearly: 'pri_01m3m57s3dzhsyv1jntbzhzz49'
+      monthly: 'pri_01m490erbqcchc4zvm2t6tjgxh',
+      yearly: 'pri_01m490g2nrpstcqbjbvbmawhge'
     },
     // While false the pricing page keeps the "join the waitlist" call to action
     // and no buy buttons are shown. Flip to true at launch.
-    live: false
+    live: true
   };
   window.CLEARCOIN_PLUS = CFG;
 
