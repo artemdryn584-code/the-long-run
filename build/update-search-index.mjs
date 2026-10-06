@@ -20,7 +20,13 @@ const NEW = [
   ["Ramit Sethi's Rich Life Approach", "Saving", "ramit-sethi-rich-life.html"],
   ["Benjamin Graham's Value Investing", "Investing", "benjamin-graham-value-investing.html"],
   ["Your Money or Your Life", "Saving", "your-money-or-your-life.html"],
-  ["Peter Lynch: Invest in What You Know", "Investing", "peter-lynch-invest-in-what-you-know.html"]
+  ["Peter Lynch: Invest in What You Know", "Investing", "peter-lynch-invest-in-what-you-know.html"],
+  ["Jack Bogle's Common Sense Investing", "Investing", "jack-bogle-common-sense-investing.html"],
+  ["Charlie Munger's Investing Approach", "Investing", "charlie-munger-mental-models.html"],
+  ["Ray Dalio's Principles", "Investing", "ray-dalio-principles.html"],
+  ["The Richest Man in Babylon", "Saving", "the-richest-man-in-babylon.html"],
+  ["The Millionaire Next Door", "Saving", "the-millionaire-next-door.html"],
+  ["Rich Dad Poor Dad, Explained", "Investing", "rich-dad-poor-dad-explained.html"]
 ];
 
 const files = fs.readdirSync(".").filter(f => f.endsWith(".html"));
