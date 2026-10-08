@@ -16,12 +16,13 @@
 <meta name="theme-color" content="#3D5AFE">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"></noscript>
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="manifest" href="/manifest.json">
 <link rel="alternate" type="application/rss+xml" title="Clearcoin" href="https://clearcoin.cc/feed.xml">
 <link rel="apple-touch-icon" href="/icon-192.png">
-<link rel="stylesheet" href="style.css?v=d3cc175b">
+<link rel="stylesheet" href="style.css?v=3b20cbe7">
 </head>
 <body class="article-page">
 <a href="#main" class="skip-link">Skip to main content</a>
@@ -141,7 +142,8 @@
 </div>
 <!-- /shell:header -->
 
-<article class="article" id="main">
+<main id="main">
+<article class="article">
   <span class="kicker">Calculator</span>
   <h1>401(k) Growth Calculator</h1>
   <p class="meta">Free tool — takes about 30 seconds</p>
@@ -189,6 +191,7 @@
   <p>Your current balance and every future contribution (yours plus your employer's match) are compounded monthly at your assumed annual return, all the way to your chosen retirement age.</p>
   <p>Not sure your employer match is fully optimized? Read <a href="401k-match.html">The 401(k) Match Most People Leave on the Table</a>. Deciding between account types? See <a href="roth-vs-traditional-401k.html">Roth vs. Traditional 401(k)</a>.</p>
 </article>
+</main>
 
 <!-- shell:footer -->
 <footer class="site-footer">

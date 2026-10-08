@@ -19,12 +19,13 @@
 <meta name="twitter:image" content="https://clearcoin.cc/og-cover.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"></noscript>
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="manifest" href="/manifest.json">
 <link rel="alternate" type="application/rss+xml" title="Clearcoin" href="https://clearcoin.cc/feed.xml">
 <link rel="apple-touch-icon" href="/icon-192.png">
-<link rel="stylesheet" href="style.css?v=d3cc175b">
+<link rel="stylesheet" href="style.css?v=3b20cbe7">
 <style>
   .debt-row-title {
     font-size: 13.5px;
@@ -155,7 +156,8 @@
 </div>
 <!-- /shell:header -->
 
-<article class="article" id="main">
+<main id="main">
+<article class="article">
   <span class="kicker"><span translate="no" class="notranslate">Clearcoin</span> Plus</span>
   <h1>Debt-Free Date Planner<span class="badge-soon">Plus preview</span></h1>
   <p class="meta">Free to try — part of Clearcoin Plus — see <a href="pricing.html">what else is included</a>.</p>
@@ -232,6 +234,7 @@
   <p>The simulation runs month by month: interest accrues on every debt at its own rate, each debt's minimum payment is applied, and the extra amount is added entirely to whichever remaining debt currently has the highest APR. Once a debt is paid off, its minimum payment amount joins the extra pool and accelerates whatever's left — the same "snowball rolling downhill" effect that makes payoff speed up near the end.</p>
   <p>If you're deciding between this method and paying off the smallest balance first for motivation, see <a href="debt-avalanche-vs-snowball.html">avalanche vs. snowball</a> — this tool always uses avalanche order, since it minimizes total interest.</p>
 </article>
+</main>
 
 <!-- shell:footer -->
 <footer class="site-footer">
