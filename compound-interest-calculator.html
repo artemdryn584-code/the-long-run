@@ -13,7 +13,7 @@
 <link rel="canonical" href="https://clearcoin.cc/compound-interest-calculator.html">
 <meta property="og:image" content="https://clearcoin.cc/og-cover.png">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="theme-color" content="#3D5AFE">
+<meta name="theme-color" content="#00843D">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" onload="this.onload=null;this.rel='stylesheet'">
@@ -22,7 +22,7 @@
 <link rel="manifest" href="/manifest.json">
 <link rel="alternate" type="application/rss+xml" title="Clearcoin" href="https://clearcoin.cc/feed.xml">
 <link rel="apple-touch-icon" href="/icon-192.png">
-<link rel="stylesheet" href="style.css?v=3b20cbe7">
+<link rel="stylesheet" href="style.css?v=4a77bfdb">
 </head>
 <body class="article-page">
 <a href="#main" class="skip-link">Skip to main content</a>
@@ -293,7 +293,7 @@ function drawChart(points) {
   }
 
   ctx.beginPath();
-  ctx.strokeStyle = '#3D5AFE';
+  ctx.strokeStyle = '#00843D';
   ctx.lineWidth = 3;
   points.forEach(function(val, i) {
     var x = padding + (i / (points.length - 1)) * chartW;
@@ -305,7 +305,7 @@ function drawChart(points) {
   var last = points[points.length - 1];
   var lastX = padding + chartW;
   var lastY = padding + chartH - (last / max) * chartH;
-  ctx.fillStyle = '#3D5AFE';
+  ctx.fillStyle = '#00843D';
   ctx.beginPath();
   ctx.arc(lastX, lastY, 5, 0, Math.PI * 2);
   ctx.fill();
