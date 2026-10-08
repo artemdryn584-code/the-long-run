@@ -54,7 +54,7 @@ const SITE = [
 ];
 
 // the site's own favicon, exactly as the old masthead used it
-const coinMark = () => `<img src="favicon.svg" alt="" class="wordmark-icon">`;
+const coinMark = () => `<img src="favicon.svg?v=2" alt="" class="wordmark-icon">`;
 
 const wordmark = () =>
   `<div class="wordmark"><a href="index.html" translate="no" class="notranslate">${coinMark()}<span translate="no" class="notranslate">Clear<span>coin</span></span></a></div>`;
