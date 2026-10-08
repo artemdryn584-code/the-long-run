@@ -21,8 +21,9 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="manifest" href="/manifest.json">
+<link rel="alternate" type="application/rss+xml" title="Clearcoin" href="https://clearcoin.cc/feed.xml">
 <link rel="apple-touch-icon" href="/icon-192.png">
-<link rel="stylesheet" href="style.css?v=46510371">
+<link rel="stylesheet" href="style.css?v=d3cc175b">
 
 <script type="application/ld+json">
 {
@@ -498,7 +499,7 @@
         </article>
         </div>
 
-        <div class="ad-slot">Ad placeholder — insert your AdSense unit here (e.g. in-article or display ad)</div>
+        <div class="ad-slot"></div>
 
         <p style="margin-top:18px"><a class="see-all" href="articles.html">Browse all 34 articles →</a></p>
       </main>
@@ -544,10 +545,14 @@
       <div class="side-box signup">
         <h2>One practical idea a week</h2>
         <p>No spam, no "hustle harder." Just one thing worth doing with your money.</p>
-        <form>
-          <input type="email" placeholder="you@email.com" aria-label="Email address">
+        <form class="newsletter-form" action="https://formsubmit.co/clearcoin.help@gmail.com" method="POST">
+          <input type="email" name="email" placeholder="you@email.com" aria-label="Email address" autocomplete="email" required>
+          <input type="hidden" name="_subject" value="New Clearcoin newsletter signup">
+          <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
           <button type="submit" class="btn">Join</button>
         </form>
+        <p class="newsletter-thanks" hidden>Thanks — you're on the list.</p>
+        <p class="newsletter-error" hidden>Something went wrong. Email <a href="mailto:clearcoin.help@gmail.com">clearcoin.help@gmail.com</a> and we'll add you.</p>
       </div>
 
       <div class="side-box">
@@ -1053,6 +1058,35 @@ if ('serviceWorker' in navigator) {
       b.classList.add('is-copied');
       setTimeout(function () { b.classList.remove('is-copied'); }, 1500);
     }).catch(function () {});
+  });
+})();
+</script>
+<script id="newsletter-form-js">
+(function () {
+  [].slice.call(document.querySelectorAll('form.newsletter-form')).forEach(function (form) {
+    var box = form.parentNode;
+    var thanks = box.querySelector('.newsletter-thanks');
+    var error = box.querySelector('.newsletter-error');
+    var btn = form.querySelector('button[type="submit"]');
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      if (error) error.hidden = true;
+      var email = form.querySelector('input[name="email"]').value;
+      if (!email || form.querySelector('input[name="_honey"]').value) return;
+      btn.disabled = true;
+      fetch('https://formsubmit.co/ajax/clearcoin.help@gmail.com', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify({ email: email, _subject: 'New Clearcoin newsletter signup', _template: 'table', _captcha: 'false' })
+      }).then(function (r) {
+        if (!r.ok) throw new Error('bad response');
+        form.hidden = true;
+        if (thanks) thanks.hidden = false;
+      }).catch(function () {
+        btn.disabled = false;
+        if (error) error.hidden = false;
+      });
+    });
   });
 })();
 </script>

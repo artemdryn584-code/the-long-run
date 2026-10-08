@@ -390,6 +390,8 @@ nav.primary a.current {
   border-radius: 12px;
 }
 
+.ad-slot:empty { display: none; }
+
 /* ---------- Article page ---------- */
 
 body.article-page {
